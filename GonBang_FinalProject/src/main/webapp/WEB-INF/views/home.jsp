@@ -25,6 +25,7 @@
 </head>
 <body>
 여기부터가 바디입니다(나영준3:01)
+정호용3:12
 <header>
 	<jsp:include page="header.jsp" />
 </header>
