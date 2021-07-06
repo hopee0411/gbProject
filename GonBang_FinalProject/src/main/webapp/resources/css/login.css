@@ -21,7 +21,9 @@
 	padding-top: 50px;
 	color: white;
 }
-
+.a {
+	border: none;
+}
 span {
 	width: none;
 	background-color: #f495cc;
@@ -31,9 +33,9 @@ span {
 	width: 500px;
 	height: 300px;
 	float: right;
-	border: 1px dotted blue;
+	border: 1px dotted white;
 	border-radius: 10px;
-	background-color: lightyellow;
+	background-color: rgb(0, 202, 202);
 	padding-top: 50px;
 	color: white;
 }
