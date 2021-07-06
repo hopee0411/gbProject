@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+.MyPM {
+	width: 250px;
+	height: 1500px;
+	float: left;  /* 왼쪽으로 정렬 */
+	margin-left: 110px;
+	
+}
+
+p.groove {
+	border-style: groove;
+	}
+	
+.MyProfile {
+	width: 230px;
+	height: 280px;
+	margin : 20px, 25px;
+	float: left;
+	box-sizing:border-box;
+	text-align: center;
+	
+}
+
+.MyMenu {
+	width: 230px;
+	height: 850px;
+	margin : 20px, 25px;
+
+}
+
+.MyPageName {
+	width: 1200px;
+	height: 65px;
+	text-shadow: gray;
+	border-bottom:outset; 
+	margin-left: 350px;
+	margin-right: 50px;
+	
+}
+
+.MyPageMain {
+	width: 1000px;
+	height: 1000px;
+}
+
+.MyPageMainTop {
+	margin-top: 60px;
+}
+.img-fluid1{
+	text-align: center;
+	border-radius: 70%;
+	overflow: hidden;
+	object-fit:cover;
+	margin-top: 20px;
+	height: 125px;
+	width: 125px;
+}

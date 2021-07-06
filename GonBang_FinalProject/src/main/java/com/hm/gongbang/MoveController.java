@@ -17,5 +17,27 @@ public class MoveController {
 		return mv;
 	}
 
+	@GetMapping("myPageFrm")
+	public String myPage() {
 		
+		return "myPage";
+	}
+	
+	@GetMapping("m_productDelivery")
+	public String m_productDelivery() {
+		
+		return "m_productDelivery";
+	}
+		
+	@GetMapping("m_productCancle")
+	public String m_productCancle() {
+		
+		return "m_productCancle";
+	}
+	
+	@GetMapping("m_memberManager")
+	public String m_memberManager() {
+		
+		return "m_memberManager";
+	}
 }//class end

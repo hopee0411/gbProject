@@ -34,7 +34,7 @@
 								href="#about">로그인</a></li>
 							<li class="nav-item mx-0 mx-lg-1"><a
 								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"
-								href="#contact">내정보</a></li>
+								href="./myPageFrm">내정보</a></li>
 							<li class="nav-item mx-0 mx-lg-1"><a
 								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"
 								href="#contact">장바구니</a></li>
