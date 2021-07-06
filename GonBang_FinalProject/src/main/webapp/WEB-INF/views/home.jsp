@@ -28,8 +28,16 @@
 <link href="resources/css/styles.css" rel="stylesheet" />
 </head>
 <body>
+<<<<<<< Updated upstream
 222222
 
+=======
+여기부터가 바디입니다(나영준3:01)
+정호용3:12 같은행 테스트 정호용
+안녕하세요
+마스터 테스트 변경 1234
+안녕하세요 안녕하세요
+>>>>>>> Stashed changes
 <header>
 	<jsp:include page="header.jsp" />
 </header>
