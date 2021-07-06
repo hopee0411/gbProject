@@ -28,7 +28,6 @@
 <link href="resources/css/styles.css" rel="stylesheet" />
 </head>
 <body>
-
 222222
 
 <header>
