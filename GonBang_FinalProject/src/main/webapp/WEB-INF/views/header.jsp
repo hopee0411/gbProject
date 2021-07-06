@@ -31,7 +31,7 @@
 								class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">로그아웃</a></li>
 							<li class="nav-item mx-0 mx-lg-1"><a
 								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"
-								href="#about">로그인</a></li>
+								href="./loginFrm">로그인</a></li>
 							<li class="nav-item mx-0 mx-lg-1"><a
 								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"
 								href="./myPageFrm">내정보</a></li>
