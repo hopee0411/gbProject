@@ -26,7 +26,7 @@
 <body>
 여기부터가 바디입니다(나영준3:01)
 정호용3:12 같은행 테스트 정호용
-안녕하세요
+안녕하세요 안녕하세요
 <header>
 	<jsp:include page="header.jsp" />
 </header>
