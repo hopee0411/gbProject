@@ -22,7 +22,7 @@
 	<div class="MyPageMain">
 	<table class="table table-hover">
 		<tr class="table-secondary">
-			<th scope="row">Secondary</th>
+			<th scope="row">적립금</th>
 			<td>Column content</td>
 			<td>Column content</td>
 			<td>Column content</td>
