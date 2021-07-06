@@ -8,7 +8,11 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Home</title>
+<title>Home
+11111
+</title>
+
+
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <!-- Font Awesome icons (free version)-->
@@ -23,6 +27,9 @@
 <!-- Core theme CSS (includes Bootstrap)-->
 <link href="resources/css/styles.css" rel="stylesheet" />
 </head>
+<body>
+222222
+
 <header>
 	<jsp:include page="header.jsp" />
 </header>
