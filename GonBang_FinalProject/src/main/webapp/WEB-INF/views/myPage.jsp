@@ -23,7 +23,7 @@
 	<table class="table table-hover">
 		<tr class="table-secondary">
 			<th scope="row">적립금</th>
-			<td>Column content</td>
+			<td>쿠폰</td>
 			<td>Column content</td>
 			<td>Column content</td>
 		</tr>
