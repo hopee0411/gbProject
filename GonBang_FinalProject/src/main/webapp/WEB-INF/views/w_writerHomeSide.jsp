@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<div class="writerHome">
+<div class="writerHome" style="height:800px;">
 	<img src="resources/images/img13.jpg" alt="프로필 사진" class="img-circle">
 	<div class="profileInfo">
 		<ul>
@@ -23,7 +23,7 @@
 	<!-- 중간 선 -->
 			<a class="suc1" href="#">내정보 관리</a>
 		<!-- 작가만 보이게 하기 -->
-	</div>
+	
 
 	<hr><!-- 중간 선 -->
 
@@ -66,7 +66,6 @@
 		</ul>
 	</div>
 </div>
-</div>
 
 
 <script type="text/javascript">
@@ -92,6 +91,3 @@ function likeWriter(num) {
 
 </script>
 
-
-
->>>>>>> shBranch

@@ -4,7 +4,7 @@
 	margin: 50px 25px 50px 25px;
 	text-align: center;
 	width: 280px;
-	height: 670px;
+	height: 1000px;
 	background-color: #ffd6d5;
 	border-radius: 4%;
 	float: left;
@@ -59,6 +59,7 @@ hr {
 }
 .orderManagement ul {
 	float: left;
+	
 }
 .copylink {
 	padding: 3px 7px 3px 7px;
