@@ -10913,12 +10913,28 @@ rtl:end:remove
 	width: 200px;
 } 
 .badge{
-	margin-top:50px;
+	margin-top:40px;
 	float: right;
-	width: 80px;
+	width: 100px;
 	background-color: pink;
 } 
- 
- 
- 
- 
+.wtable{
+	margin-top: 70px;
+}
+td{
+	text-align: center;
+	width: 125px;
+}
+th{
+	width: 300px;
+	text-align: left;
+}	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -53,14 +53,28 @@ img {
 						굿크리에이터</button>
 				<button type="button" class="wbtn btn-primary btn-sm"
 					style="margin-left: 40px;">작가홈</button>
-				<span class="badge bg-primary">...명</span>
-
+				<span class="badge">...명 구매</span>
+				
+				<table class="wtable">
+					<tr>
+						<th style="border: 1px solid;">수령</th>
+						<td style="border: 1px solid;">주문제작</td>
+					</tr>
+					<tr>
+						<th style="border: 1px solid;">수령</th>
+						<td style="border: 1px solid;">주문제작</td>
+					</tr>
+					<tr>
+						<th style="border: 1px solid;">수령</th>
+						<td style="border: 1px solid;" ><h6>주문제작</h6></td>
+					</tr>
+				</table>
 			</div>
+				
 		</div>
 	</div>
-
-
-	<!--	
+	
+<!--	
 			<div class="col-lg-5">
 				<h1 class="font-weight-light">제품 이름</h1>
 				<p>This is a template that is great for small businesses. It
@@ -127,7 +141,98 @@ img {
 	</footer>
 </body>
 </html>
+	
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
 
 
 
