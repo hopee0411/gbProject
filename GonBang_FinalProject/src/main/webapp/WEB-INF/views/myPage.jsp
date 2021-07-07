@@ -43,7 +43,7 @@
 				</table>
 			</div>
 		<div class="row">
-		<h5 style="margin-left: -45px; margin-top: 30px;">최근주문내역</h5>
+		<h5 style="margin-left: -45px; margin-top: 30px;">최근주문내역</h5>		
 			<table class="table table-bordered" style="margin-top: 25px; text-align: center; margin-left: -45px;">
 				<thead>
 					<tr>
@@ -55,7 +55,12 @@
 						<th>비고</th>
 					</tr>
 				</thead>
-					<td>조회되는 내용이 없습니다.</td>
+				<tr>
+				<td colspan="6"><c:if test="true">조회되는 내용이 없습니다.</c:if></td>
+				</tr>
+				<tr>
+					<td></td><td></td><td></td><td></td><td></td><td></td>
+				</tr>
 			</table>
 		</div>
 </body>
