@@ -8,11 +8,8 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Home
-11111 정호용5:46
-11111정호용바보
-</title>
-
+<title>Home</title>
+1111 테스트
 
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -29,16 +26,6 @@
 <link href="resources/css/styles.css" rel="stylesheet" />
 </head>
 <body>
-<<<<<<< Updated upstream
-222222
-
-=======
-여기부터가 바디입니다(나영준3:01)
-정호용3:12 같은행 테스트 정호용
-안녕하세요
-마스터 테스트 변경 1234
-안녕하세요 안녕하세요
->>>>>>> Stashed changes
 <header>
 	<jsp:include page="header.jsp" />
 </header>
