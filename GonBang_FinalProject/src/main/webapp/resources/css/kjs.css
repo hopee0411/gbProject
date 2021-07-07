@@ -42,9 +42,10 @@ p.groove {
 
 .MyPageMain {
 	width: 1300px;
-	height: 1900px;
+	height: 1600px;
 	float: left;
 	margin-left: 150px;
+	
 }
 
 .MyPageMainTop {
@@ -64,4 +65,3 @@ p.groove {
 	width: 200px;
 	margin: 25px 25px 0 25px;
 }
-
