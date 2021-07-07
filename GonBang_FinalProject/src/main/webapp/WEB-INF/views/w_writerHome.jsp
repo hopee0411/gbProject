@@ -31,7 +31,7 @@
 	</div>
 </section>
 
-<footer>
+<footer style="margin-top: 1000px;">
 	<jsp:include page="footer.jsp" />
 </footer>
 

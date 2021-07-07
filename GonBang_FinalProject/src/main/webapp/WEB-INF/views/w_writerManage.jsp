@@ -27,7 +27,8 @@
 	</div>
 	<section class="se" style="padding-top: 70px;">
 		<div class="queContent">
-			<form class="table-secondary" action="./w_AtPrivateInfoFix" method="post">
+			<form class="table-secondary" action="./w_AtPrivateInfoFix"
+				method="post">
 				<table class="table table-hover">
 					<tbody class="table b">
 						<tr class="table-secondary">
@@ -38,8 +39,7 @@
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">아이디</font></font></th>
-							<td><font><font><input type="text"
-										name="w_gona_name"></font></font></td>
+							<td><font><font>불러올 아이디</font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
@@ -81,36 +81,51 @@
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">생년월일</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
-									style="vertical-align: inherit;"> <input type="text"
-										name="birth">
-										<!-- 안되서 지워둠 <select name="birth">
-										<script>
-									for(i = 1900; i<2021; i++){										
-										var arrays = [i];
-										document.write("<option>"+ arrays[i] + "</option>");
-									}
-										</script>
-								</select> -->
-								<select>
+									style="vertical-align: inherit;"> <select name="birth">
 											<script>
-						var b=['1','2','4','5','6','7','8','9','10','11','12'];
-						 for(i=0;i<11;i++){
-						 	document.write("<option>"+b[i]+"</option>");
-						} 
-						</script>
-									</select> 
-									<select name="birth">
+												var num = 0;
+												for (i = 1900; i < 2021; i++) {
+													var arrays = [];
+													arrays[num] = i;
+													document.write("<option>"
+															+ arrays[num]
+															+ "</option>");
+													num++;
+												}
+											</script>
+									</select> <select name="birth">
 											<script>
-						var c=['1','2','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21'
-								,'22','23','24','25','26','27','28','29','30','31'];
-						 for(j=0;j<30;j++){							 
-							 document.write("<option>" + "&nbsp&nbsp" + c[j] + "&nbsp&nbsp" + "</option>");
-						 }
-						 </script>
+						var b=['1','2','4','5',
+							'6', '7', '8', '9',
+							'10', '11', '12' ];
+												for (i = 0; i < 11; i++) {
+													document.write("<option>"
+															+ b[i]
+															+ "</option>");
+												}
+											</script>
+									</select> <select name="birth">
+											<script>
+												var c = [ '1', '2', '4', '5',
+														'6', '7', '8', '9',
+														'10', '11', '12', '13',
+														'14', '15', '16', '17',
+														'18', '19', '20', '21',
+														'22', '23', '24', '25',
+														'26', '27', '28', '29',
+														'30', '31' ];
+												for (j = 0; j < 30; j++) {
+													document.write("<option>"
+															+ "&nbsp&nbsp"
+															+ c[j]
+															+ "&nbsp&nbsp"
+															+ "</option>");
+												}
+											</script>
 									</select>
 								</font></font></td>
 						</tr>
-						
+
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">주소</font></font></th>
@@ -120,16 +135,16 @@
 						</tr>
 					</tbody>
 				</table>
-					<div>
-				<button type="reset" class="btn btn-primary btn-lg">
-					<font style="vertical-align: inherit;"><font
-						style="vertical-align: inherit;">취 소</font></font>
-				</button>
-				<button type="submit" class="btn btn-primary btn-lg">
-					<font style="vertical-align: inherit;"><font
-						style="vertical-align: inherit;">작가 정보 수정하기</font></font>
-				</button>
-			</div>
+				<div>
+					<button type="reset" class="btn btn-primary btn-lg">
+						<font style="vertical-align: inherit;"><font
+							style="vertical-align: inherit;">취 소</font></font>
+					</button>
+					<button type="submit" class="btn btn-primary btn-lg">
+						<font style="vertical-align: inherit;"><font
+							style="vertical-align: inherit;">작가 정보 수정하기</font></font>
+					</button>
+				</div>
 			</form>
 		</div>
 	</section>

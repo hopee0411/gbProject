@@ -12,7 +12,7 @@ public class MoveController {
 
 	private ModelAndView mv;
 
-	// �α��� ������ �̵� HY
+	
 	@GetMapping("loginFrm")
 	public ModelAndView loginFrm() {
 		log.info("loginFrm()");
@@ -22,7 +22,7 @@ public class MoveController {
 		return mv;
 	}
 
-	// ����ȸ�� ���� ������ �̵� HY
+	
 	@GetMapping("m_joinMemberFrm")
 	public ModelAndView m_joinMemberFrm() {
 		log.info("m_joinMemberFrm()");
