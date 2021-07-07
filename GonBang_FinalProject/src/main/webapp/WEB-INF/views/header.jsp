@@ -51,11 +51,11 @@
 		</div>
 		<div class="header_footer navbar-collapse tf_menu">
 			<ul>
-				<li><a href="#"><h5>액세서리</h5></a></li>
-				<li><a href="#"><h5>리빙</h5></a></li>
-				<li><a href="#"><h5>식품/디저트</h5></a></li>
-				<li><a href="#"><h5>꽃</h5></a></li>
-				<li><a href="#"><h5>문구/팬시</h5></a></li>
+				<li><a href="./category"><h5>액세서리</h5></a></li>
+				<li><a href="./category"><h5>리빙</h5></a></li>
+				<li><a href="./category"><h5>식품/디저트</h5></a></li>
+				<li><a href="./category"><h5>꽃</h5></a></li>
+				<li><a href="./category"><h5>문구/팬시</h5></a></li>
 			</ul>
 		</div>
 	</div>
