@@ -56,7 +56,19 @@
 					
 					<tr>
 						<th>생년월일</th>
-						<th><input type="text" name="birth">
+						<th>
+						 <select name="birth">
+						
+								<script>
+										var num = 0;
+									for(i = 1900; i<2021; i++){	
+										var arrays = [];
+										arrays[num] = i;
+										document.write("<option>"+ arrays[num] + "</option>");
+										num++;
+									}
+										</script>
+								</select> 
 						<select>
 								<script>
 									var b = [ '1', '2', '4', '5', '6', '7',
