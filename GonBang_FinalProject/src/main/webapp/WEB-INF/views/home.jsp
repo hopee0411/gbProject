@@ -9,12 +9,17 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 <title>Home
 </title>
 
 =======
 <title>Home</title>
 >>>>>>> yjBranch
+=======
+<title>Home</title>
+1111 테스트
+>>>>>>> jsBranch
 
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
