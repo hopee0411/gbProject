@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hm.gongbang.dao.MemberDao">
+	
+	<!-- 비번 구하기 -->	
+	<select id="loginProc" parameterType="String" resultType="com.hm.gongbang.dto.Mw_viewDto">
+		SELECT * FROM mw_view WHERE id=#{mw_id}
+	</select>
+
+</mapper>

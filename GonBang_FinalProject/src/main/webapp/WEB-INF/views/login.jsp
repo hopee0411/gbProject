@@ -6,6 +6,16 @@
 <head>
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="resources/css/login.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var chk = "${msg}";	
+	if(chk != ""){
+		alert(chk);
+		location.reload(true);
+	}
+});
+</script>
 <style type="text/css">
 .pageMa {
 	text-decoration: none;
@@ -17,7 +27,7 @@
 <body>
 	<header>
 		<jsp:include page="header.jsp" />
-	</header>
+	</header>	
 	<center>
 		<div class="login-all">
 			<div class="person-all">
@@ -27,9 +37,9 @@
 					</h2>
 					<div>
 						<div id="person-id-pwd">
-							<input class="idinput a" type="text" name="m_id"
+							<input class="idinput a" type="text" name="id"
 								placeholder=" 아이디"> <br> <input class="a" type="password"
-								name="m_pwd" placeholder=" 비밀번호" maxlength="12" minlength="6">
+								name="pwd" placeholder=" 비밀번호" maxlength="12" minlength="6">
 						</div>
 						<div class="loginbtn">
 							<button class="btnStyle pageMa" type="submit">로그인</button>
@@ -52,9 +62,9 @@
 					</h2>
 					<div>
 						<div id="company-id-pwd">
-							<input type="text" name="w_id" placeholder=" 아이디"
+							<input type="text" name="id" placeholder=" 아이디"
 								class="idinput a"> <br> <input type="password"
-								name="w_pwd" placeholder=" 비밀번호" maxlength="12" minlength="6"
+								name="pwd" placeholder=" 비밀번호" maxlength="12" minlength="6"
 								class="a">
 						</div>
 						<div class="loginbtn">
