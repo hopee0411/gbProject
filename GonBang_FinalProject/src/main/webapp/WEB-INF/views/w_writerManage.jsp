@@ -27,7 +27,7 @@
 	</div>
 	<section class="se" style="padding-top: 70px;">
 		<div class="queContent">
-			<form class="table-secondary" action="">
+			<form class="table-secondary" action="./w_AtPrivateInfoFix" method="post">
 				<table class="table table-hover">
 					<tbody class="table b">
 						<tr class="table-secondary">
