@@ -21,6 +21,21 @@
 
 	<hr>
 	<!-- 중간 선 -->
+			<a class="suc1" href="#">내정보 관리</a>
+		<!-- 작가만 보이게 하기 -->
+	</div>
+
+	<hr><!-- 중간 선 -->
+
+	<!-- 관심작가 처리 안함 -->
+	<button class="likeWriter" onclick="">
+		&hearts; 관심 작가
+	</button>
+	&nbsp;&#47;&nbsp;
+	
+	<a class="copylink" href="#" onclick="clip(); return false;">&curren; 공유</a>
+	
+	<hr><!-- 중간 선 -->
 
 	<table border="1" class="tbMenu">
 		<tr>
@@ -40,6 +55,8 @@
 	<hr>
 	<!-- 중간 선 -->
 
+	<hr><!-- 중간 선 -->
+
 	<div class="orderManagement">
 		<ul>
 			<h6>&lt;주문 관리&gt;</h6>
@@ -49,3 +66,32 @@
 		</ul>
 	</div>
 </div>
+</div>
+
+
+<script type="text/javascript">
+//공유버튼 처리
+function clip(){
+	var url = '';
+	var textarea = document.createElement("textarea");
+	document.body.appendChild(textarea);
+	url = window.document.location.href;
+	textarea.value = url;
+	textarea.select();
+	document.execCommand("copy");
+	document.body.removeChild(textarea);
+	alert("URL이 복사되었습니다.");
+}
+
+function likeWriter(num) {
+	if(!num == 0 || num == 1){
+		alert("로그인 해주세요.");
+	}
+}
+
+
+</script>
+
+
+
+>>>>>>> shBranch

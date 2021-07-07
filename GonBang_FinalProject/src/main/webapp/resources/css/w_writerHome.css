@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+section {
+	margin: 0 auto;
+}
+
+
+.w_boxs {
+	border: 1px solid black;
+}
+
+.w_box1 {
+	width: 335px; 
+	border: 1px solid black;
+}
+
+.w_box2 {
+	width: 400px; 
+	margin-left: 400px;
+	border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
