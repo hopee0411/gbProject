@@ -3,7 +3,7 @@
 
 .queSide{
 	 width:250px;
-	height:1500px; 
+	height:800px; 
 	float: left;
 	color: black;
 	background-color: gray;
@@ -12,8 +12,8 @@
 }
 .se{
 	width: 100%;
-	height: 1500px;
-	
+	height: 800px;
+	position: relative;
 }
 
 .font-weight-bold{
@@ -26,9 +26,9 @@
 
 .queContent{
 	/* margin-top: 120px;*/
-	margin-left: 250px; 
-	width: 100%;
-	height: 1500px;
+	margin-left: 340px; 
+	width: 1000px;
+	height: 800px;
 }
 .hh1{
 	height: 1000px;
@@ -38,7 +38,13 @@
 	width: 100%;
 	height: 40px;
 }
-
+.table b{
+	width: 400px;
+	height: 200px;
+}
+.tbody>tr>td{
+	width:150px;
+}
 
 
 

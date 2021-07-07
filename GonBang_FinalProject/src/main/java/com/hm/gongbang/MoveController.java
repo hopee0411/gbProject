@@ -58,6 +58,12 @@ public class MoveController {
 		log.info("w_writerManageFrm");
 		
 		return "w_writerManage";
+	}
+	@GetMapping("w_writerHomeFrm")
+	public String w_writerHomeFrm() {
+		log.info("w_writerHomeFrm");
+		
+		return "w_writerHome";
 	}	
 	
 }//class end
