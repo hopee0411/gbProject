@@ -24,7 +24,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="tabbable" id="tabs-107511">
-				<ul class="nav nav-tabs">
+				<ul class="nav nav-tabs" style="margin-top: 40px;">
 					<li class="nav-item">
 						<a class="nav-link active show" href="#tab1" data-toggle="tab">섹션 1</a>
 					</li>

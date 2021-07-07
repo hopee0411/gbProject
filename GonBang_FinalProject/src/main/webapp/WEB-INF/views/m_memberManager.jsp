@@ -96,7 +96,7 @@
 					</tr>
 				</thead>
 				</table>
-			<div style= "text-align: center;">
+			<div style= "text-align: center;" >
 				<button type="reset" class="btn btn-primary btn-lg">
 					<font style="vertical-align: inherit;"></font>
 					<font style="vertical-align: inherit;">취 소</font>
