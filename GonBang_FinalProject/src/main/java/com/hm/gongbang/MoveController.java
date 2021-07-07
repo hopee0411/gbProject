@@ -2,9 +2,11 @@ package com.hm.gongbang;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import lombok.extern.java.Log;
+import oracle.jdbc.proxy.annotation.Post;
 
 @Log
 @Controller
@@ -59,5 +61,25 @@ public class MoveController {
 		
 		return "w_writerManage";
 	}	
+	
+	/*--------------------안요한----------------------------*/
+	// 카테고리 화면(클릭 시 화면)
+	// category();
+	@GetMapping("category")
+	public String category(){
+		log.info("category()");
+		
+		return "category";
+	} // category ends
+	
+	// 작품 상세보기 페이지
+	// productContents()
+	@GetMapping("productContents")
+	public String productContents() {
+		log.info("productContents()");
+		
+		return "productContents";	
+	} // productContents end
+	
 	
 }//class end
