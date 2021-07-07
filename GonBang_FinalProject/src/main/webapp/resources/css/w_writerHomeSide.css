@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+.writerHome {
+	margin: 50px 25px 50px 25px;
+	text-align: center;
+	width: 280px;
+	height: 670px;
+	background-color: #ffd6d5;
+	border-radius: 4%;
+	float: left;
+}
+
+.img-circle {
+	margin-top: 20px;
+	width: 200px;
+	height: 200px;
+	border-radius: 70%;
+	overflow: hidden;
+}
+
+.profileInfo ul li {
+	border: 1px solid #ff7875;
+	margin-top: 10px;
+	margin-right: 30px;
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: #4c4c4c;
+}
+
+a:hover {
+	color: white;
+}
+
+hr {
+	margin: 10px; 
+	color: inherit;
+	border: 2px solid white;
+	opacity: 80%;
+}
+
+.tbMenu {
+	width: 200px;
+	margin-left: 40px;
+	border: none;
+	border-collapse: collapse;
+}
+
+.tbMenu tr {
+	text-align: center;
+}
+.tbMenu tr td {
+	border: 1px solid #ff7875;
+}
+
+.orderManagement {
+	text-align: left;
+}
+.orderManagement ul {
+	float: left;
+}
+
