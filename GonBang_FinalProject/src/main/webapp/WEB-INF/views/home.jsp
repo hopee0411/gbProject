@@ -9,7 +9,6 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>Home</title>
-1111 테스트
 
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />

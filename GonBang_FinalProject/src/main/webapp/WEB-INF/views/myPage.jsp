@@ -17,17 +17,46 @@
 		<aside>
 			<jsp:include page="myAside.jsp" />
 		</aside>
-		<div class="MyPageName"><h2>마이 페이지</h2></div>
+		<div class="MyPageName">
+			<h2>마이 페이지</h2>
+		</div>
 	</div>
 	<div class="MyPageMain">
-		<table class="table table-hover">
-			<tr class="table-secondary">
-				<th scope="row" style="font-size: 20px;">적립금<br>0P</th>
-				<td scope="row" style="font-size: 20px;">쿠폰<br>0장</td>
-				<td scope="row" style="font-size: 20px;">주문내역<br>0권</td>
-				<td scope="row" style="font-size: 20px;">문의<br>0권</td>
-			</tr>
-		</table>
-	</div>
+		<div class="row">
+			<table class="table table-bordered" style="margin-top: 30px; text-align: center; margin-left: -45px;">
+				<thead>
+					<tr>
+						<th>적립금</th>
+						<th>쿠폰</th>
+						<th>주문 내역</th>
+						<th>문의</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>0P</td>
+						<td>0장</td>
+						<td>0건</td>
+						<td>0건</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+		<div class="row">
+		<h5 style="margin-left: -45px; margin-top: 30px;">최근주문내역</h5>
+			<table class="table table-bordered" style="margin-top: 25px; text-align: center; margin-left: -45px;">
+				<thead>
+					<tr>
+						<th>주문일자</th>
+						<th>주문번호</th>
+						<th style="margin: 0 20px;">주문내역</th>
+						<th>주문금액</th>
+						<th>주문상태</th>
+						<th>비고</th>
+					</tr>
+				</thead>
+					<td>조회되는 내용이 없습니다.</td>
+			</table>
+		</div>
 </body>
 </html>
