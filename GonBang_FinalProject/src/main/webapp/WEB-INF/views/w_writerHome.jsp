@@ -27,6 +27,8 @@
 		</div>
 		<div class="w_box1">
 			<jsp:include page="w_writerHomeSide.jsp" />
+			
+			
 		</div>
 	</div>
 </section>

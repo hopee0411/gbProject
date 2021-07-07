@@ -26,6 +26,7 @@
 	<div style="width: 280px; height: 400px;">
 		<%-- <jsp:include page="queSide.jsp" /> --%>
 		<jsp:include page="w_writerHomeSide.jsp" />
+		
 	</div>
 	<section class="se" class="p-3 mb-2 bg-secondary text-white">
 		<div>
