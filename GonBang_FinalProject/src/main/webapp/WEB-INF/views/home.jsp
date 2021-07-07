@@ -8,18 +8,8 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<title>Home
-</title>
-asdsaddsa
-=======
 <title>Home</title>
->>>>>>> yjBranch
-=======
-<title>Home</title>
-1111 테스트
->>>>>>> jsBranch
+ddddd
 
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />

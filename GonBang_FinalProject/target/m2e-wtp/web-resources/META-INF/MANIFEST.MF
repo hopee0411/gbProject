@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: BPC72622
-=======
-Built-By: BPC72623
->>>>>>> jsBranch
 Build-Jdk: 11.0.10
 Created-By: Maven Integration for Eclipse
 
