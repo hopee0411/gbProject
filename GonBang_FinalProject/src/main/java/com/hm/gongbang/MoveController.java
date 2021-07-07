@@ -12,7 +12,7 @@ public class MoveController {
 
 	private ModelAndView mv;
 
-	//·Î±×ÀÎ ÆäÀÌÁö ÀÌµ¿ HY
+	// ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ HY
 	@GetMapping("loginFrm")
 	public ModelAndView loginFrm() {
 		log.info("loginFrm()");
@@ -22,7 +22,7 @@ public class MoveController {
 		return mv;
 	}
 
-	//°³ÀÎÈ¸¿ø °¡ÀÔ ÆäÀÌÁö ÀÌµ¿ HY
+	// ï¿½ï¿½ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ HY
 	@GetMapping("m_joinMemberFrm")
 	public ModelAndView m_joinMemberFrm() {
 		log.info("m_joinMemberFrm()");
@@ -31,7 +31,6 @@ public class MoveController {
 		mv.setViewName("m_joinMember");
 		return mv;
 	}
-
 
 	@GetMapping("myPageFrm")
 	public String myPage() {
@@ -59,7 +58,6 @@ public class MoveController {
 
 	@GetMapping("w_writerQuestionFrm")
 	public String w_writerQuestionFrm() {
-		log.info("w_writerQuestionFrm()");
 
 		return "w_writerQuestion";
 
@@ -67,15 +65,14 @@ public class MoveController {
 
 	@GetMapping("w_writerManageFrm")
 	public String w_writerManageFrm() {
-		log.info("w_writerManageFrm");
 
 		return "w_writerManage";
 	}
+
 	@GetMapping("w_writerHomeFrm")
 	public String w_writerHomeFrm() {
-		log.info("w_writerHomeFrm");
-		
-		return "w_writerHome";
-	}	
 
-}//class end
+		return "w_writerHome";
+	}
+
+}// class end
