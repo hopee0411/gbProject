@@ -12,8 +12,12 @@
 </head>
 <body>
 <a href="./w_writerHomeFrm">작가홈</a>
+&nbsp&nbsp&nbsp
 <a href="./w_writerQuestionFrm">작가문의</a>
-<a href="./w_writerManageFrm">작가개인정보</a>
+&nbsp&nbsp&nbsp
+<a href="./w_writerManageFrm">작가개인정보수정페이지</a>
+&nbsp&nbsp&nbsp
+<a href="./w_writerManageSee">작가개인정보출력페이지</a>
 
 <header>
 	<jsp:include page="header.jsp"/>

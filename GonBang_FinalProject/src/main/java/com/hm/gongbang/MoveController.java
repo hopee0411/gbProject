@@ -1,6 +1,9 @@
 package com.hm.gongbang;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -56,6 +59,11 @@ public class MoveController {
 	public String m_memberManager() {
 
 		return "m_memberManager";
+	}
+	@GetMapping("w_writerManageSee")
+	public String w_writerManageSee(Model model, HttpSession httpSession) {
+			
+		return "w_writerManageSee";
 	}
 
 	@GetMapping("w_writerQuestionFrm")
