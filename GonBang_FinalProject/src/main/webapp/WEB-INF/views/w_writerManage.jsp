@@ -33,8 +33,8 @@
 					<tbody class="table b">
 						<tr class="table-secondary">
 							<th scope="row"><font><font>공방이름</font></font></th>
-							<td><font><font><input type="text"
-										name="w_gona_name"></font></font></td>
+							<td><font><font><input type="text" id="gongbangName" name="gongbangName"
+							 value="{writer.WH_GBNAME}" readonly="readonly"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font

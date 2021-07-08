@@ -4,21 +4,21 @@
 <mapper namespace="com.hm.gongbang.dao.W_InfoDao">
 
 	<!-- 작가 정보 수정 -->
-	<!-- <UPDATE id="w_AtPrivateInfoFix"
+	<update id="w_AtPrivateInfoFix"
 	parameterType="com.hm.gongbang.dto.WriterDto">
 		UPDATE WRITER
 		SET
 			W_ID = #{W_ID},
 			W_PWD = #{W_PWD},
 			W_PHONENUM = #{W_PHONENUM},
-			W_PHONENUM = #{W_PHONENUM},
+			W_EMAIL = #{W_EMAIL},
 			W_COMPANYNUM = #{W_COMPANYNUM},
 			W_GENDER = #{W_GENDER},
 			W_BIRTH = #{W_BIRTH},
 			W_ACCOUNT = #{W_ACCOUNT},
 			W_NUMFAIL = #{W_NUMFAIL},
 			W_SELECTION = #{W_SELECTION}
-	</UPDATE> -->
+	</update>
 
 
 
