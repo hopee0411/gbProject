@@ -21,7 +21,7 @@ public class MemberService {
 	
 	private ModelAndView mv;
 	
-	//·Î±×ÀÎ id/pwd È®ÀÎ ÈÄ ¼º°ø/½ÇÆÐ Ã³¸®
+	//ï¿½Î±ï¿½ï¿½ï¿½ id/pwd È®ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 	public ModelAndView loginProc(Mw_viewDto mwDto, RedirectAttributes rttr) {
 		mv = new ModelAndView();		
 		String view = null;
@@ -38,12 +38,12 @@ public class MemberService {
 			}
 			else {
 				view = "redirect:loginFrm";
-				msg = "ºñ¹Ð¹øÈ£°¡ ¸ÂÁö ¾Ê½À´Ï´Ù.";
+				msg = "ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.";
 			}
 		}//if end
 		else {
 			view = "redirect:loginFrm";
-			msg = "¾ÆÀÌµð¸¦ È®ÀÎÇØÁÖ¼¼¿ä";
+			msg = "ï¿½ï¿½ï¿½Ìµï¿½ È®ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½";
 		}//else end
 		
 		mv.setViewName(view);
