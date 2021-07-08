@@ -19,12 +19,8 @@ public class W_InfoService {
 
 	public String w_AtPrivateInfoFix(WriterDto writer, RedirectAttributes rttr) {
 		String view = null;
-		String msg = null;
-
-		return "";
-
-		
-		int PHONENUM = 0;
+		String msg = null;		
+		String PHONENUM = null;		
 		String EMAIL = null;
 		int COMPANYNUM = 0;
 		String GENDER = null;
@@ -38,7 +34,7 @@ public class W_InfoService {
 		String encPwd = pwdEncoder.encode(writer.getW_PWD());
 		//비밀번호 덮어쓰기
 		writer.setW_PWD(encPwd);
-		writer.setW_PHONENUM(PHONENUM);
+		writer.setW_PHONENUM(PHONENUM);		
 		writer.setW_EMAIL(EMAIL);
 		writer.setW_COMPANYNUM(COMPANYNUM);
 		writer.setW_GENDER(GENDER);

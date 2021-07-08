@@ -1,9 +1,14 @@
 package com.hm.gongbang;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.hm.gongbang.service.MyService;
 
 import lombok.extern.java.Log;
 import oracle.jdbc.proxy.annotation.Post;
@@ -11,9 +16,13 @@ import oracle.jdbc.proxy.annotation.Post;
 @Log
 @Controller
 public class MoveController {
-
+	@Autowired
+	private HttpSession session;
+	
 	private ModelAndView mv;
-
+	
+	@Autowired
+	private MyService myServ; //서비스로 넘어갈 변수 지정
 	
 	@GetMapping("loginFrm")
 	public ModelAndView loginFrm() {
@@ -35,9 +44,18 @@ public class MoveController {
 	}
 
 	@GetMapping("myPageFrm")
-	public String myPage() {
-
-		return "myPage";
+	public ModelAndView myPage() {
+		log.info("myPage()");
+		mv = new ModelAndView();
+		String id = (String)session.getAttribute("id");
+		if(id != null) {
+			mv = myServ.MyPageMain();//서비스로 넘어가기위한 작업
+		}
+		else {
+			mv.setViewName("home");
+			
+		}
+		return mv;
 	}
 
 	@GetMapping("m_productDelivery")
