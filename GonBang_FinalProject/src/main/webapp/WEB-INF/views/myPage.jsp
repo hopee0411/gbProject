@@ -1,6 +1,9 @@
 <!-- 마이페이지 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +38,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>${PT_POINT}p</td>
+						<td>${my.PT_POINT}p</td>
 						<td>0장</td>
 						<td>0건</td>
 						<td>0건</td>
@@ -51,26 +54,26 @@
 					<tr>
 						<th>주문일자</th>
 						<th>주문번호</th>
-						<th style="margin: 0 20px;">주문내역</th>
+						<th>주문내역</th>
 						<th>주문금액</th>
 						<th>주문상태</th>
-						<th>비고</th>
+						<th>수량</th>
 					</tr>
 				</thead>
-				<c:if test="true">
+				<c:if test=" ${empty receptList} ">
 					<tr>
 						<td colspan="6">조회되는 내용이 없습니다.</td>
 					</tr>
 				</c:if>
-				<c:if test="false">
-					<c:forEach var="bitem" items="">
+				<c:if test="${!empty receptList}">
+					<c:forEach var="bitem" items="${receptList}">
 						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
+							<td>${bitem.r_orderdate}</td>
+							<td>${bitem.r_num}</td>
+							<td>${bitem.r_pname}</td>
+							<td>${bitem.r_price}</td>
+							<td>${bitem.r_dcondition}</td>
+							<td>${bitem.r_count}</td>
 						</tr>
 					</c:forEach>
 				</c:if>

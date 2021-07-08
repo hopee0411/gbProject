@@ -33,17 +33,17 @@ public class MemberService {
 			if(mwDto.getPwd().equals(mw_pwd)) {				
 				view = "redirect:/";
 				session.setAttribute("id", mwDto.getId());
-				session.setAttribute("id", mwDto.getMw_code());
+				session.setAttribute("code", mwDto.getMw_code());
 				
 			}
 			else {
 				view = "redirect:loginFrm";
-				msg = "��й�ȣ�� ���� �ʽ��ϴ�.";
+				msg = "비밀번호를 확인해주세요";
 			}
 		}//if end
 		else {
 			view = "redirect:loginFrm";
-			msg = "���̵� Ȯ�����ּ���";
+			msg = "아이디를 확인해주세요";
 		}//else end
 		
 		mv.setViewName(view);

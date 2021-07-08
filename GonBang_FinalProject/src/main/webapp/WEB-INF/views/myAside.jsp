@@ -15,8 +15,10 @@ a{
 <div class="MyProfile"  style="border-style:groove;" text-align ="center" >
 	<img class="img-fluid1" src="resources/images/psa.jpg" 
 						alt="사진설정" width="90px;"/> <br>
-	<h5 style="margin-top: 40px;">새싹</h5>  					
-	<div style="margin-bottom: 50px;">~~님</div>   
+	<h5 style="margin-top: 40px;">${memberdto.m_grade}</h5>  
+	<div style="margin-bottom: 50px;">${memberdto.m_name}님</div>   
+						
+	
 	
 </div>
 <div class="MyMenu"  style="border-style: groove; text-decoration: none; padding-top: 100px;" >

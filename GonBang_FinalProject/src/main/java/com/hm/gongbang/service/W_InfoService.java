@@ -19,7 +19,6 @@ public class W_InfoService {
 		String view = null;
 		String msg = null;
 
-		return "";
 
 		/*
 		 * int PHONENUM = 0; String EMAIL = null; int COMPANYNUM = 0; String GENDER =
