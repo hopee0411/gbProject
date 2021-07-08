@@ -1,8 +1,11 @@
 package com.hm.gongbang.service;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hm.gongbang.dto.WriterDto;
@@ -13,13 +16,16 @@ import com.hm.gongbang.dto.WriterDto;
 public class W_InfoService {
 
 	@Autowired
-	private W_InfoDao wDao;
+	private HttpSession session;
 
-	public String w_AtPrivateInfoFix(WriterDto writer, RedirectAttributes rttr) {
+	private ModelAndView mv;
+
+
+	/*public String w_AtPrivateInfoFix(WriterDto writer, RedirectAttributes rttr) {
 		String view = null;
-		String msg = null;
+		//String msg = null;
 
-
+		return view;*/
 		/*
 		 * int PHONENUM = 0; String EMAIL = null; int COMPANYNUM = 0; String GENDER =
 		 * null; String BIRTH = null; int ACCOUNT = 0; int NUMFAIL = 0; int SELECTION =
@@ -39,6 +45,25 @@ public class W_InfoService {
 		 * } rttr.addFlashAttribute("msg", msg); return view;
 		 */
 
+	@Autowired
+	private W_InfoDao wDao;
+
+
+	public String w_AtPrivateInfo(HttpSession session, String W_ID) {
+		
+		return null;
 	}
 
-}
+	
+	
+	/*public ModelAndView w_AtPrivateInfoFix(HttpSession session, String userId) {
+		
+		mv = new ModelAndView();
+		
+		WriterDto wInfo = wDao.w_AtPrivateInfoFix(userId);
+		
+		
+		mv.addObject("wInfo", wInfo);
+		
+		return mv;*/
+	}
