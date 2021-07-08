@@ -21,7 +21,7 @@
 			<h2>회원 정보 관리</h2>
 		</div>
 	</div>
-	<div class="MyPageMain" style="margin-top: 50px;">
+	<div class="MyPageMain" style="margin-top: 70px;">
 		<div class="row">
 			<table class="table table-bordered"
 				style="margin-top: 30px; text-align: center; margin-left: -45px;">

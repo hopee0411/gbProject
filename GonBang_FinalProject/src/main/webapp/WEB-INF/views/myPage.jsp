@@ -27,7 +27,7 @@
 				style="margin-top: 30px; text-align: center; margin-left: -45px;">
 				<thead>
 					<tr>
-						<th>적립금</th>
+						<th class="point">적립금</th>
 						<th>쿠폰</th>
 						<th>주문 내역</th>
 						<th>문의</th>
@@ -35,7 +35,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>0P</td>
+						<td>${PT_POINT}p</td>
 						<td>0장</td>
 						<td>0건</td>
 						<td>0건</td>
