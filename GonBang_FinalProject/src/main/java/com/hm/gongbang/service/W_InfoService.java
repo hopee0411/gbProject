@@ -50,11 +50,9 @@ public class W_InfoService {
 
 
 	public String w_AtPrivateInfo(HttpSession session, String W_ID) {
-		
-		return null;
-	}
-
 	
+		return "";
+	}
 	
 	/*public ModelAndView w_AtPrivateInfoFix(HttpSession session, String userId) {
 		

@@ -33,6 +33,7 @@ public class HomeController {
 		return "handmadeItd";
 	}
 	
+	
 	@GetMapping("productSale")
 	public String productSale() {
 		logger.info("productSale()");

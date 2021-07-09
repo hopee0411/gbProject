@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.hm.gongbang.dao.MyDao;
 import com.hm.gongbang.dto.MemberDto;
 import com.hm.gongbang.dto.ReceptDto;
+import com.hm.gongbang.dto.Saving_PointDto;
 
 @Service
 public class MyService {
@@ -24,6 +25,7 @@ public class MyService {
 	
 	private MemberDto memberDto;
 	private ReceptDto receptDto;
+	private Saving_PointDto saving_pointDto;
 	@Autowired
 	private MyDao myDao;
 	
@@ -35,6 +37,11 @@ public class MyService {
 		String m_id = (String)session.getAttribute("id");
 		memberDto = myDao.memberInfo(m_id);//myDao로 session에 저장된 id값을 가지고 간다
 		mv.addObject("memberdto", memberDto); // 모델에 데이터를 담는다.왜? 다시 리턴시켜서 메인으로 가져가야하니까
+		
+		saving_pointDto = new Saving_PointDto();
+		String pt_id = (String)session.getAttribute("id");
+		saving_pointDto = myDao.saving_pointInfo(m_id);
+		mv.addObject("saving_pointdto", saving_pointDto);
 		
 		receptDto = new ReceptDto();
 		ArrayList<ReceptDto> receptList = myDao.receptList(m_id);		
