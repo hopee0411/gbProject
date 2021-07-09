@@ -2,14 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hm.gongbang.dao.MyDao">
-	<select id="memberInfo" parameterType="String" resultType="com.hm.gongbang.dto.MemberDto">
-		SELECT * FROM M	WHERE M_ID=#{m_id}
+	<select id="memberInfo" parameterType="String"
+		resultType="com.hm.gongbang.dto.MemberDto">
+		SELECT * FROM M WHERE M_ID=#{m_id}
 		<!-- m테이블에 M_ID컬럼이 m_id와 같은 정보를 모두 가져오겠다 -->
 	</select>
-	<select id="receptList" parameterType="String" resultType="com.hm.gongbang.dto.ReceptDto">
-		SELECT * FROM R	WHERE M_ID=#{m_id}
+	<select id="receptList" parameterType="String"
+		resultType="com.hm.gongbang.dto.ReceptDto">
+		SELECT * FROM R WHERE M_ID=#{m_id}
 	</select>
-	<select id="saving_pointInfo" parameterType="String" resultType="com.hm.gongbang.dto.Saving_PointDto">
+	<select id="saving_pointInfo" parameterType="String"
+		resultType="com.hm.gongbang.dto.Saving_PointDto">
 		SELECT * FROM PT WHERE M_ID=#{m_id}
 	</select>
 </mapper>
