@@ -7,6 +7,9 @@
 		<!-- m테이블에 M_ID컬럼이 m_id와 같은 정보를 모두 가져오겠다 -->
 	</select>
 	<select id="receptList" parameterType="String" resultType="com.hm.gongbang.dto.ReceptDto">
-		SELECT * FROM r	WHERE M_ID=#{m_id}
+		SELECT * FROM R	WHERE M_ID=#{m_id}
+	</select>
+	<select id="saving_pointInfo" parameterType="String" resultType="com.hm.gongbang.dto.Saving_PointDto">
+		SELECT * FROM PT WHERE M_ID=#{m_id}
 	</select>
 </mapper>

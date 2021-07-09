@@ -30,15 +30,15 @@
 				style="margin-top: 30px; text-align: center; margin-left: -45px;">
 				<thead>
 					<tr>
-						<th class="point">적립금</th>
+						<th>적립금</th>
 						<th>쿠폰</th>
-						<th>주문 내역</th>
+						<th>주문 내역 (주문한 상품개수)</th>
 						<th>문의</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>${my.PT_POINT}p</td>
+						<td>${Saving_PointDto.pt_point}p</td>
 						<td>0장</td>
 						<td>0건</td>
 						<td>0건</td>
@@ -60,7 +60,7 @@
 						<th>수량</th>
 					</tr>
 				</thead>
-				<c:if test=" ${empty receptList} ">
+				<c:if test=" ${empty receptList}">
 					<tr>
 						<td colspan="6">조회되는 내용이 없습니다.</td>
 					</tr>

@@ -38,7 +38,7 @@ public class W_InfoService {
 		 * //e.printStackTrace(); view = "redirect:w_writerManageFrm"; msg = "비밀번호 틀림";
 		 * } rttr.addFlashAttribute("msg", msg); return view;
 		 */
-
+		return "";
 	}
 
 }
