@@ -30,4 +30,13 @@ public class MemberController {
 		return mv;
 	}//loginProc() end
 	
+	@GetMapping("logoutProc")
+	public ModelAndView logoutProc(RedirectAttributes rttr) {
+		log.info("logoutProc()");
+		mv = new ModelAndView();
+		mv = mServ.logoutProc(rttr);
+		
+		return mv;
+	}//logoutProc() end
+	
 }//class end
