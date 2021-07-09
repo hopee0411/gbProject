@@ -30,11 +30,11 @@
 				<thead>
 					<tr>
 						<th>이름</th>
-						<th>홍길동</th>
+						<th>${memberdto.m_name}</th>
 					</tr>
 					<tr>
 						<th>아이디</th>
-						<th>789asd@naver.com</th>
+						<th>${memberdto.m_id}</th>
 					</tr>
 					<tr>
 						<th>비밀번호</th>

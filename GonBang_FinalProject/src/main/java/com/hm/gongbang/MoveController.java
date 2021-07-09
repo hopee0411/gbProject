@@ -85,15 +85,9 @@ public class MoveController {
 
 	@GetMapping("m_memberManagerFrm")
 	public ModelAndView m_memberManager() {
-		log.info("m_memberManager()");
 		mv = new ModelAndView();
-		String id = (String)session.getAttribute("id");
-		if(id != null) {
-			mv = myServ.MyPageMain();//서비스로 넘어가기위한 작업
-		}
-		else {
-			mv.setViewName("myPage");	
-		}
+		mv.setViewName("m_memberManager");
+		
 		return mv;
 	}
 	

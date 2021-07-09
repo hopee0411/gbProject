@@ -18,4 +18,10 @@
 		resultType="com.hm.gongbang.dto.Saving_PointDto">
 		SELECT * FROM PT WHERE M_ID=#{m_id}
 	</select>
+	
+	<select id="couponInfo" parameterType="String"
+		resultType="com.hm.gongbang.dto.CouponDto">
+		SELECT * FROM C WHERE M_ID=#{m_id}
+	</select>
+	
 </mapper>
