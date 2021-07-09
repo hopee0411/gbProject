@@ -22,27 +22,22 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarResponsive">
 						<ul class="navbar-nav ms-auto">
-							<li class="bef"><input type="text" placeholder="검색">
+							<li><input type="text" placeholder="검색">
 								<img alt="검색버튼" src="resources/images/Desert.jpg"
 								class="py-3 selectImg" onclick="#"></li>
 							<!-- href="#portfolio"로 하면 페이지 내에서 이동함(카테고리로 이동함) -->
-							<li class="nav-item py-3 px-0 suc">테스트님</li>
 							<li class="nav-item mx-0 mx-lg-1 suc"><a
-								class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">로그아웃</a></li>
+								class="nav-link py-3 px-0 px-lg-3 rounded" href="./logoutProc">로그아웃</a></li>
+							<li class="nav-item mx-0 mx-lg-1 bef"><a
+								class="nav-link py-3 px-0 px-lg-3 rounded" href="./loginFrm">로그인</a></li>
+							<li class="nav-item mx-0 mx-lg-1 suc"><a
+								class="nav-link py-3 px-0 px-lg-3 rounded" href="./myPageFrm">내정보</a></li>
+							<li class="nav-item mx-0 mx-lg-1 suc"><a
+								class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">장바구니</a></li>
 							<li class="nav-item mx-0 mx-lg-1"><a
-								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"
-								href="./loginFrm">로그인</a></li>
+								class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">고객센터</a></li>
 							<li class="nav-item mx-0 mx-lg-1"><a
-								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"
-								href="./myPageFrm">내정보</a></li>
-							<li class="nav-item mx-0 mx-lg-1"><a
-								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"
-								href="#contact">장바구니</a></li>
-							<li class="nav-item mx-0 mx-lg-1"><a
-								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"
-								href="#contact">고객센터</a></li>
-							<li class="nav-item mx-0 mx-lg-1"><a
-								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"
+								class="nav-link py-3 px-0 px-lg-3 rounded"
 								href="./w_writerHomeFrm">작가홈</a></li>
 						</ul>
 					</div>

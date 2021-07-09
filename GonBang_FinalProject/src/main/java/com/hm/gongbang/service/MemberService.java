@@ -21,7 +21,7 @@ public class MemberService {
 	
 	private ModelAndView mv;
 	
-	//
+	//로그인 HY
 	public ModelAndView loginProc(Mw_viewDto mwDto, RedirectAttributes rttr) {
 		mv = new ModelAndView();		
 		String view = null;
@@ -32,6 +32,7 @@ public class MemberService {
 		if(mwDto.getPwd() !=null) {
 			if(mwDto.getPwd().equals(mw_pwd)) {				
 				view = "redirect:/";
+				msg = "로그인 하셨습니다.";
 				session.setAttribute("id", mwDto.getId());
 				session.setAttribute("code", mwDto.getMw_code());
 				
@@ -51,5 +52,14 @@ public class MemberService {
 		
 		return mv;
 	}//loginProc() end
+	
+	//로그아웃 HY
+	public ModelAndView logoutProc(RedirectAttributes rttr) {
+		session.invalidate();//세션 삭제
+		mv = new ModelAndView();
+		mv.setViewName("redirect:/");
+		rttr.addFlashAttribute("msg", "로그아웃 하셨습니다.");
+		return mv;
+	}
 
 }//class end
