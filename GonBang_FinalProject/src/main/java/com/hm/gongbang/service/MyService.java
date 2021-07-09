@@ -4,6 +4,7 @@ package com.hm.gongbang.service;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,6 +53,5 @@ public class MyService {
 		
 		return mv;
 	}//MyPageMain() end
-
 
 }//class end

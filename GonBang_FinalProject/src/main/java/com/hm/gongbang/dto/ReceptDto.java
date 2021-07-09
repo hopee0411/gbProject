@@ -4,6 +4,8 @@ package com.hm.gongbang.dto;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
 @Data
@@ -22,10 +24,10 @@ public class ReceptDto {
 	private int r_addcode;
 	private long r_refundnum;
 	private String r_dcondition;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "Asia/Seoul")
 	private Timestamp r_orderdate;
 	private int r_basketnum;
 	private int o_optionnum;
-	private int p_productnum;
 	private String w_id;
 	private String m_id;
 	
