@@ -25,21 +25,7 @@
 <link href="resources/css/styles.css" rel="stylesheet" />
 <title>Home</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript">
-$(function(){
-	//게시글 작성 성공(저장) 메시지 출력(alert)
-	var chk = "${msg}";
-	if(chk != ""){
-		alert(chk);
-	}
-	var chId = "${id}";
-	if(chId !=""){
-		$(".suc").css("display", "block");
-		$(".bef").css("display", "none");
-	}
-	
-});
-</script>
+
 </head>
 <body>
 <header>
