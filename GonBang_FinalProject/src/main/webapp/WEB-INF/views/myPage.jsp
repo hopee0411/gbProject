@@ -31,15 +31,15 @@
 				<thead>
 					<tr>
 						<th>적립금</th>
-						<th>쿠폰</th>
-						<th>주문 내역 (주문한 상품개수)</th>
+						<th>쿠폰 내역</th>
+						<th>주문 내역 (주문한 개수)</th>
 						<th>문의</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>${saving_pointdto.pt_point}p</td>
-						<td>0장</td>
+						 <td>${coupondto.c_couponhistory}%</td>
 						<td>0건</td>
 						<td>0건</td>
 					</tr>
