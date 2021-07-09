@@ -10,9 +10,9 @@
 <link href="resources/css/w_info.css" rel="stylesheet" />
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="resources/css/w_writerHomeSide.css" rel="stylesheet" />
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		var identy = "${writerdto.W_ID}";
-		$("#W_ID").html(identy + "님");
+		$("#W_ID").html(identy + "님"); -->
 	</script>
 </head>
 <body>
