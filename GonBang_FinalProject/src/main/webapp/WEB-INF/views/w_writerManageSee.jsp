@@ -11,7 +11,7 @@
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="resources/css/w_writerHomeSide.css" rel="stylesheet" />
 	<script type="text/javascript">
-		var identy = "${writer.W_ID}";
+		var identy = "${writerdto.W_ID}";
 		$("#W_ID").html(identy + "님");
 	</script>
 </head>
@@ -37,12 +37,12 @@
 						<tr class="table-secondary">
 							<th scope="row"><font><font>공방이름</font></font></th>
 							<td><font><font><input type="text"
-										${writer.WH_GBNAME}></font></font></td>
+										${writerhomedto.WH_GBNAME}></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">아이디</font></font></th>
-							<td><font><font>${writer.W_ID}11</font></font></td>
+							<td><font><font>${writerdto.W_ID}11</font></font></td>
 							
 						</tr>
 						<tr class="table-secondary">
@@ -50,28 +50,28 @@
 									style="vertical-align: inherit;">비밀번호</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"><input type="text"
-										${writer.W_PWD} name="w_gona_name"></font></font></td>
+										${writerdto.W_PWD} name="w_gona_name"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">비밀번호확인</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"><input type="text"
-										${writer.W_PWD} name="w_gona_name"></font></font></td>
+										${writerdto.W_PWD} name="w_gona_name"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">이메일</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"><input type="email"
-										${writer.W_EMAIL} name="w_gona_name"></font></font></td>
+										${writerdto.W_EMAIL} name="w_gona_name"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">사업자 등록번호</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"><input type="text"
-										${writer.W_COMPANYNUM} name="w_gona_name"></font></font></td>
+										${writerdto.W_COMPANYNUM} name="w_gona_name"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font

@@ -2,7 +2,6 @@ package com.hm.gongbang;
 
 import javax.servlet.http.HttpSession;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hm.gongbang.service.MyService;
+import com.hm.gongbang.service.W_InfoService;
 
 import lombok.extern.java.Log;
 import oracle.jdbc.proxy.annotation.Post;
@@ -20,12 +20,15 @@ import oracle.jdbc.proxy.annotation.Post;
 public class MoveController {
 	@Autowired
 	private HttpSession session;
-	
+
 	private ModelAndView mv;
-	
+
 	@Autowired
-	private MyService myServ; //서비스로 넘어갈 변수 지정
-	
+	private W_InfoService wInfoS;
+
+	@Autowired
+	private MyService myServ; // 서비스로 넘어갈 변수 지정
+
 	@GetMapping("loginFrm")
 	public ModelAndView loginFrm() {
 		log.info("loginFrm()");
@@ -35,7 +38,6 @@ public class MoveController {
 		return mv;
 	}
 
-	
 	@GetMapping("m_joinMemberFrm")
 	public ModelAndView m_joinMemberFrm() {
 		log.info("m_joinMemberFrm()");
@@ -49,38 +51,43 @@ public class MoveController {
 	public ModelAndView myPage() {
 		log.info("myPage()");
 		mv = new ModelAndView();
-		String id = (String)session.getAttribute("id");
-		if(id != null) {
-			mv = myServ.MyPageMain();//서비스로 넘어가기위한 작업
-		}
-		else {
+		String id = (String) session.getAttribute("id");
+		if (id != null) {
+			mv = myServ.MyPageMain();// 서비스로 넘어가기위한 작업
+		} else {
 			mv.setViewName("home");
-			
+
 		}
 		return mv;
 	}
 
 	@GetMapping("m_productDelivery")
 	public String m_productDelivery() {
-
 		return "m_productDelivery";
 	}
 
 	@GetMapping("m_productCancle")
 	public String m_productCancle() {
-
 		return "m_productCancle";
 	}
 
 	@GetMapping("m_memberManager")
 	public String m_memberManager() {
-
 		return "m_memberManager";
 	}
+
 	@GetMapping("w_writerManageSee")
-	public String w_writerManageSee(Model model, HttpSession httpSession) {
-			
-		return "w_writerManageSee";
+	public ModelAndView w_writerManageSee() {
+		log.info("w_writerManageSee()");
+		mv = new ModelAndView();
+		String id = (String)session.getAttribute("id");
+		if(id != null) {
+			mv = wInfoS.w_AtPrivateInfo(); // > W_InfoService 이동
+		}
+		else {
+			mv.setViewName("home");
+		}
+		return mv;
 	}
 
 	@GetMapping("w_writerQuestionFrm")
@@ -102,26 +109,23 @@ public class MoveController {
 		return "w_writerHome";
 	}
 
-		
-	
 	/*--------------------안요한----------------------------*/
 	// 카테고리 화면(클릭 시 화면)
 	// category();
 	@GetMapping("category")
-	public String category(){
+	public String category() {
 		log.info("category()");
-		
+
 		return "category";
 	} // category ends
-	
+
 	// 작품 상세보기 페이지
 	// productContents()
 	@GetMapping("productContents")
 	public String productContents() {
 		log.info("productContents()");
-		
-		return "productContents";	
+
+		return "productContents";
 	} // productContents end
-	
-	
-}//class end
+
+}// class end

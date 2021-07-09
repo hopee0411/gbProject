@@ -53,15 +53,10 @@ public class W_InfoService {
 	
 		return "";
 	}
-	
-	/*public ModelAndView w_AtPrivateInfoFix(HttpSession session, String userId) {
-		
-		mv = new ModelAndView();
-		
-		WriterDto wInfo = wDao.w_AtPrivateInfoFix(userId);
-		
-		
-		mv.addObject("wInfo", wInfo);
-		
-		return mv;*/
+
+
+	public ModelAndView w_AtPrivateInfo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+}

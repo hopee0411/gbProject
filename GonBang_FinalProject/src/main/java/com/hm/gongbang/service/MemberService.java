@@ -21,7 +21,7 @@ public class MemberService {
 	
 	private ModelAndView mv;
 	
-	//�α��� id/pwd Ȯ�� �� ����/���� ó��
+	//
 	public ModelAndView loginProc(Mw_viewDto mwDto, RedirectAttributes rttr) {
 		mv = new ModelAndView();		
 		String view = null;
