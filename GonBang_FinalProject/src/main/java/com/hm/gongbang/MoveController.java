@@ -26,6 +26,7 @@ public class MoveController {
 	@Autowired
 	private MyService myServ; //서비스로 넘어갈 변수 지정
 	
+	//로그인 페이지 이동 HY
 	@GetMapping("loginFrm")
 	public ModelAndView loginFrm() {
 		log.info("loginFrm()");
@@ -33,9 +34,9 @@ public class MoveController {
 
 		mv.setViewName("login");
 		return mv;
-	}
+	}//loginFrm() end
 
-	
+	//일반 회원가입 페이지 이동 HY
 	@GetMapping("m_joinMemberFrm")
 	public ModelAndView m_joinMemberFrm() {
 		log.info("m_joinMemberFrm()");
@@ -43,8 +44,18 @@ public class MoveController {
 
 		mv.setViewName("m_joinMember");
 		return mv;
-	}
-
+	}//m_joinMemberFrm() end
+	
+	//작가 회원가입 페이지 이동
+	@GetMapping("w_joinWriterFrm")
+	public ModelAndView w_joinWriterFrm() {
+		log.info("w_joinWriterFrm()");
+		mv = new ModelAndView();
+		
+		mv.setViewName("w_joinWriter");
+		return mv;
+	}//w_joinWriterFrm() end
+	
 	@GetMapping("myPageFrm")
 	public ModelAndView myPage() {
 		log.info("myPage()");

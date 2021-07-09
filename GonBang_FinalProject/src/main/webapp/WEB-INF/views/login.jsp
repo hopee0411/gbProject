@@ -68,13 +68,13 @@ $(function(){
 								class="a">
 						</div>
 						<div class="loginbtn">
-							<button type="button" class="btnStyle">로그인</button>
+							<button class="btnStyle pageMa" type="submit">로그인</button>
 						</div>
 					</div>
 				</form>
 				<div id="per-sub-id-pwd">
 						<div class="btnPdd">
-							<button class="btnStyle" type="button">작가 회원가입</button>
+							<button class="btnStyle" type="button"><a class="pageMa" href="w_joinWriterFrm">작가 회원가입</a></button>
 						</div>
 						<div class="btnPdd">
 							<button class="btnStyle" type="button">아이디/비밀번호 찾기</button>

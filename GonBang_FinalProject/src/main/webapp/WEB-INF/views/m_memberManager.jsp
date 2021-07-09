@@ -48,10 +48,9 @@
 					</tr>
 					<tr>
 						<th>성별</th>
-						<th><font style="vertical-align: inherit;"><font
-								style="vertical-align: inherit;"><input type='radio'
+						<th><font style="vertical-align: inherit;"><input type='radio'
 									name='gender' value='female' />여성 <input type='radio'
-									name='gender' value='male' />남성 </font></font></th>
+									name='gender' value='male' />남성</font></th>
 					</tr>
 					
 					<tr>
