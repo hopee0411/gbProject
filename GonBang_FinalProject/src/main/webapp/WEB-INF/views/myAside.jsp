@@ -50,7 +50,7 @@ a{
                     <ul>
                         <li><a href="#">회원등급</a></li>
 						<li><a href="../mypage/m_Address.jsp">주소(배송지관리)</a></li>
-                        <li><a href="./m_memberManager">회원정보 관리</a></li>   
+                        <li><a href="./m_memberManagerFrm">회원정보 관리</a></li>   
                         <li><a href="../mypage/m_Drop.jsp">회원탈퇴</a></li>                     
                         <li><a href="../mypage/m_Card.jsp">카드 및 환불계좌 관리</a></li>
 

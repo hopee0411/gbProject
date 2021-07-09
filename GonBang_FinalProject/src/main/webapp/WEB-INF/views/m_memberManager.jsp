@@ -7,7 +7,8 @@
 <meta charset="UTF-8">
 <title>회원 정보 관리</title>
 <link href="resources/css/kjs.css" rel="stylesheet" />
-<link href="resources/css/styles.css" rel="stylesheet" />
+<link href="resources/css/styles.css" rel="stylesheet"/>
+<link href="resources/css/myAside.jsp" rel="stylesheet"/>
 </head>
 <body>
 	<header>
@@ -15,8 +16,9 @@
 	</header>
 	<div class="MyPageMainTop">
 		<aside>
-			<jsp:include page="myAside.jsp" />
+			<jsp:include page="myAside.jsp"/>
 		</aside>
+		
 		<div class="MyPageName">
 			<h2>회원 정보 관리</h2>
 		</div>

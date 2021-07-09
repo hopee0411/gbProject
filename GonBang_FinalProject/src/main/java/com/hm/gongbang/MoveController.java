@@ -72,11 +72,21 @@ public class MoveController {
 		return "m_productCancle";
 	}
 
-	@GetMapping("m_memberManager")
+	@GetMapping("m_memberManagerFrm")
 	public String m_memberManager() {
 
+		log.info("m_memberManager()");
+		mv = new ModelAndView();
+		String id = (String)session.getAttribute("id");
+		if(id != null) {
+			mv = myServ.MyPageMain();//서비스로 넘어가기위한 작업
+		}
+		else {
+			mv.setViewName("myPage");	
+		}
 		return "m_memberManager";
 	}
+	
 	@GetMapping("w_writerManageSee")
 	public String w_writerManageSee(Model model, HttpSession httpSession) {
 			

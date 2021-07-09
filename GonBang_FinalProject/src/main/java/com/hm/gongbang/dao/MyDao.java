@@ -13,7 +13,7 @@ public interface MyDao {
 
 	ArrayList<ReceptDto> receptList(String m_id);
 
-	Saving_PointDto saving_pointInfo(String m_id);
+	Saving_PointDto saving_pointInfo(String pt_id);
 
 
 }

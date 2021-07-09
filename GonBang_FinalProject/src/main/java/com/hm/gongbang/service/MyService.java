@@ -4,6 +4,7 @@ package com.hm.gongbang.service;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +37,8 @@ public class MyService {
 		memberDto = new MemberDto();
 		String m_id = (String)session.getAttribute("id");
 		memberDto = myDao.memberInfo(m_id);//myDao로 session에 저장된 id값을 가지고 간다
-		mv.addObject("memberdto", memberDto); // 모델에 데이터를 담는다.왜? 다시 리턴시켜서 메인으로 가져가야하니까
+		session.setAttribute("memberdto", memberDto);
+		//mv.addObject("memberdto", memberDto); // 모델에 데이터를 담는다.왜? 다시 리턴시켜서 메인으로 가져가야하니까
 		
 		saving_pointDto = new Saving_PointDto();
 		String pt_id = (String)session.getAttribute("id");
@@ -51,6 +53,5 @@ public class MyService {
 		
 		return mv;
 	}//MyPageMain() end
-
 
 }//class end

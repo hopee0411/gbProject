@@ -38,7 +38,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>${Saving_PointDto.pt_point}p</td>
+						<td>${saving_pointdto.pt_point}p</td>
 						<td>0장</td>
 						<td>0건</td>
 						<td>0건</td>
