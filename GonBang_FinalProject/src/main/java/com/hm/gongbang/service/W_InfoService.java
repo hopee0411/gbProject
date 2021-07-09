@@ -9,43 +9,44 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hm.gongbang.dto.WriterDto;
+
+import lombok.extern.java.Log;
+
 import com.hm.gongbang.dao.W_InfoDao;
 import com.hm.gongbang.dto.WriterDto;
+@Log
 
 @Service
 public class W_InfoService {
 
-	
 	private WriterDto writerDto;
-	
+
+	@Autowired
 	private W_InfoDao w_InfoDao;
-	
+
 	@Autowired
 	private HttpSession session;
 
 	private ModelAndView mv;
 
-
 	@Autowired
 	private W_InfoDao wDao;
 
-	//작가 개인정보 가져오기
-	public ModelAndView w_AtPrivateInfo() {
+	// 작가 개인정보 가져오기
+	public ModelAndView w_writerManageSee() {
+		log.info("w_writerManageSee()");
 		mv = new ModelAndView();
-		
+		String view = null;
+
 		writerDto = new WriterDto();
-		String W_ID = (String)session.getAttribute("id");
-		writerDto = w_InfoDao.w_AtPrivateInfo(W_ID);
+
+		String w_id = (String) session.getAttribute("id");
+		writerDto = w_InfoDao.w_writerManageSee(w_id);
 		session.setAttribute("writerDto", writerDto);
-		//mv.addObject("writerDto", writerDto);
-		
+			
 		return mv;
 	}
 }
-
-
-
-
 
 
 

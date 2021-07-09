@@ -42,7 +42,7 @@
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">아이디</font></font></th>
-							<td><font><font>${WriterDto.W_ID}11</font></font></td>
+							<td><font><font>${WriterDto.w_id}11</font></font></td>
 							
 						</tr>
 						<tr class="table-secondary">
@@ -50,28 +50,28 @@
 									style="vertical-align: inherit;">비밀번호</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"><input type="text"
-										${WriterDto.W_PWD} name="w_gona_name"></font></font></td>
+										${WriterDto.w_pwd} name="w_gona_name"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">비밀번호확인</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"><input type="text"
-										${WriterDto.W_PWD} name="w_gona_name"></font></font></td>
+										${WriterDto.w_pwd} name="w_gona_name"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">이메일</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"><input type="email"
-										${WriterDto.W_EMAIL} name="w_gona_name"></font></font></td>
+										${WriterDto.w_email} name="w_gona_name"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">사업자 등록번호</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"><input type="text"
-										${WriterDto.W_COMPANYNUM} name="w_gona_name"></font></font></td>
+										${WriterDto.w_companynum} name="w_gona_name"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
