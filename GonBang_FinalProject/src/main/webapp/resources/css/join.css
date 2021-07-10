@@ -65,3 +65,12 @@
 	margin: 2px auto;
 	color: #fff;
 }
+
+ 
+.correct{
+    color : green;
+}
+.incorrect{
+    color : red;
+}
+ 
