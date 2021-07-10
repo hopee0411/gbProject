@@ -26,8 +26,27 @@
 	</bean>
 
 	<!-- 트랜잭션 관련 설정 : 어노테이션으로 트랜잭션을 처리하겠다. -->
-	<tx:annotation-driven/> 
+	<tx:annotation-driven />
 
-<mybatis-spring:scan base-package="com.hm.gongbang.dao"/>
+	<mybatis-spring:scan
+		base-package="com.hm.gongbang.dao" />
+	<!-- Gmail -->
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="hopee0411@gmail.com" />
+		<property name="password" value="jhy2021!" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.debug">true</prop>
+				<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+				<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
+			</props>
+		</property>
+	</bean>
 
 </beans>

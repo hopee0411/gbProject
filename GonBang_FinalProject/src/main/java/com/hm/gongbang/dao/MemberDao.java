@@ -3,8 +3,10 @@ package com.hm.gongbang.dao;
 import com.hm.gongbang.dto.Mw_viewDto;
 
 public interface MemberDao {
-	//ÀÏ¹Ý, ÀÛ°¡ ·Î±×ÀÎ Ã³¸®
+	//ï¿½Ï¹ï¿½, ï¿½Û°ï¿½ ï¿½Î±ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 	public Mw_viewDto loginProc(String mw_id);
+
+	public int idCheck(String m_id);
 
 
 }//class end

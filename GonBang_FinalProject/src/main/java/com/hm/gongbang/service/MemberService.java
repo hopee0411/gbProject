@@ -61,5 +61,21 @@ public class MemberService {
 		rttr.addFlashAttribute("msg", "로그아웃 하셨습니다.");
 		return mv;
 	}
+	
+	//아이디 중복체크
+	public String idCheck(String m_id) {
+		String res = null;		
+		// 입력한 아이디로 DB를 검색해서 결과가 있으면 사용불가(fail)
+		// 없으면 사용가능(ok) 메시지를 전송.
+		int cnt = mDao.idCheck(m_id);
+		//해당 아이디가 있으면 cnt = 1, 없으면 cnt = 0.
+		if(cnt == 0) {
+			res = "ok";
+		}
+		else {
+			res = "fail";
+		}
+		return res;
+	}
 
 }//class end
