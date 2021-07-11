@@ -7,16 +7,22 @@
 	<select id="w_AtPrivateInfo" parameterType="String"
 		resultType="com.hm.gongbang.dto.WriterDto">
 		SELECT * FROM W WHERE W_ID=#{w_id}
-
 	</select>
 
-
-	<!-- 작가 정보 수정 <update id="w_AtPrivateInfoFix" parameterType="com.hm.gongbang.dto.WriterDto"> 
-		UPDATE WRITER SET W_ID = #{W_ID}, W_PWD = #{W_PWD}, W_PHONENUM = #{W_PHONENUM}, 
-		W_EMAIL = #{W_EMAIL}, W_COMPANYNUM = #{W_COMPANYNUM}, W_GENDER = #{W_GENDER}, 
-		W_BIRTH = #{W_BIRTH}, W_ACCOUNT = #{W_ACCOUNT}, W_NUMFAIL = #{W_NUMFAIL}, 
-		W_SELECTION = #{W_SELECTION} </update> -->
-
+	<!-- 작가 정보 수정하기 -->
+	<update id="w_AtPrivateInfoFix"
+		parameterType="com.hm.gongbang.dto.WriterDto">
+		UPDATE WRITER SET
+		W_ID = #{W_ID},
+		W_PWD = #{W_PWD},
+		W_EMAIL = #{W_EMAIL},
+		W_COMPANYNUM = #{W_COMPANYNUM},
+		W_BIRTH = #{W_BIRTH},
+		W_ACCOUNT= #{W_ACCOUNT},
+		W_NUMFAIL=#{W_NUMFAIL},
+		W_SELECTION = #{W_SELECTION}
+		WHERE W_ID=#{w_id}
+	</update>
 
 
 </mapper>

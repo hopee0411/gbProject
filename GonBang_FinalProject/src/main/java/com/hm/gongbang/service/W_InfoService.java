@@ -47,15 +47,35 @@ public class W_InfoService {
 
 		return mv;
 	}
-	
+
+	// 작가 개인정보 수정하기
+	public String w_AtPrivateInfoFix(WriterDto writer, RedirectAttributes rttr) {
+		String view = null;
+
+		// 비밀번호 암호화 처리
+		// Spring security에서 제공하는 암호화 인코더 사용
+		/*
+		 * BCryptPasswordEncoder pwdEncoder = new BCryptPasswordEncoder();
+		 * 
+		 * String encPwd = pwdEncoder.encode(writer.getW_pwd()); // 원래 비밀번호에 암호화된 비밀번호
+		 * 덮어쓰기 writer.setW_pwd(encPwd);
+		 */
+		try {
+			wDao.w_AtPrivateInfoFix(writer);
+
+			view = "redirect:w_writerManageSee";
+			rttr.addFlashAttribute("msg", "수정 성공");
+
+		} catch (Exception e) {
+			view = "redirect:w_writerManageSee";
+			rttr.addFlashAttribute("msg", "수정 실패");
+
+		}
+
+		return view;
+	}
 
 }
-
-
-
-
-
-
 
 
 
