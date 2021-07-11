@@ -4,7 +4,7 @@
 <mapper namespace="com.hm.gongbang.dao.W_InfoDao">
 
 	<!-- 작가 정보 가져오기 -->
-	<select id="w_writerManageSee" parameterType="String"
+	<select id="w_AtPrivateInfo" parameterType="String"
 		resultType="com.hm.gongbang.dto.WriterDto">
 		SELECT * FROM W WHERE W_ID=#{w_id}
 

@@ -91,15 +91,14 @@ public class MoveController {
 		return mv;
 	}
 
-	@GetMapping("w_writerManageSee")
-	public ModelAndView w_writerManageSee() {
-		log.info("w_writerManageSee()");
+	@GetMapping("w_writerManageSeeFrm")
+	public ModelAndView w_writerManageSeeFrm() {
 		mv = new ModelAndView();
+		mv.setViewName("w_writerManageSee");
+		
 		String id = (String) session.getAttribute("id");
 		if (id != null) {
-			mv = wInfoS.w_writerManageSee();
-		} else {
-			mv.setViewName("home");
+			mv = wInfoS.w_AtPrivateInfo();// 서비스로 넘어가기위한 작업
 		}
 		return mv;
 	}
@@ -107,11 +106,9 @@ public class MoveController {
 	/*
 	 * @GetMapping("w_writerManageSee") public ModelAndView w_writerManageSee() {
 	 * log.info("w_writerManageSee()"); mv = new ModelAndView(); String id =
-	 * (String)session.getAttribute("id"); if(id != null) { mv =
-	 * wInfoS.w_AtPrivateInfo(); // > W_InfoService 이동 } else {
-	 * mv.setViewName("home"); } return mv; }
+	 * (String) session.getAttribute("id"); if (id != null) { mv =
+	 * wInfoS.w_writerManageSee(); } else { mv.setViewName("home"); } return mv; }
 	 */
-
 	@GetMapping("w_writerQuestionFrm")
 	public String w_writerQuestionFrm() {
 

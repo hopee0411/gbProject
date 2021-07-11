@@ -10,10 +10,7 @@
 <link href="resources/css/w_info.css" rel="stylesheet" />
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="resources/css/w_writerHomeSide.css" rel="stylesheet" />
-	<!-- <script type="text/javascript">
-		var identy = "${writerdto.W_ID}";
-		$("#W_ID").html(identy + "님"); -->
-	</script>
+
 </head>
 <body>
 	<header>
@@ -23,6 +20,7 @@
 	<!-- 왼쪽 사이드 -->
 	<jsp:include page="w_writerHomeSide.jsp" />
 	<div class="w_main">
+
 		<h2>
 			<font style="vertical-align: inherit;"><font
 				style="vertical-align: inherit;">작가정보 관리</font></font>
@@ -30,48 +28,50 @@
 	</div>
 	<section class="se" style="padding-top: 70px;">
 		<div class="queContent">
-			<form class="table-secondary" action="./w_AtPrivateInfoFix"
-				method="post">
+
+			<form class="table-secondary" method="post" action="w_AtPrivateInfoFix">
 				<table class="table table-hover">
 					<tbody class="table b">
 						<tr class="table-secondary">
 							<th scope="row"><font><font>공방이름</font></font></th>
 							<td><font><font><input type="text"
-										${writerhomedto.WH_GBNAME}></font></font></td>
+										${writer_homedto.WH_GBNAME}></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">아이디</font></font></th>
-							<td><font><font>${WriterDto.w_id}11</font></font></td>
-							
+							<td><font style="vertical-align: inherit;"><font
+									style="vertical-align: inherit;"><input type="text"
+										style="background-color: silver;" value="${writerdto.w_id}"
+										readonly="readonly"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">비밀번호</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"><input type="text"
-										${WriterDto.w_pwd} name="w_gona_name"></font></font></td>
+										value="${writerdto.w_pwd}"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">비밀번호확인</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
-									style="vertical-align: inherit;"><input type="text"
-										${WriterDto.w_pwd} name="w_gona_name"></font></font></td>
+									style="vertical-align: inherit;"><input type="password"
+										value="${writerdto.w_pwd}"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">이메일</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"><input type="email"
-										${WriterDto.w_email} name="w_gona_name"></font></font></td>
+										value="${writerdto.w_email}"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;">사업자 등록번호</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"><input type="text"
-										${WriterDto.w_companynum} name="w_gona_name"></font></font></td>
+										value="${writerdto.w_companynum}"></font></font></td>
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
@@ -80,6 +80,7 @@
 									style="vertical-align: inherit;"><input type='radio'
 										name='gender' value='female' />여성 <input type='radio'
 										name='gender' value='male' />남성 </font></font></td>
+
 						</tr>
 						<tr class="table-secondary">
 							<th scope="row"><font style="vertical-align: inherit;"><font
@@ -87,45 +88,51 @@
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"> <select name="birth">
 											<script>
-												var num = 0;
-												for (i = 1900; i < 2021; i++) {
-													var arrays = [];
-													arrays[num] = i;
-													document.write("<option>"
-															+ arrays[num]
-															+ "</option>");
-													num++;
-												}
-											</script>
+													var num = 0;
+													for (i = 1900; i < 2021; i++) {
+														var arrays = [];
+														arrays[num] = i;
+														document
+																.write("<option>"
+																		+ arrays[num]
+																		+ "</option>");
+														num++;
+													}
+												</script>
 									</select> <select name="birth">
 											<script>
-												var b = [ '1', '2', '4', '5',
-														'6', '7', '8', '9',
-														'10', '11', '12' ];
-												for (i = 0; i < 11; i++) {
-													document.write("<option>"
-															+ b[i]
-															+ "</option>");
-												}
-											</script>
+													var b = [ '1', '2', '4',
+															'5', '6', '7', '8',
+															'9', '10', '11',
+															'12' ];
+													for (i = 0; i < 11; i++) {
+														document
+																.write("<option>"
+																		+ b[i]
+																		+ "</option>");
+													}
+												</script>
 									</select> <select name="birth">
 											<script>
-												var c = [ '1', '2', '4', '5',
-														'6', '7', '8', '9',
-														'10', '11', '12', '13',
-														'14', '15', '16', '17',
-														'18', '19', '20', '21',
-														'22', '23', '24', '25',
-														'26', '27', '28', '29',
-														'30', '31' ];
-												for (j = 0; j < 30; j++) {
-													document.write("<option>"
-															+ "&nbsp&nbsp"
-															+ c[j]
-															+ "&nbsp&nbsp"
-															+ "</option>");
-												}
-											</script>
+													var c = [ '1', '2', '4',
+															'5', '6', '7', '8',
+															'9', '10', '11',
+															'12', '13', '14',
+															'15', '16', '17',
+															'18', '19', '20',
+															'21', '22', '23',
+															'24', '25', '26',
+															'27', '28', '29',
+															'30', '31' ];
+													for (j = 0; j < 30; j++) {
+														document
+																.write("<option>"
+																		+ "&nbsp&nbsp"
+																		+ c[j]
+																		+ "&nbsp&nbsp"
+																		+ "</option>");
+													}
+												</script>
 									</select>
 								</font></font></td>
 						</tr>
@@ -135,7 +142,7 @@
 									style="vertical-align: inherit;">주소</font></font></th>
 							<td><font style="vertical-align: inherit;"><font
 									style="vertical-align: inherit;"><input type="text"
-										${writer.W_ID} name="w_gona_name"></font></font></td>
+										value="${writerdto.w_companynum}"></font></font></td>
 						</tr>
 					</tbody>
 				</table>
@@ -151,6 +158,7 @@
 				</div>
 			</form>
 		</div>
+
 	</section>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
