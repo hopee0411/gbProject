@@ -2,6 +2,8 @@ package com.hm.gongbang.dao;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Repository;
+
 import com.hm.gongbang.dto.CouponDto;
 //import com.hm.gongbang.dto.McDto;
 import com.hm.gongbang.dto.MemberDto;
@@ -9,6 +11,8 @@ import com.hm.gongbang.dto.Pi_viewDto;
 import com.hm.gongbang.dto.QuestionDto;
 import com.hm.gongbang.dto.ReceptDto;
 import com.hm.gongbang.dto.Saving_PointDto;
+
+@Repository
 
 
 public interface MyDao {
@@ -24,5 +28,8 @@ public interface MyDao {
 	int questionInfo(String m_id);
 
 	ArrayList<Pi_viewDto> Pi_viewInfo(String m_id);
+	
+	//회원 개인정보 수정하기
+	public void m_InfoFix(MemberDto member);
 
 }

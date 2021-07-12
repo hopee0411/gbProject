@@ -41,9 +41,8 @@ public class MyService {
 	private Pi_viewDto pi_viewDto;
 
 	
-	@Autowired	
+	@Autowired		
 	private MyDao myDao;
-	
 	//마이페이지 메인 정보 가져오기
 	public ModelAndView MyPageMain() {
 		mv = new ModelAndView(); //모델을 새로쓰려고 객체를 만듦.
@@ -92,4 +91,39 @@ public class MyService {
 		return mv;
 	}//MyPageMain() end
 
+	public String m_InfoFix(MemberDto member, RedirectAttributes rttr) {
+		
+		String view = null;
+		System.out.println(member);
+		String getId = (String)session.getAttribute("id");
+		member.setM_id(getId);
+		try {
+
+			myDao.m_InfoFix(member);
+			
+
+			view = "redirect:m_memberManagerFrm";
+			rttr.addFlashAttribute("msg", "수정 성공");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			view = "redirect:m_memberManagerFrm";
+			rttr.addFlashAttribute("msg", "수정 실패");
+
+		}
+		return view;
+	}
+
 }//class end
+
+
+
+
+
+
+
+
+
+
+
+

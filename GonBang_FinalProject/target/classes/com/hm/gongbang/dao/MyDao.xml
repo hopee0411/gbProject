@@ -34,4 +34,17 @@
 		SELECT * FROM pi_view WHERE M_ID=#{m_id}
 	</select>
 	
+		<!-- 회원 정보 수정하기 -->
+	<update id="m_InfoFix"
+		parameterType="com.hm.gongbang.dto.MemberDto">
+	UPDATE MEMBER
+	SET
+		 M_PWD = #{m_pwd}
+		,M_EMAIL = #{m_email}
+		,M_GENDER = #{m_gender}
+		,M_BIRTH = #{m_birth}
+	WHERE M_ID = #{m_id}
+
+	</update>
+	
 </mapper>
