@@ -1,6 +1,8 @@
 package com.hm.gongbang.service;
 
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
@@ -13,10 +15,16 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hm.gongbang.dao.MyDao;
 import com.hm.gongbang.dto.CouponDto;
+//	import com.hm.gongbang.dto.McDto;
 import com.hm.gongbang.dto.MemberDto;
+import com.hm.gongbang.dto.Pi_viewDto;
+import com.hm.gongbang.dto.QuestionDto;
 import com.hm.gongbang.dto.ReceptDto;
 import com.hm.gongbang.dto.Saving_PointDto;
 
+import lombok.extern.java.Log;
+
+@Log
 @Service
 public class MyService {
 	
@@ -29,8 +37,11 @@ public class MyService {
 	private ReceptDto receptDto;
 	private Saving_PointDto saving_pointDto;
 	private CouponDto couponDto;
-	@Autowired
+	private QuestionDto questionDto;
+	private Pi_viewDto pi_viewDto;
+
 	
+	@Autowired	
 	private MyDao myDao;
 	
 	//마이페이지 메인 정보 가져오기
@@ -48,26 +59,36 @@ public class MyService {
 		
 		//적립금
 		saving_pointDto = new Saving_PointDto();
-		String pt_id = (String)session.getAttribute("id");
+		//String pt_id = (String)session.getAttribute("id");
 		saving_pointDto = myDao.saving_pointInfo(m_id);
 		mv.addObject("saving_pointdto", saving_pointDto);
 		
 		
 		//쿠폰 내역
 		couponDto = new CouponDto();
-		String c_id = (String)session.getAttribute("id");
+		//String c_id = (String)session.getAttribute("id");
 		couponDto = myDao.couponInfo(m_id);
 		mv.addObject("coupondto", couponDto);
+		
+		//문의 건수
+		questionDto = new QuestionDto();
+		//String q_id = (String)session.getAttribute("id");
+		int qNum = myDao.questionInfo(m_id);
+		mv.addObject("qNum", qNum);
 		
 		
 		//최근 주문 내역
 		receptDto = new ReceptDto();
-		ArrayList<ReceptDto> receptList = myDao.receptList(m_id);		
+		ArrayList<ReceptDto> receptList = myDao.receptList(m_id);
 		mv.addObject("receptList", receptList);
-		System.out.println("데이터확인 " + receptList);
 		mv.setViewName("myPage");//modelAndView에 이동할 페이지를 담는다
+		mv.addObject("rNum", receptList.size());
 		
-
+		//관심작품
+		pi_viewDto = new Pi_viewDto();
+		ArrayList<Pi_viewDto> pi_viewList = myDao.Pi_viewInfo(m_id);
+		mv.addObject("pi_viewList", pi_viewList);
+		System.out.println(pi_viewList);
 		return mv;
 	}//MyPageMain() end
 

@@ -24,4 +24,14 @@
 		SELECT * FROM C WHERE M_ID=#{m_id}
 	</select>
 	
+	<select id="questionInfo" parameterType="String"
+		resultType="Integer">
+		SELECT COUNT (*) FROM Q WHERE M_ID=#{m_id}
+	</select> 
+	
+	<select id="Pi_viewInfo" parameterType="String"
+		resultType="com.hm.gongbang.dto.Pi_viewDto">
+		SELECT * FROM pi_view WHERE M_ID=#{m_id}
+	</select>
+	
 </mapper>
