@@ -5,24 +5,37 @@
 
 	<!-- 작가 정보 가져오기 -->
 	<select id="w_AtPrivateInfo" parameterType="String"
-		resultType="com.hm.gongbang.dto.WriterDto">
-		SELECT * FROM W WHERE W_ID=#{w_id}
+		resultType="com.hm.gongbang.dto.W_InfoDto">
+		SELECT * FROM W_INFO WHERE W_ID=#{w_id}
 	</select>
 
 	<!-- 작가 정보 수정하기 -->
 	<update id="w_AtPrivateInfoFix"
-		parameterType="com.hm.gongbang.dto.WriterDto">
-		UPDATE WRITER SET
-		W_ID = #{W_ID},
-		W_PWD = #{W_PWD},
-		W_EMAIL = #{W_EMAIL},
-		W_COMPANYNUM = #{W_COMPANYNUM},
-		W_BIRTH = #{W_BIRTH},
-		W_ACCOUNT= #{W_ACCOUNT},
-		W_NUMFAIL=#{W_NUMFAIL},
-		W_SELECTION = #{W_SELECTION}
-		WHERE W_ID=#{w_id}
-	</update>
+		parameterType="com.hm.gongbang.dto.W_InfoDto">
+	UPDATE WRITER
+	SET
+		 W_ID = #{w_id}
+		,W_PWD = #{w_pwd}
+		,W_PHONENUM = #{w_phonenum}
+		,W_EMAIL = #{w_email}
+		,W_COMPANYNUM = #{w_companynum}
+		,W_GENDER = #{w_gender}
+		,W_BIRTH = #{w_birth}
+		,W_ACCOUNT = #{w_account}
+		,W_ADDR = #{w_addr}
+	WHERE W_ID = #{w_id}
+	
+	</update>	
+	
+	<!--    작가정보수정2    -->
+	
+	  <update id="w_AtPrivateInfoFix2" 
+		parameterType="String">
+	UPDATE WRITER_HOME
+	SET
+		WH_GBNAME = #{wh_gbname}
+	WHERE W_ID = #{w_id}
 
+	</update> 
 
 </mapper>

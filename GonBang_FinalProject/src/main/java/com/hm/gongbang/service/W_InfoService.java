@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.hm.gongbang.dto.W_InfoDto;
 import com.hm.gongbang.dto.WriterDto;
 
 import lombok.extern.java.Log;
@@ -26,54 +27,61 @@ public class W_InfoService {
 	private HttpSession session;
 
 	private WriterDto writerDto;
-
+	
+	private W_InfoDto w_infoDto;
+	
 	@Autowired
 	private W_InfoDao w_InfoDao;
 
 	@Autowired
 	private W_InfoDao wDao;
 
-	// 작가 개인정보 가져오기
-	public ModelAndView w_AtPrivateInfo() {
-		log.info("w_AtPrivateInfo()");
-		mv = new ModelAndView();
 
-		writerDto = new WriterDto();
-		String w_id = (String) session.getAttribute("id");
-		writerDto = w_InfoDao.w_AtPrivateInfo(w_id);
-		session.setAttribute("writerdto", writerDto);
+	// 작가 개인정보 가져오기2
+		public ModelAndView w_AtPrivateInfo() {
+			log.info("w_AtPrivateInfo()");
+			mv = new ModelAndView();
 
-		mv.setViewName("w_writerManageSee");// 이동할 페이지
+			w_infoDto = new W_InfoDto();
+			String w_id = (String) session.getAttribute("id");
+			w_infoDto = w_InfoDao.w_AtPrivateInfo(w_id);
+			session.setAttribute("w_infodto", w_infoDto);
 
-		return mv;
-	}
+			mv.setViewName("w_writerManageSee");// 이동할 페이지
+
+			return mv;
+		}
 
 	// 작가 개인정보 수정하기
-	public String w_AtPrivateInfoFix(WriterDto writer, RedirectAttributes rttr) {
+	public String w_AtPrivateInfoFix(W_InfoDto writer, RedirectAttributes rttr) {
 		String view = null;
-
-		// 비밀번호 암호화 처리
-		// Spring security에서 제공하는 암호화 인코더 사용
-		/*
-		 * BCryptPasswordEncoder pwdEncoder = new BCryptPasswordEncoder();
-		 * 
-		 * String encPwd = pwdEncoder.encode(writer.getW_pwd()); // 원래 비밀번호에 암호화된 비밀번호
-		 * 덮어쓰기 writer.setW_pwd(encPwd);
-		 */
+		System.out.println("확인:@@@@@@" + writer);
+		
+		String wh_gbname = writer.getWh_gbname();
+	
 		try {
-			wDao.w_AtPrivateInfoFix(writer);
+			
 
-			view = "redirect:w_writerManageSee";
+			wDao.w_AtPrivateInfoFix(writer);
+			System.out.println("확인2@@@@@" + writer);
+			wDao.w_AtPrivateInfoFix2(wh_gbname);
+			
+			
+
+			
+			view = "redirect:w_writerManageSeeFrm";
 			rttr.addFlashAttribute("msg", "수정 성공");
 
 		} catch (Exception e) {
-			view = "redirect:w_writerManageSee";
+			e.printStackTrace();
+			view = "redirect:w_writerManageSeeFrm";
 			rttr.addFlashAttribute("msg", "수정 실패");
 
 		}
 
 		return view;
 	}
+	
 
 }
 

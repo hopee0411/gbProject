@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hm.gongbang.dao.W_InfoDao;
+import com.hm.gongbang.dto.W_InfoDto;
 import com.hm.gongbang.dto.WriterDto;
 import com.hm.gongbang.service.W_InfoService;
 
@@ -28,7 +29,8 @@ public class W_InfoController {
 
 	// 작가 개인정보 수정하기
 	@PostMapping("w_AtPrivateInfoFix")
-	public String w_AtPrivateInfoFix(WriterDto writer, RedirectAttributes rttr) {
+	public String w_AtPrivateInfoFix(W_InfoDto writer, RedirectAttributes rttr) {
+		System.out.println("확인~~~~~~~~~~" + writer);
 		log.info("w_AtPrivateInfoFix()");
 
 		String view = wInfoS.w_AtPrivateInfoFix(writer, rttr);
