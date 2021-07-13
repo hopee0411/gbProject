@@ -29,5 +29,6 @@ public class ReceptDto {
 	private int o_optionnum;
 	private String w_id;
 	private String m_id;
+	private String r_dnum;
 	
 }
