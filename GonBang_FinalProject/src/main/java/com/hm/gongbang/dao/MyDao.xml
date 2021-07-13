@@ -11,7 +11,7 @@
 	
 	<select id="receptList" parameterType="String"
 		resultType="com.hm.gongbang.dto.ReceptDto">
-		SELECT * FROM R WHERE M_ID=#{m_id}
+		SELECT * FROM R WHERE M_ID=#{m_id} AND R_DCONDITION='배송중' OR R_DCONDITION='배송완료'
 	</select>
 	
 	<select id="saving_pointInfo" parameterType="String"
@@ -46,5 +46,10 @@
 	WHERE M_ID = #{m_id}
 
 	</update>
+	
+	<select id="receptCList" parameterType="String"
+		resultType="com.hm.gongbang.dto.ReceptDto">
+		SELECT * FROM R WHERE M_ID=#{m_id} AND R_DCONDITION='취소'
+	</select>
 	
 </mapper>

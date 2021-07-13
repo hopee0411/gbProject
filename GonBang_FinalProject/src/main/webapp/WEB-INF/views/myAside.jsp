@@ -13,8 +13,12 @@ a{
 
 <section class="MyPM" style="width: 230px;">
 <div class="MyProfile"  style="border-style:groove;" text-align ="center" >
-	<img class="img-fluid1" src="resources/images/psa.jpg" 
-						alt="사진설정" width="90px;"/> <br>
+
+<a href="./myPageFrm"><img class="img-fluid1" src="resources/images/psa.jpg" 
+						alt="사진설정" width="90px;"/> <br></a>
+
+	<!-- <img class="img-fluid1" src="resources/images/psa.jpg" 
+						alt="사진설정" width="90px;"/> <br> -->
 	<h5 style="margin-top: 40px;">${memberdto.m_grade}</h5>  
 	<div style="margin-bottom: 50px;">${memberdto.m_name}님</div>   
 						
@@ -26,7 +30,7 @@ a{
                	 <li class="text"><a href="./m_productDelivery">주문/배송</a></li>
                     <ul>
                         <li><a href="./m_productDelivery">주문/배송 내역</a></li>
-                        <li><a href="./m_productCancle">취소/교환/환불</a></li><br>
+                        <li><a href="./m_productCancle">취소</a></li><br>
                     </ul>
                 </li>
                 <li><a href="../mypage/m_List.jsp">관심리스트</a>

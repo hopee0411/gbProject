@@ -9,6 +9,7 @@
 <link href="resources/css/kjs.css" rel="stylesheet" />
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="resources/css/myAside.jsp" rel="stylesheet" />
+
 </head>
 <body>
 	<header>
@@ -77,5 +78,8 @@
 			</form>
 		</div>
 	</div>
+		<footer>
+		<jsp:include page="footer.jsp" />
+	</footer>
 </body>
 </html>

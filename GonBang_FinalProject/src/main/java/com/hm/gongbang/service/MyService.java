@@ -1,7 +1,7 @@
 package com.hm.gongbang.service;
 
 
-import java.sql.Timestamp;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -27,7 +27,6 @@ import lombok.extern.java.Log;
 @Log
 @Service
 public class MyService {
-	
 	private ModelAndView mv; // 밑에서 변수계속 사용위해 위에 한번에 선언
 	
 	@Autowired
@@ -58,30 +57,27 @@ public class MyService {
 		
 		//적립금
 		saving_pointDto = new Saving_PointDto();
-		//String pt_id = (String)session.getAttribute("id");
 		saving_pointDto = myDao.saving_pointInfo(m_id);
 		mv.addObject("saving_pointdto", saving_pointDto);
 		
 		
 		//쿠폰 내역
 		couponDto = new CouponDto();
-		//String c_id = (String)session.getAttribute("id");
 		couponDto = myDao.couponInfo(m_id);
 		mv.addObject("coupondto", couponDto);
 		
 		//문의 건수
 		questionDto = new QuestionDto();
-		//String q_id = (String)session.getAttribute("id");
 		int qNum = myDao.questionInfo(m_id);
 		mv.addObject("qNum", qNum);
 		
 		
-		//최근 주문 내역
+		//최근 주문 내역(영수증)
 		receptDto = new ReceptDto();
 		ArrayList<ReceptDto> receptList = myDao.receptList(m_id);
-		mv.addObject("receptList", receptList);
+		session.setAttribute("receptList", receptList);
 		mv.setViewName("myPage");//modelAndView에 이동할 페이지를 담는다
-		mv.addObject("rNum", receptList.size());
+		session.setAttribute("rNum", receptList.size());
 		
 		//관심작품
 		pi_viewDto = new Pi_viewDto();
@@ -112,6 +108,18 @@ public class MyService {
 
 		}
 		return view;
+	}
+	
+	public ModelAndView MyOderCancle() {
+		// TODO Auto-generated method stub
+		log.info("MyOderCancle()");
+		String m_id = (String)session.getAttribute("id");
+		receptDto = new ReceptDto();
+		ArrayList<ReceptDto> receptCList = myDao.receptCList(m_id);		
+		session.setAttribute("receptCList", receptCList);
+		mv.setViewName("m_productCancle");//modelAndView에 이동할 페이지를 담는다
+		session.setAttribute("rCnum", receptCList.size());
+		return mv;
 	}
 
 }//class end
