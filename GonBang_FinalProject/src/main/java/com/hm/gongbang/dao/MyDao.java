@@ -32,4 +32,6 @@ public interface MyDao {
 	//회원 개인정보 수정하기
 	public void m_InfoFix(MemberDto member);
 
+	ArrayList<ReceptDto> receptCList(String m_id);
+
 }

@@ -58,10 +58,10 @@ public class MoveController {
 		mv.setViewName("w_joinWriter");
 		return mv;
 	}// w_joinWriterFrm() end
-
+	
 	@GetMapping("myPageFrm")
 	public ModelAndView myPage() {
-		log.info("myPage()");
+		log.info("myPageFrm()");
 		mv = new ModelAndView();
 		String id = (String) session.getAttribute("id");
 		if (id != null) {
@@ -75,12 +75,15 @@ public class MoveController {
 
 	@GetMapping("m_productDelivery")
 	public String m_productDelivery() {
-		return "m_productDelivery";
+		log.info("m_productDelivery()");
+		String view = "m_productDelivery";
+		return view;
 	}
 
 	@GetMapping("m_productCancle")
-	public String m_productCancle() {
-		return "m_productCancle";
+	public ModelAndView m_productCancle() {
+		mv = myServ.MyOderCancle();
+		return mv;
 	}
 
 	@GetMapping("m_memberManagerFrm")
@@ -90,7 +93,7 @@ public class MoveController {
 
 		return mv;
 	}
-
+	
 	@GetMapping("w_writerManageSeeFrm")
 	public ModelAndView w_writerManageSeeFrm() {
 		mv = new ModelAndView();
@@ -102,7 +105,7 @@ public class MoveController {
 		}
 		return mv;
 	}
-
+	
 	/*
 	 * @GetMapping("w_writerManageSee") public ModelAndView w_writerManageSee() {
 	 * log.info("w_writerManageSee()"); mv = new ModelAndView(); String id =

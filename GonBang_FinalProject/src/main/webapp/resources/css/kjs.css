@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
+
 .MyPM {
 	width: 250px;
-	height: 1500px;
+	height: 1000px;
 	float: left;  /* 왼쪽으로 정렬 */
 	margin-left: 110px;	
 }
@@ -41,10 +42,10 @@ p.groove {
 }
 
 .MyPageMain {
-	width: 50%;
-	height: 1600px;
+	height: 1000px;
+	 width: 50%;
 	float: left;
-	margin-left: 150px;	
+	margin-left: 150px;
 }
 
 .MyPageMainTop {
@@ -64,4 +65,8 @@ p.groove {
 	width: 200px;
 	margin: 25px 25px 0 25px;
 	
+}
+footer {
+	width: 100%;
+	margin-top: 1000px;
 }

@@ -11,6 +11,13 @@
 <title>마이 페이지</title>
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="resources/css/kjs.css" rel="stylesheet" />
+<style type="text/css">
+
+
+.MyPageMain {
+	height: 1000px;
+}
+</style>
 </head>
 <body>
 	<header>
@@ -103,7 +110,8 @@
 							<div class="text-center">
 								<!-- Product name-->
 								<h6 style="text-align: left;">공방이름 : ${piItem.wh_gbname}</h6>
-								<h6 style="text-align: left;">제품이름 : ${piItem.p_productname}</h6>
+								<h6 style="text-align: left;">제품이름 :
+									${piItem.p_productname}</h6>
 								<!-- Product price-->
 								<h6 style="text-align: left;">가격 : ${piItem.p_price}원</h6>
 							</div>
@@ -130,6 +138,10 @@
 				</div>
 			</div>
 		</div>
-		<jsp:include page="footer.jsp"></jsp:include>
+	</div>
+
+	<footer>
+		<jsp:include page="footer.jsp" />
+	</footer>
 </body>
 </html>
