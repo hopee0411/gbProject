@@ -82,7 +82,7 @@ public class MoveController {
 		return mv;
 	}
 
-	@GetMapping("m_productDeliveryFrm")
+	@GetMapping("m_productDelivery")
 	public String m_productDelivery() {
 		log.info("m_productDelivery()");
 		String view = "m_productDelivery";
@@ -114,6 +114,7 @@ public class MoveController {
 		}
 		return mv;
 	}
+
 	
 	/*
 	 * @GetMapping("w_writerManageSee") public ModelAndView w_writerManageSee() {
@@ -121,6 +122,14 @@ public class MoveController {
 	 * (String) session.getAttribute("id"); if (id != null) { mv =
 	 * wInfoS.w_writerManageSee(); } else { mv.setViewName("home"); } return mv; }
 	 */
+
+	@GetMapping("w_productDeliveryFrm")
+	public String w_productDeliveryFrm() {
+
+		return "w_productDelivery";
+
+	}
+
 	@GetMapping("w_writerQuestionFrm")
 	public String w_writerQuestionFrm() {
 
