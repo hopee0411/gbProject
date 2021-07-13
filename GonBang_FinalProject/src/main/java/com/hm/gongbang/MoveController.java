@@ -73,7 +73,7 @@ public class MoveController {
 		return mv;
 	}
 
-	@GetMapping("m_productDelivery")
+	@GetMapping("m_productDeliveryFrm")
 	public String m_productDelivery() {
 		return "m_productDelivery";
 	}
