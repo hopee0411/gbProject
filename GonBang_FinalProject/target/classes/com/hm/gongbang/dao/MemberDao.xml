@@ -10,7 +10,13 @@
 	
 	<!-- 아이디 중복확인 -->
 	<select id="idCheck" parameterType="String" resultType="Integer">
-		SELECT COUNT(*) FROM m WHERE m_id=#{m_id}
+		SELECT COUNT(*) FROM mw_view WHERE id=#{id}
 	</select>
-
+	
+	<!-- 회원가입 -->
+	<insert id="memberJoinProc" parameterType="com.hm.gongbang.dto.MemberDto">
+		INSERT INTO m VALUES <!-- 기본이되는 쿼리 --> 
+		(#{m_id}, #{m_pwd}, #{m_name}, #{m_email}, #{m_addr}, #{m_gender}, #{m_birth}, DEFAULT, DEFAULT, DEFAULT, DEFAULT)
+	</insert>
+	
 </mapper>
