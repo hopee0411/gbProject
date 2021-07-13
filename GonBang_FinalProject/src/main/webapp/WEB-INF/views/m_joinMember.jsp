@@ -35,7 +35,7 @@
 					type="button" class="idcheck-btn" value="중복확인" onclick="idcheck()"
 					required> 
 				<input type="password" class="login-input"
-					title="비밀번호" name="m_pwd" placeholder="비밀번호" required> 
+					title="비밀번호" name="m_pwd" minlength="6" placeholder="비밀번호" required > 
 				<input
 					type="text" name="m_name" class="login-input" title="이름"
 					placeholder="이름" required> 
@@ -54,8 +54,8 @@
 					placeholder="주소" required> <font
 					style="vertical-align: inherit;" class="login-input"> 
 				<input
-					type='radio' name='m_gender' value='female' />여성 <input
-					type='radio' name='m_gender' value='male' />남성
+					type='radio' name='m_gender' value='여성' />여성 <input
+					type='radio' name='m_gender' value='남성' />남성
 				</font> <input type="text" name="m_birth" class="login-input" title="생일"
 					placeholder="생일" required> <input type="submit"
 					class="login-btn" value="가입">
@@ -77,7 +77,7 @@
 			return;
 		}
 		var ckObj = {
-			"m_id" : id
+			"id" : id
 		};
 		//ajax를 사용하여 controller로 전송
 		$.ajax({

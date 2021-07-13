@@ -59,6 +59,15 @@ public class MoveController {
 		return mv;
 	}//w_joinWriterFrm() end
 	
+	//장바구니 이동
+	@GetMapping("m_sBasketFrm")
+	public ModelAndView m_sBasketFrm() {
+		mv = new ModelAndView();
+		
+		mv.setViewName("m_sBasket");
+		return mv;
+	}
+	
 	@GetMapping("myPageFrm")
 	public ModelAndView myPage() {
 		log.info("myPage()");

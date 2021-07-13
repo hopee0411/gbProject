@@ -38,8 +38,8 @@ $(function(){
 					<div>
 						<div id="person-id-pwd">
 							<input class="idinput a" type="text" name="id"
-								placeholder=" 아이디"> <br> <input class="a" type="password"
-								name="pwd" placeholder=" 비밀번호" maxlength="12" minlength="6">
+								placeholder=" 아이디" required> <br> <input class="a" type="password"
+								name="pwd" placeholder=" 비밀번호" maxlength="12" minlength="6" required>
 						</div>
 						<div class="loginbtn">
 							<button class="btnStyle pageMa" type="submit">로그인</button>
