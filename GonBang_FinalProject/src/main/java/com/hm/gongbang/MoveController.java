@@ -114,15 +114,15 @@ public class MoveController {
 		}
 		return mv;
 	}
+	
+	@GetMapping("w_productCancleFrm")
+	public String w_productCancleFrm() {
+
+		return "w_productCancle";
+
+	}
 
 	
-	/*
-	 * @GetMapping("w_writerManageSee") public ModelAndView w_writerManageSee() {
-	 * log.info("w_writerManageSee()"); mv = new ModelAndView(); String id =
-	 * (String) session.getAttribute("id"); if (id != null) { mv =
-	 * wInfoS.w_writerManageSee(); } else { mv.setViewName("home"); } return mv; }
-	 */
-
 	@GetMapping("w_productDeliveryFrm")
 	public String w_productDeliveryFrm() {
 
