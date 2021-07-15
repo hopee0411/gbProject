@@ -53,6 +53,8 @@ public class W_DeliveryService {
 		session.setAttribute("receptList", receptList);
 		mv.setViewName("w_productDelivery");// modelAndView에 이동할 페이지를 담는다
 
+		
+		
 		return mv;
 
 		/*

@@ -45,17 +45,21 @@ public class W_DeliveryController {
 		mv.setViewName("w_productDelivery");
 		mv = wDs.wDSearchOption(w_id, r_pname);
 
-		return mv;
-	}
+		return mv; }
+	 
 
 	// 실패
+	
 	/*
-	 * GetMapping("wDSearchOption") public ModelAndView wDSearchOption(String w_id,
+	 * @GetMapping("wDSearchOption") public ModelAndView wDSearchOption(String w_id,
 	 * ReceptDto rec) { mv = new ModelAndView(); w_id = (String)
-	 * session.getAttribute("id"); mv.setViewName("w_productDelivery"); mv =
 	 * wDs.wDSearchOption(w_id, rec);
 	 * 
 	 * return mv; }
 	 */
-
 }
+
+
+
+
+

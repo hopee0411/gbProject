@@ -13,6 +13,12 @@
 		resultType="com.hm.gongbang.dto.ReceptDto">
 		SELECT * FROM R WHERE W_ID=#{w_id} and R_PNAME=#{r_pname}
 	</select>
+	
+	<!-- <select id="" parameterType=""
+		resultType="com.hm.gongbang.dto.ReceptDto">
+		SELECT * FROM R WHERE W_ID=#{w_id} and M_ID=#{m_id};
+	</select> -->
+	
 
 
 </mapper>
