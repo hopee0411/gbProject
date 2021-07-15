@@ -37,5 +37,13 @@
 	WHERE W_ID = #{w_id}
 
 	</update> 
+	
+	
+	
+	<!-- 작가 회원 가입 -->
+	<insert id="writerJoinProc" parameterType="com.hm.gongbang.dto.WriterDto">
+		INSERT INTO w VALUES <!-- 기본이되는 쿼리 --> 
+		(#{w_id}, #{w_pwd}, #{w_phonenum}, #{w_email}, #{w_companynum}, #{w_gender}, #{w_birth}, #{w_account}, DEFAULT, DEFAULT, #{w_addr})
+	</insert>
 
 </mapper>
