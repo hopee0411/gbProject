@@ -61,7 +61,7 @@ function idcheck() {
 		$("#w_id").focus();
 		return;
 	}
-	var ckObj = {"m_id":id};
+	var ckObj = {"id":id};
 	//ajax를 사용하여 controller로 전송
 	$.ajax({
 		url: "idCheck",
