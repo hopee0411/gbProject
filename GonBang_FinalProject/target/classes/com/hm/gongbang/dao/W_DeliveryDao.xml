@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hm.gongbang.dao.W_DeliveryDao">
+
+	<select id="receptList" parameterType="String"
+		resultType="com.hm.gongbang.dto.ReceptDto">
+		SELECT * FROM R WHERE W_ID=#{w_id}
+	</select>
 	
-	<mapper namespace="com.hm.gongbang.dao.W_DeliveryDao">
-	
-	</mapper>
+	<select id="receptPName" parameterType="String"
+		resultType="com.hm.gongbang.dto.ReceptDto">
+		SELECT * FROM R WHERE W_ID=#{w_id} and R_PNAME=#{r_pname}
+	</select>
+
+
+</mapper>
