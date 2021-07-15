@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hm.gongbang.service.MyService;
+import com.hm.gongbang.service.W_DeliveryService;
 import com.hm.gongbang.service.W_InfoService;
 
 import lombok.extern.java.Log;
@@ -26,6 +27,9 @@ public class MoveController {
 	@Autowired
 	private W_InfoService wInfoS;
 
+	@Autowired
+	private W_DeliveryService wDs;
+	
 	@Autowired
 	private MyService myServ; // 서비스로 넘어갈 변수 지정
 
@@ -190,9 +194,19 @@ public class MoveController {
 
 	
 	@GetMapping("w_productDeliveryFrm")
-	public String w_productDeliveryFrm() {
+	public ModelAndView w_productDeliveryFrm() {
+		mv = new ModelAndView();
+		mv.setViewName("w_productDelivery");
+		
+		String id = (String) session.getAttribute("id");
+		if (id != null) {
+			mv = wDs.wSearch();// 서비스로 넘어가기위한 작업
+		} else {
+			mv.setViewName("login");
 
-		return "w_productDelivery";
+		}
+	
+		return mv;
 
 	}
 
