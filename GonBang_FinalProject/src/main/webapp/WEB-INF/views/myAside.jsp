@@ -27,36 +27,36 @@ a{
 </div>
 <div class="MyMenu"  style="border-style: groove; text-decoration: none; padding-top: 100px;" >
            <ul>
-               	 <li class="text"><a href="./m_productDelivery">주문/배송</a></li>
+               	 <li class="text"><a href="./m_productDeliveryFrm">주문/배송</a></li>
                     <ul>
-                        <li><a href="./m_productDelivery">주문/배송 내역</a></li>
+                        <li><a href="./m_productDeliveryFrm">주문/배송 내역</a></li>
                         <li><a href="./m_productCancle">취소</a></li><br>
                     </ul>
                 </li>
-                <li><a href="../mypage/m_List.jsp">관심리스트</a>
+                <li><a href="./m_interestList">관심리스트</a>
                     <ul>
-                        <li><a href="../mypage/m_List.jsp">관심작품</a></li>
-                        <li><a href="../mypage/m_AuthorList.jsp">관심작가</a></li><br>
+                        <li><a href="./m_interestList">관심작품</a></li>
+                        <li><a href="./m_interesListTwo">관심작가</a></li><br>
                     </ul>
                 </li>
-				<li><a href="../mypage/m_Coupon.jsp">쿠폰/적립금</a>
+				<li><a href="./m_savingCoupon">쿠폰/적립금</a>
                     <ul>
-                        <li><a href="../mypage/m_Coupon.jsp">쿠폰</a></li>
-                        <li><a href="../mypage/m_Point.jsp">적립금</a></li><br>
+                        <li><a href="./m_savingCoupon">쿠폰</a></li>
+                        <li><a href="./m_savinfPoint">적립금</a></li><br>
                     </ul>
                 </li>
-                <li><a href="../mypage/m_Question.jsp">문의</a>
+                <li><a href="./m_memberQuestion">문의</a>
                     <ul>
-                        <li><a href="../mypage/m_Question.jsp">문의내역</a></li><br>
+                        <li><a href="./m_memberQuestion">문의내역</a></li><br>
                     </ul>
                 </li>
-                <li><a href="#">나의정보</a>
+                <li><a href="./m_memberShip">나의정보</a>
                     <ul>
-                        <li><a href="#">회원등급</a></li>
-						<li><a href="../mypage/m_Address.jsp">주소(배송지관리)</a></li>
+                        <li><a href="./m_memberShip">회원등급</a></li>
+						<li><a href="./m_orderContents">주소(배송지관리)</a></li>
                         <li><a href="./m_memberManagerFrm">회원정보 관리</a></li>   
-                        <li><a href="../mypage/m_Drop.jsp">회원탈퇴</a></li>                     
-                        <li><a href="../mypage/m_Card.jsp">카드 및 환불계좌 관리</a></li>
+                        <li><a href="./m_memberResign">회원탈퇴</a></li>                     
+                        <li><a href="./m_pay">카드 및 환불계좌 관리</a></li>
 
                     </ul>
                 </li>

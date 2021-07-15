@@ -6,10 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>회원 정보 관리</title>
-<link href="resources/css/kjs.css" rel="stylesheet" />
 <link href="resources/css/styles.css" rel="stylesheet" />
+<link href="resources/css/kjs.css" rel="stylesheet" />
 <link href="resources/css/myAside.jsp" rel="stylesheet" />
-
+<style type="text/css">
+.MyPageMain {
+	height: 1000px;
+}
+</style>
 </head>
 <body>
 	<header>
@@ -78,6 +82,7 @@
 			</form>
 		</div>
 	</div>
+	
 		<footer>
 		<jsp:include page="footer.jsp" />
 	</footer>

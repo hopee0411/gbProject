@@ -1,4 +1,4 @@
-<!-- 적립금 -->
+<!-- 문의내역 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link href="resources/css/kjs.css" rel="stylesheet" />
@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>적립금</title>
+<title>문의내역</title>
 </head>
 <body>
 	<header>
@@ -18,9 +18,9 @@
 		<aside>
 			<jsp:include page="myAside.jsp" />
 		</aside>
+
 		<div class="MyPageName">
-			<h2>적립금</h2>
+			<h2>문의내역</h2>
 		</div>
-	</div>
 </body>
 </html>
