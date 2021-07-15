@@ -82,6 +82,29 @@ public class W_InfoService {
 		return view;
 	}
 	
+	//작가 회원 가입
+	public ModelAndView writerJoinProc(WriterDto writer, RedirectAttributes rttr) {
+		log.info("writerService, writerJoinProc");
+		mv = new ModelAndView();
+		String view = null;
+		String msg = null;
+		BCryptPasswordEncoder pwdEncoder = new BCryptPasswordEncoder();
+		String encPwd = pwdEncoder.encode(writer.getW_pwd());
+		writer.setW_pwd(encPwd);
+		try {
+			w_InfoDao.writerJoinProc(writer);
+			view = "redirect:loginFrm";
+			msg = "회원가입성공";
+		} catch (Exception e) {
+			//e.printStackTrace();
+			view = "redirect:w_joinWriterFrm";
+			msg = "회원가입실패";
+		}
+		mv.setViewName(view);
+		rttr.addFlashAttribute("msg", msg);
+		return mv;
+	}
+	
 
 }
 

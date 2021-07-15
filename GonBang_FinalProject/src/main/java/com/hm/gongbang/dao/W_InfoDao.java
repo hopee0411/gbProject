@@ -20,4 +20,6 @@ public interface W_InfoDao {
 	
 	public void w_AtPrivateInfoFix2(String wh_gbname);
 
+	void writerJoinProc(WriterDto writer);
+
 }

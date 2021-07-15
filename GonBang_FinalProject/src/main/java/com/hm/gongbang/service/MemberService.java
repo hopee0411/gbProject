@@ -33,11 +33,12 @@ public class MemberService {
 		String view = null;
 		String msg = null;
 		String mw_pwd = mwDto.getPwd();
+		System.out.println(mw_pwd);
 		String mw_id = mwDto.getId();
 		BCryptPasswordEncoder pwdEncoder = new BCryptPasswordEncoder();
 		try {
 			mwDto = mDao.loginProc(mw_id);
-			if(pwdEncoder.matches(mwDto.getPwd(), mw_pwd)) {				
+			if(pwdEncoder.matches(mw_pwd, mwDto.getPwd())) {				
 				view = "redirect:/";
 				msg = "로그인 하셨습니다.";
 				session.setAttribute("id", mwDto.getId());
@@ -45,7 +46,7 @@ public class MemberService {
 			}
 			else {
 				view = "redirect:loginFrm";
-				msg = "비밀번호를 확인해주세요";
+				msg = "비밀번호를 확해주세요";
 			}
 		} catch (Exception e) {// TODO: handle exception
 			view = "redirect:loginFrm";
