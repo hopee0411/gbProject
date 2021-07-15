@@ -1,4 +1,4 @@
-<!-- 회원 작품 배송관리 -->
+<!-- 회원 주문/ 배송관리 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -12,8 +12,11 @@
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="resources/css/kjs.css" rel="stylesheet" />
 <style type="text/css">
-.container-fluid {
-	height: 1000px;
+/* .container-fluid {
+	height: 500px;
+} */
+.MyPageMain {
+	height: 500px;
 }
 </style>
 </head>
@@ -113,7 +116,7 @@
 				</table>
 			</div>
 		</div>
-		<footer>
+		<footer style="width: 100%;">
 			<jsp:include page="footer.jsp" />
 		</footer>
 </body>

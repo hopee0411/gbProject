@@ -68,6 +68,7 @@ public class MoveController {
 		return mv;
 	}
 
+	//마이페이지 메인
 	@GetMapping("myPageFrm")
 	public ModelAndView myPage() {
 		log.info("myPageFrm()");
@@ -82,17 +83,82 @@ public class MoveController {
 		return mv;
 	}
 
-	@GetMapping("m_productDelivery")
+	//주문/배송 내역
+	@GetMapping("m_productDeliveryFrm")
 	public String m_productDelivery() {
 		log.info("m_productDelivery()");
 		String view = "m_productDelivery";
 		return view;
 	}
 
+	//취소
 	@GetMapping("m_productCancle")
 	public ModelAndView m_productCancle() {
 		mv = myServ.MyOderCancle();
 		return mv;
+	}
+	
+	//회원탈퇴
+	@GetMapping("m_memberResign")
+	public String m_memberResign() {
+		String view = "m_memberResign";
+		return view;
+	}
+	
+	//회원등급
+	@GetMapping("m_memberShip")
+	public String m_memberShip() {
+		String view = "m_memberShip";
+		return view;
+	}
+	
+	//마이페이지 쿠폰
+	@GetMapping("m_savingCoupon")
+	public String m_savingCoupon() {
+		String view = "m_savingCoupon";
+		return view;
+	}
+	
+	//마이페이지 적립금
+	@GetMapping("m_savinfPoint")
+	public String m_savinfPoint() {
+		String view = "m_savinfPoint";
+		return view;
+	}
+	
+	//관심작품
+	@GetMapping("m_interestList")
+	public String m_interestList() {
+		String view = "m_interestList";
+		return view;
+	}
+	
+	//관심작가
+	@GetMapping("m_interesListTwo")
+	public String m_interesListTwo() {
+		String view = "m_interesListTwo";
+		return view;
+	}
+	
+	//카드 및 환불계좌 관리
+	@GetMapping("m_pay")
+	public String m_pay() {
+		String view = "m_pay";
+		return view;
+	}
+	
+	//주소, 배송지관리
+	@GetMapping("m_orderContents")
+	public String m_orderContents() {
+		String view = "m_orderContents";
+		return view;
+	}
+	
+	//문의내역
+	@GetMapping("m_memberQuestion")
+	public String m_memberQuestion() {
+		String view = "m_memberQuestion";
+		return view;
 	}
 
 	@GetMapping("m_memberManagerFrm")

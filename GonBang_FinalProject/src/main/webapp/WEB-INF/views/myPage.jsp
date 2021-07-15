@@ -12,8 +12,6 @@
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="resources/css/kjs.css" rel="stylesheet" />
 <style type="text/css">
-
-
 .MyPageMain {
 	height: 1000px;
 }
@@ -34,7 +32,7 @@
 	<div class="MyPageMain">
 		<div class="row">
 			<table class="table table-bordered"
-				style="margin-top: 30px; text-align: center; margin-left: -45px;">
+				style="margin-top: 30px; text-align: center; margin-left: -45px; width: 100%;">
 				<thead>
 					<tr>
 						<th>적립금</th>
@@ -56,7 +54,7 @@
 		<div class="row">
 			<h5 style="margin-left: -45px; margin-top: 30px;">최근주문내역</h5>
 			<table class="table table-bordered"
-				style="margin-top: 25px; text-align: center; margin-left: -45px;">
+				style="margin-top: 25px; text-align: center; margin-left: -45px; width: 100%;">
 				<thead>
 					<tr>
 						<th>주문일자</th>
@@ -87,7 +85,7 @@
 				</c:if>
 			</table>
 		</div>
-		<h5 style="margin-left: -45px; margin-top: 30px;">관심작품</h5>
+		<h5 style="margin-left: -45px; margin-top: 30px; width: 80%;">관심작품</h5>
 		<hr style="margin-left: -45px;">
 
 		<c:if test="${empty pi_viewList}">
@@ -121,7 +119,7 @@
 			</c:forEach>
 		</c:if>
 
-		<h5 style="margin-left: -45px; margin-top: 30px;">관심작가</h5>
+		<h5 style="margin-left: -45px; margin-top: 30px; width: 80%;">관심작가</h5>
 		<hr style="margin-left: -45px;">
 		<div class="col mb-5" id="scroll" style="width: 250px; height: 280px;">
 			<div class="card h-100">
