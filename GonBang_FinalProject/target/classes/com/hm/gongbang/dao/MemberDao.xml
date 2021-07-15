@@ -19,4 +19,7 @@
 		(#{m_id}, #{m_pwd}, #{m_name}, #{m_email}, #{m_addr}, #{m_gender}, #{m_birth}, DEFAULT, DEFAULT, DEFAULT, DEFAULT)
 	</insert>
 	
+	<select id="getBasket" parameterType="String" resultType="com.hm.gongbang.dto.Shopping_BasketDto">
+		SELECT * FROM sb WHERE m_id=#{m_id}
+	</select>
 </mapper>

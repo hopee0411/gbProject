@@ -1,5 +1,7 @@
 package com.hm.gongbang.service;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.hm.gongbang.dao.MemberDao;
 import com.hm.gongbang.dto.MemberDto;
 import com.hm.gongbang.dto.Mw_viewDto;
+import com.hm.gongbang.dto.Shopping_BasketDto;
 
 import lombok.extern.java.Log;
 
@@ -106,7 +109,19 @@ public class MemberService {
 		mv.setViewName(view);
 		rttr.addFlashAttribute("msg", msg);
 		return mv;
-	}
+	}//memberJoinProc() end
+	
+	
+	//장바구니
+	public ModelAndView getBasket() {
+		mv = new ModelAndView();
+		log.info("MemeberService: getBasket();");
+		String m_id = (String)session.getAttribute("id");
+		ArrayList<Shopping_BasketDto> basketList = mDao.getBasket(m_id);
+		session.setAttribute("basketlist", basketList);
+		mv.setViewName("m_sBasket");
+		return mv;
+	}//getBasket() end
 
 
 }//class end

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.hm.gongbang.service.MemberService;
 import com.hm.gongbang.service.MyService;
 import com.hm.gongbang.service.W_InfoService;
 
@@ -25,7 +26,10 @@ public class MoveController {
 
 	@Autowired
 	private W_InfoService wInfoS;
-
+	
+	@Autowired
+	private MemberService mServ;
+	
 	@Autowired
 	private MyService myServ; // 서비스로 넘어갈 변수 지정
 
@@ -62,9 +66,9 @@ public class MoveController {
 	//장바구니 이동
 	@GetMapping("m_sBasketFrm")
 	public ModelAndView m_sBasketFrm() {
+		log.info("m_sBasketFrm()");
 		mv = new ModelAndView();
-		
-		mv.setViewName("m_sBasket");
+		mv = mServ.getBasket();
 		return mv;
 	}
 
