@@ -24,19 +24,20 @@
 	margin-right: 30px;
 	list-style: none;
 }
-a {
+.writerHome a {
 	text-decoration: none;
 	color: black;
 }
 
-a:hover {
+.writerHome a:hover {
+	text-decoration: none;
 	color: white;
 }
 
-hr {
+.writerHome hr {
 	margin: 10px; 
-	color: inherit;
-	border: 2px solid white;
+	border: 1px solid white;
+	color: white;
 	opacity: 80%;
 }
 
@@ -50,12 +51,23 @@ hr {
 .tbMenu tr {
 	text-align: center;
 }
+.tbMenu tr th {
+	text-align: center;
+}
+.tbMenu tr th span {
+	font-size: 18px;
+	font-weight: bold;
+}
 .tbMenu tr td {
 	border: 1px solid #ff7875;
 }
 
 .orderManagement {
 	text-align: left;
+}
+.orderManagement ul span {
+	font-size: 18px;
+	font-weight: bold;
 }
 .orderManagement ul {
 	float: left;
@@ -73,4 +85,14 @@ hr {
 
 .likeWriter:hover {
 	color: white;
+}
+
+.w_suc {
+	/* 안보이게 */
+	display: none;
+}
+
+.w_bef {
+	/* 보이게 */
+	display: block;
 }

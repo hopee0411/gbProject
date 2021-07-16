@@ -16,5 +16,4 @@ public class WriterDto {
 	private int w_selection;// 작가 세션값
 	private String w_addr;
 	
-	
 }

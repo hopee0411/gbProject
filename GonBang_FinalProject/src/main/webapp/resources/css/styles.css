@@ -457,8 +457,8 @@ progress {
 }
 
 .lead {
-  font-size: 1.25rem;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 300px;
 }
 
 .display-1 {
@@ -6722,6 +6722,10 @@ textarea.form-control-lg {
   gap: 3rem !important;
 }
 
+.justify-content {
+	 justify-content: flex-start;
+}
+
 .justify-content-start {
   justify-content: flex-start !important;
 }
@@ -11075,7 +11079,7 @@ html {
 }
 
 .footer {
-	margin-top: 200px;
+	margin-top: 100px;
 	padding-top: 12px;
 	padding-bottom: 5rem;
 	background-color: #ffa8a5;
@@ -11175,4 +11179,9 @@ html {
 .selectImg {
 	width: 30px;
 	margin-right: 10px; 
+}
+
+.Items {
+	margin: 10px;
+	width: 200px;
 }

@@ -21,9 +21,6 @@ a{
 						alt="사진설정" width="90px;"/> <br> -->
 	<h5 style="margin-top: 40px;">${memberdto.m_grade}</h5>  
 	<div style="margin-bottom: 50px;">${memberdto.m_name}님</div>   
-						
-	
-	
 </div>
 <div class="MyMenu"  style="border-style: groove; text-decoration: none; padding-top: 100px;" >
            <ul>

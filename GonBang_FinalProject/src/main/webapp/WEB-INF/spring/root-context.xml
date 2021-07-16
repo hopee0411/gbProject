@@ -27,7 +27,6 @@
 
 	<!-- 트랜잭션 관련 설정 : 어노테이션으로 트랜잭션을 처리하겠다. -->
 	<tx:annotation-driven />
-
 	<mybatis-spring:scan
 		base-package="com.hm.gongbang.dao" />
 	<!-- Gmail -->
@@ -48,5 +47,5 @@
 			</props>
 		</property>
 	</bean>
-
+	<mybatis-spring:scan base-package="com.hm.gongbang.dao"/>
 </beans>

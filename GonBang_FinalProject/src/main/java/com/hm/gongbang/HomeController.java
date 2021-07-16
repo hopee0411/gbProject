@@ -18,7 +18,6 @@ public class HomeController {
 		
 		return "home";
 	} // home end
-	
 	@GetMapping("w_writerHome")
 	public String w_WriterHome() {
 		logger.info("w_writerHome()");

@@ -1,18 +1,17 @@
 package com.hm.gongbang;
 
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.hm.gongbang.service.MemberService;
 import com.hm.gongbang.service.MyService;
 import com.hm.gongbang.service.W_DeliveryService;
 import com.hm.gongbang.service.W_InfoService;
+import com.hm.gongbang.service.W_HomeService;
 
 import lombok.extern.java.Log;
 import oracle.jdbc.proxy.annotation.Post;
@@ -23,8 +22,10 @@ public class MoveController {
 	@Autowired
 	private HttpSession session;
 
+	@Autowired
+	private W_HomeService wServ;
+	
 	private ModelAndView mv;
-
 	@Autowired
 	private W_InfoService wInfoS;
 	
@@ -213,7 +214,8 @@ public class MoveController {
 		return mv;
 
 	}
-
+	
+	
 	@GetMapping("w_writerQuestionFrm")
 	public String w_writerQuestionFrm() {
 
@@ -226,7 +228,6 @@ public class MoveController {
 
 		return "w_writerManage";
 	}
-
 	@GetMapping("w_writerHomeFrm")
 	public String w_writerHomeFrm() {
 
