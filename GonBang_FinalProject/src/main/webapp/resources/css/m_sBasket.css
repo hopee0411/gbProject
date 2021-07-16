@@ -4,13 +4,22 @@
 	float: left;
 	font-size: 0.9375em;
 	margin-bottom: 20px;
+	height: auto;
 }
 
-.basketdiv .row.head {
+.basketdiv>.row {
+	height: 93px;
+}
+
+.basketdiv>.head {
+	height: 65px;
+}
+
+.basketdiv .head {
 	border-bottom: 2px solid #888;
 	box-sizing: border-box;
 	background-color: #f4f4f4;
-	font-weight: 500;
+	font-weight: 500px;
 }
 
 .basketdiv .data {
@@ -28,6 +37,7 @@
 
 .basketdiv .row.head .subdiv {
 	background-color: #f4f4f4;
+	font-size: 20px;
 }
 
 .basketdiv .row>.subdiv {
@@ -106,7 +116,7 @@
 .basketdiv .sum {
 	width: 34%;
 	max-width: 80px;
-	color: #0000aa;
+	color: #000;
 }
 
 .basketdiv .point {
@@ -209,6 +219,7 @@
 .sumcount, .summoney {
 	font-size: 1.25em;
 	font-weight: bold;
+	width: auto;
 }
 
 .buttongroup {
@@ -235,8 +246,24 @@
 	font-size: 0.8125em;
 }
 
-.orderform .p_num {
+.p_num {
 	text-align: right;
 	width: 40px;
 	font-size: 1em;
+}
+
+.orderform {
+	width: 80%;
+	margin-top: 70px;
+}
+
+.ddddd {
+	
+	text-align: center;
+	border: 1px solid black;
+}
+
+.dcenter {
+	border: 1px solid black;
+	width: 200px;
 }
