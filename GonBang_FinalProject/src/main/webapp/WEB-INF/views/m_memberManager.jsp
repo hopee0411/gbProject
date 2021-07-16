@@ -9,11 +9,6 @@
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="resources/css/kjs.css" rel="stylesheet" />
 <link href="resources/css/myAside.jsp" rel="stylesheet" />
-<style type="text/css">
-.MyPageMain {
-	height: 1000px;
-}
-</style>
 </head>
 <body>
 	<header>
@@ -28,7 +23,7 @@
 			<h2>회원 정보 관리</h2>
 		</div>
 	</div>
-	<div class="MyPageMain" style="margin-top: 70px;">
+	<div class="MyPageMain" style="height: 800px; margin-top: 70px;">
 		<div class="row">
 			<form method="post" action="m_InfoFix">
 				<table class="table table-bordered"
@@ -83,8 +78,8 @@
 		</div>
 	</div>
 	
-		<footer>
-		<jsp:include page="footer.jsp" />
-	</footer>
+<footer>
+	<jsp:include page="footer.jsp" />
+</footer>
 </body>
 </html>

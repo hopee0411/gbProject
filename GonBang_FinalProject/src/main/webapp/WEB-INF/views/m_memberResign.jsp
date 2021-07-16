@@ -27,15 +27,15 @@
 		<div>
 		<div class="m_memberShip">
 		<div class="row">
-		<h5 style="text-align: center; margin-top: 40px;">안녕하세요? 회원님 <br> 그 동안 소소한 진심을 이용해주셔서 정말 감사합니다.
+		<h5 style="text-align: center; margin-top: 40px;">안녕하세요? <span style="color: blue;">${memberdto.m_name}회원님</span> <br> 그 동안 소소한 진심을 이용해주셔서 정말 감사합니다.
 		<br>앞으로 좀 더 나은 모습으로 회원님을 찾아 뵙겠습니다. 아래의 유의사항들을 확인하여
 		<br>주시고 회원탈퇴를 진행해주세요.</h5>
 			<table class="table table-bordered" 
 				style="margin-top: 25px; text-align: center; margin-left: 20px; width: 90%; height: 150px;">
 				<thead>
 					<tr>
-						<td style="padding-bottom:60px;">나의 적립금 _ P</td>
-						<td style="padding-bottom:60px;">나의 쿠폰 _ 장</td>
+						<td style="padding-bottom:60px;">나의 적립금 ${saving_pointdto.pt_point} P</td>
+						<td style="padding-bottom:60px;">나의 쿠폰 ${coupondto.c_couponhistory} 장</td>
 					</tr>
 				</thead>
 			</table>
@@ -55,5 +55,9 @@
 			</div>
 		</div>
 	</div>
+	</div>
+<footer style="margin-top: 250px;">
+	<jsp:include page="footer.jsp" />
+</footer>
 </body>
 </html>

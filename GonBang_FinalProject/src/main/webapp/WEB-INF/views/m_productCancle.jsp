@@ -63,7 +63,6 @@
 															<button class="btnM btnGray01">조회</button>
 														</fieldset>
 													</form>
-													</div>
 												</tr>
 											</thead>
 										</table>
@@ -108,6 +107,8 @@
 					</table>
 				</div>
 			</div>
+		</div>
+	</div>
 			<footer>
 				<jsp:include page="footer.jsp" />
 			</footer>

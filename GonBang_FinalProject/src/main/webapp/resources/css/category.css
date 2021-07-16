@@ -10851,11 +10851,6 @@ textarea.form-control-lg {
 
 /*-------------------------  내가 작성 한것 ----------------- */
 
-
-.text-center{
-	float: left;
-}
-
 button{
 	float: left;
 	border:0 none;
@@ -10863,21 +10858,105 @@ button{
 	text-align: right;
 }
 
-.images:hover{
-	color: red;
-}
-
 .card-img-top{
 	width: 450px;
 	height: 250px;
 }
-.footer {
-	margin-top: 200px;
-	padding-top: 12px;
-	padding-bottom: 5rem;
-	background-color: #ffa8a5;
-	color: #fff;
-	height: 150px;
+.optionall{
+	width: 100%;
+	height: 230px;
+	margin-top: 50px;
+	text-align: center;
+}
+.optioninfo{
+	margin: 0 auto;
+	width: 80%;
+	height: 100%;
+	border: 1px solid; 
+	border-style: solid none solid none;
+}
+.ageall{
+	margin: 0 auto;
+	width:50%;
+	height: 70px;
+	margin-top: 17px; 
+	text-align: center;
+}
+.agename{
+	font-size:25px;
+	text-align:center;
+	width: 150px;
+	float: left;
+}
+.ageinfo{
+	width: 150px;
+	float: left;
+}
+.couplename{
+	font-size:25px;
+	text-align:center;
+	width: 150px;
+	float: left;
+}
+.coupleinfo{
+	width: 150px;
+	float: left;
+}
+.payall{
+	width: 43%;
+	height: 70px;
+	margin: 0 auto;
+	text-align: center;
+}
+.payinfo{
+	width: 100%;
+}
+.payseach{
+	border-radius: 7px;
+	border-color: #ffa8a5;
+	width: 150px;
+	margin-top:17px; 	
+}
+.payname{
+	float: left;
+	font-size:25px;
+	margin-top: 15px;
+}
+.btnall{
+	width: 30%;
+	height: 50px;
+	text-align: center;
+	margin: 0 auto;
+}
+.btn{
+	width: 150px;
+}
+#seachbtn{
+	margin-right: 60px;
+}
+.images{
+	float: right;
+}
+#likeimg:hover {
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
+}
+#chicklikeimg:hover{
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
+}
+#productimg:hover{
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 

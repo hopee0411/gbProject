@@ -22,5 +22,9 @@
 		<div class="MyPageName">
 			<h2>주소, 배송지관리</h2>
 		</div>
+	</div>
+<footer>
+	<jsp:include page="footer.jsp" />
+</footer>
 </body>
 </html>

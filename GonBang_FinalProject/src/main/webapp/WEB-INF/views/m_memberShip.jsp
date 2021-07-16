@@ -24,8 +24,7 @@
 			<h2>회원등급</h2>
 		</div>
 	</div>
-	<div>
-		<div class="m_memberShip">
+	<div class="m_memberShip" style="height: none;">
 		<div class="row">
 			<table class="table table-bordered"
 				style="margin-top: 30px; text-align: center; margin-left: 20px; width: 90%;">
@@ -69,5 +68,9 @@
 			<h5>2. 회원등급은 매월 1일에 갱신됩니다.</h5>
 		</div>
 	</div>
+	
+<footer style="margin-top: 500px;">
+	<jsp:include page="footer.jsp" />
+</footer>
 </body>
 </html>

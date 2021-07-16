@@ -17,13 +17,13 @@ import com.hm.gongbang.dto.Saving_PointDto;
 
 public interface MyDao {
 
-	MemberDto memberInfo(String m_id);
+	MemberDto memberInfo(String m_id); 
 
-	ArrayList<ReceptDto> receptList(String m_id);
+	ArrayList<ReceptDto> receptList(String m_id); // 영수증 
 
-	Saving_PointDto saving_pointInfo(String pt_id);
+	Saving_PointDto saving_pointInfo(String pt_id); //적립금
 
-	CouponDto couponInfo(String m_id);
+	CouponDto couponInfo(String m_id); // 쿠폰
 
 	int questionInfo(String m_id);
 

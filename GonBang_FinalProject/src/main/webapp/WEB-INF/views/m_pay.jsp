@@ -23,5 +23,9 @@
 		<div class="MyPageName">
 			<h2>카드 및 환불계좌 관리</h2>
 		</div>
+	</div>
+<footer>
+	<jsp:include page="footer.jsp" />
+</footer>
 </body>
 </html>
