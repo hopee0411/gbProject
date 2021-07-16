@@ -22,5 +22,8 @@
 			<h2>적립금</h2>
 		</div>
 	</div>
+<footer>
+	<jsp:include page="footer.jsp" />
+</footer>
 </body>
 </html>
