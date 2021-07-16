@@ -22,10 +22,10 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarResponsive">
 						<ul class="navbar-nav ms-auto">
-							<li class="bef"><input type="text" placeholder="검색">
+							<li class="bef"><input type="search" placeholder="검색">
 								<img alt="검색버튼" src="resources/images/Desert.jpg"
 								class="py-3 selectImg" onclick="#"></li>
-							<!-- href="#portfolio"로 하면 페이지 내에서 이동함(카테고리로 이동함) -->
+				
 							<li class="nav-item py-3 px-0 suc">테스트님</li>
 							<li class="nav-item mx-0 mx-lg-1 suc"><a
 								class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">로그아웃</a></li>
@@ -51,11 +51,11 @@
 		</div>
 		<div class="header_footer navbar-collapse tf_menu">
 			<ul>
-				<li><a href="./category"><h5>액세서리</h5></a></li>
-				<li><a href="./category"><h5>리빙</h5></a></li>
-				<li><a href="./category"><h5>식품/디저트</h5></a></li>
-				<li><a href="./category"><h5>꽃</h5></a></li>
-				<li><a href="./category"><h5>문구/팬시</h5></a></li>
+				<li><a href="./category?kate=액세서리"><h5>액세서리</h5></a></li>
+				<li><a href="./category?kate=리빙"><h5>리빙</h5></a></li>
+				<li><a href="./category?kate=식품/디저트"><h5>식품/디저트</h5></a></li>
+				<li><a href="./category?kate=꽃"><h5>꽃</h5></a></li>
+				<li><a href="./category?kate=문구/팬시"><h5>문구/팬시</h5></a></li>
 			</ul>
 		</div>
 	</div>
