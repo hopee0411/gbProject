@@ -11,7 +11,7 @@
 	
 	<select id="receptList" parameterType="String"
 		resultType="com.hm.gongbang.dto.ReceptDto">
-		SELECT * FROM R WHERE M_ID=#{m_id}
+		SELECT * FROM R WHERE M_ID=#{m_id} AND R_DCONDITION='배송중' OR R_DCONDITION='배송완료'
 	</select>
 	
 	<select id="saving_pointInfo" parameterType="String"
@@ -22,6 +22,34 @@
 	<select id="couponInfo" parameterType="String"
 		resultType="com.hm.gongbang.dto.CouponDto">
 		SELECT * FROM C WHERE M_ID=#{m_id}
+	</select>
+	
+	<select id="questionInfo" parameterType="String"
+		resultType="Integer">
+		SELECT COUNT (*) FROM Q WHERE M_ID=#{m_id}
+	</select> 
+	
+	<select id="Pi_viewInfo" parameterType="String"
+		resultType="com.hm.gongbang.dto.Pi_viewDto">
+		SELECT * FROM pi_view WHERE M_ID=#{m_id}
+	</select>
+	
+		<!-- 회원 정보 수정하기 -->
+	<update id="m_InfoFix"
+		parameterType="com.hm.gongbang.dto.MemberDto">
+	UPDATE MEMBER
+	SET
+		 M_PWD = #{m_pwd}
+		,M_EMAIL = #{m_email}
+		,M_GENDER = #{m_gender}
+		,M_BIRTH = #{m_birth}
+	WHERE M_ID = #{m_id}
+
+	</update>
+	
+	<select id="receptCList" parameterType="String"
+		resultType="com.hm.gongbang.dto.ReceptDto">
+		SELECT * FROM R WHERE M_ID=#{m_id} AND R_DCONDITION='취소'
 	</select>
 	
 </mapper>

@@ -10,8 +10,6 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -33,16 +31,17 @@ public class MemberController {
 
 	@Autowired
 	private JavaMailSender mailSender;
-
+	
+	//로그인
 	@PostMapping("loginProc")
 	public ModelAndView loginProc(Mw_viewDto mwDto, RedirectAttributes rttr) {
 		log.info("loginProc()");
-		System.out.println(mwDto.getId());
 		mv = new ModelAndView();
 		mv = mServ.loginProc(mwDto, rttr);
 		return mv;
 	}// loginProc() end
-
+	
+	//로그아웃
 	@GetMapping("logoutProc")
 	public ModelAndView logoutProc(RedirectAttributes rttr) {
 		log.info("logoutProc()");
@@ -51,12 +50,13 @@ public class MemberController {
 
 		return mv;
 	}// logoutProc() end
-
+	
+	//아이디 중복 확인
 	@GetMapping(value = "idCheck", produces = "application/text; charset=utf-8")
 	@ResponseBody
-	public String idCheck(String m_id) {
-		log.info("id : " + m_id);
-		String res = mServ.idCheck(m_id);
+	public String idCheck(String id) {
+		log.info("id : " + id);
+		String res = mServ.idCheck(id);
 		return res;
 	}// idCheck() end
 
@@ -88,11 +88,21 @@ public class MemberController {
 			mailSender.send(message);
 			
 		} catch (Exception e){ 
-			//e.printStackTrace()
+			e.printStackTrace();
 		}
 		String num = "" + checkNum;
 		
 		return num;
 	}// mailCheckGET() end
-
+	
+	//일반 회원 가입
+	@PostMapping("memberJoinProc")
+	public ModelAndView memberJoinProc(MemberDto member, RedirectAttributes rttr) {
+		log.info("컨트롤러 memberJoinProc()");
+		mv = new ModelAndView();
+		System.out.println("데이터확인" + member);
+		mv = mServ.memberJoinProc(member, rttr);
+		return mv;
+	}//memberJoinProc() end
+	
 }// class end

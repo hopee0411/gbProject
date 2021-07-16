@@ -1,52 +1,94 @@
 @charset "UTF-8";
 
-
-.queSide{
-	 width:250px;
-	height:800px; 
+.queSide {
+	width: 250px;
+	height: 800px;
 	float: left;
 	color: black;
 	background-color: gray;
 	/* box-sizing: border-box; */
-	
 }
-.se{
+
+.se {
 	width: 100%;
 	height: 800px;
 	position: relative;
 }
 
-.font-weight-bold{
+.font-weight-bold {
 	width: 100%;
 	height: 30px;
-	background-color:orange;
-	margin-left:10px;
-
+	background-color: orange;
+	margin-left: 10px;
 }
 
-.queContent{
+.queContent {
 	/* margin-top: 120px;*/
-	margin-left: 340px; 
-	width: 1000px;
+	margin-left: 340px;
+	width: 1300px;
 	height: 800px;
 	position: absolute;
 	top: 100px;
 }
-.hh1{
+
+.hh1 {
 	height: 1000px;
 	width: 300px;
 }
-.w_main{
+
+.w_main {
 	width: 100%;
 	height: 40px;
 }
-.table b{
+
+.table b {
 	width: 400px;
 	height: 200px;
 }
-.tbody>tr>td{
-	width:150px;
+
+.tbody>tr>td {
+	width: 150px;
 }
+
+.dTop {
+	width: 700px;
+	height: 170px;
+	/* margin-bottom: 100px; */
+	/* margin-left: 40px; */
+}
+
+.dTop_box {
+	border-style: solid;
+	border-color: black;
+	margin: 0px 40px 0px 0px;
+	width: 350px;
+	height: 70px;
+	text-align: center;
+	padding-top: 15px;
+}
+
+.dSearch {
+	margin-left: 40px;
+}
+
+.dSearch_box {
+	border-style: solid;
+	border-color: black;
+	/* margin: 1px; */
+	padding: 5px;
+	width: 120px;
+	height: 50px;
+}
+.dButton{
+	margin-top: 10px;
+	margin-left: 160px;
+}
+.dSResult{
+	text-align: center;
+	
+}
+
+
 
 
 

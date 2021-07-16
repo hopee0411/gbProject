@@ -24,11 +24,11 @@ public class ReceptDto {
 	private int r_addcode;
 	private long r_refundnum;
 	private String r_dcondition;
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "Asia/Seoul")
 	private Timestamp r_orderdate;
 	private int r_basketnum;
 	private int o_optionnum;
 	private String w_id;
 	private String m_id;
+	private String r_dnum;
 	
 }

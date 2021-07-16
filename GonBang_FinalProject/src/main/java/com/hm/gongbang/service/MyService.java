@@ -1,6 +1,8 @@
 package com.hm.gongbang.service;
 
 
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
@@ -13,13 +15,18 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hm.gongbang.dao.MyDao;
 import com.hm.gongbang.dto.CouponDto;
+//	import com.hm.gongbang.dto.McDto;
 import com.hm.gongbang.dto.MemberDto;
+import com.hm.gongbang.dto.Pi_viewDto;
+import com.hm.gongbang.dto.QuestionDto;
 import com.hm.gongbang.dto.ReceptDto;
 import com.hm.gongbang.dto.Saving_PointDto;
 
+import lombok.extern.java.Log;
+
+@Log
 @Service
 public class MyService {
-	
 	private ModelAndView mv; // 밑에서 변수계속 사용위해 위에 한번에 선언
 	
 	@Autowired
@@ -29,10 +36,12 @@ public class MyService {
 	private ReceptDto receptDto;
 	private Saving_PointDto saving_pointDto;
 	private CouponDto couponDto;
-	@Autowired
+	private QuestionDto questionDto;
+	private Pi_viewDto pi_viewDto;
+
 	
+	@Autowired		
 	private MyDao myDao;
-	
 	//마이페이지 메인 정보 가져오기
 	public ModelAndView MyPageMain() {
 		mv = new ModelAndView(); //모델을 새로쓰려고 객체를 만듦.
@@ -48,27 +57,81 @@ public class MyService {
 		
 		//적립금
 		saving_pointDto = new Saving_PointDto();
-		String pt_id = (String)session.getAttribute("id");
 		saving_pointDto = myDao.saving_pointInfo(m_id);
 		mv.addObject("saving_pointdto", saving_pointDto);
 		
 		
 		//쿠폰 내역
 		couponDto = new CouponDto();
-		String c_id = (String)session.getAttribute("id");
 		couponDto = myDao.couponInfo(m_id);
 		mv.addObject("coupondto", couponDto);
 		
+		//문의 건수
+		questionDto = new QuestionDto();
+		int qNum = myDao.questionInfo(m_id);
+		mv.addObject("qNum", qNum);
 		
-		//최근 주문 내역
+		
+		//최근 주문 내역(영수증)
 		receptDto = new ReceptDto();
-		ArrayList<ReceptDto> receptList = myDao.receptList(m_id);		
-		mv.addObject("receptList", receptList);
-		System.out.println("데이터확인 " + receptList);
+		ArrayList<ReceptDto> receptList = myDao.receptList(m_id);
+		session.setAttribute("receptList", receptList);
 		mv.setViewName("myPage");//modelAndView에 이동할 페이지를 담는다
+		session.setAttribute("rNum", receptList.size());
 		
-
+		//관심작품
+		pi_viewDto = new Pi_viewDto();
+		ArrayList<Pi_viewDto> pi_viewList = myDao.Pi_viewInfo(m_id);
+		mv.addObject("pi_viewList", pi_viewList);
+		System.out.println(pi_viewList);
 		return mv;
 	}//MyPageMain() end
 
+	public String m_InfoFix(MemberDto member, RedirectAttributes rttr) {
+		
+		String view = null;
+		System.out.println(member);
+		String getId = (String)session.getAttribute("id");
+		member.setM_id(getId);
+		try {
+
+			myDao.m_InfoFix(member);
+			
+
+			view = "redirect:m_memberManagerFrm";
+			rttr.addFlashAttribute("msg", "수정 성공");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			view = "redirect:m_memberManagerFrm";
+			rttr.addFlashAttribute("msg", "수정 실패");
+
+		}
+		return view;
+	}
+	
+	public ModelAndView MyOderCancle() {
+		// TODO Auto-generated method stub
+		log.info("MyOderCancle()");
+		String m_id = (String)session.getAttribute("id");
+		receptDto = new ReceptDto();
+		ArrayList<ReceptDto> receptCList = myDao.receptCList(m_id);		
+		session.setAttribute("receptCList", receptCList);
+		mv.setViewName("m_productCancle");//modelAndView에 이동할 페이지를 담는다
+		session.setAttribute("rCnum", receptCList.size());
+		return mv;
+	}
+
 }//class end
+
+
+
+
+
+
+
+
+
+
+
+
