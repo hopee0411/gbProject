@@ -38,9 +38,10 @@
 				<div class="col-md-12">
 					<div class="tabbable" id="tabs-107511" style="">
 						<ul class="nav nav-tabs" style="margin-top: 40px;">
-							<li class="nav-item" style="margin-left: -50px;"><a
-								class="nav-link active show" href="#tab1"><h4
-										style="padding-right: 50px; padding-left: 50px;">주문/배송조회</h4></a>
+							<li class="nav-item" style="margin-left: -50px;">
+								<a class="nav-link active show" href="#tab1">
+									<h4 style="padding-right: 50px; padding-left: 50px;">주문/배송조회</h4>
+								</a>
 							</li>
 						</ul>
 						<div class="tab-content"
@@ -54,13 +55,13 @@
 													<fieldset style="width: 1000px;">
 														<label for="">기간별 조회</label>
 														<button type="button" id="term1" class="btnM btnWhite06"
-															onclick="dDate()">1개월</button>
+															onclick="dDate(1m)">1개월</button>
 														<button type="button" id="term3" class="btnM btnWhite06"
-															onclick="dDate()">3개월</button>
+															onclick="dDate(3m)">3개월</button>
 														<button type="button" id="term6" class="btnM btnWhite06"
-															onclick="dDate()">6개월</button>
+															onclick="dDate(6m)">6개월</button>
 														<button type="button" id="term12" class="btnM btnWhite06"
-															onclick="dDate()" value="12개월">12개월</button>
+															onclick="dDate(12m)">12개월</button>
 
 														<label for="">일자별 조회</label> <input type="date" id="sdate"
 															name="sdate" title="조회 시작일 입력" value="" class="calendar">
@@ -71,7 +72,6 @@
 														<button class="btnM btnGray01">조회</button>
 													</fieldset>
 												</form>
-												</div>
 											</tr>
 										</thead>
 									</table>
@@ -116,24 +116,53 @@
 				</table>
 			</div>
 		</div>
-		<footer style="width: 100%;">
-			<jsp:include page="footer.jsp" />
-		</footer>
+	</div>
+<footer style="width: 100%;">
+	<jsp:include page="footer.jsp" />
+</footer>
 </body>
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
-/* 
-function dDate(date) {
+function dDate(start) {
+	var num = start.substring(0, 1);
+	var str = start.substring(1, 2);
+	
+	var today = new Date();
+	
+	var endDate = $.datepicker.formatDate('yy-mm-dd', today);
+	$('$dDate').val(endDate);
+	
+	if(str == 'm') {
+		today.setMonth(today.getMonth() - num);
+		today.setDate(today.getDate() + 1);
+	}
+	
+	var startdate = $.datepicker.formatDate('yy-mm-dd', today);
+	$('#sdate').val(startdate);
+	$("#dDate").datepicker( "option", "minDate", startDate );
+    
+    // 시작일은 종료일 이후 날짜 선택하지 못하도록 비활성화
+    $("#sdate").datepicker( "option", "maxDate", endDate );
+	
+	
+	
+	
+	
+	
+	/* 
 	$.ajax({
 		type : "GET",
 		url : "dDate?date=" + date,
-	});
-}//dDate() end */
-
-	$("#term12").click(function () {
-		var num = $("#term12").val();
-		alert(num);
-		console.log("확인" + num);		
-	});
-</script>
+	}); */
+}//dDate() end 
+</script> -->
 </html>
+
+
+
+
+
+
+
+

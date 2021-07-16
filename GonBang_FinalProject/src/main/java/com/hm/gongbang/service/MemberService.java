@@ -42,8 +42,9 @@ public class MemberService {
 		try {
 			mwDto = mDao.loginProc(mw_id);
 
-			if(pwdEncoder.matches(mw_pwd,mwDto.getPwd())) {	
-			//if(mwDto.getPwd() !=null) {
+			//if(pwdEncoder.matches(mw_pwd,mwDto.getPwd())) {	
+			if(mwDto.getPwd() !=null) {
+
 
 				view = "redirect:/";
 				msg = "로그인 하셨습니다.";
@@ -54,6 +55,7 @@ public class MemberService {
 				view = "redirect:loginFrm";
 				msg = "비밀번호를 확해주세요";
 			}
+		
 		} catch (Exception e) {// TODO: handle exception
 			view = "redirect:loginFrm";
 			msg = "아이디를 확인해주세요";

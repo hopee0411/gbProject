@@ -58,13 +58,13 @@ public class MyService {
 		//적립금
 		saving_pointDto = new Saving_PointDto();
 		saving_pointDto = myDao.saving_pointInfo(m_id);
-		mv.addObject("saving_pointdto", saving_pointDto);
+		session.setAttribute("saving_pointdto", saving_pointDto);
 		
 		
 		//쿠폰 내역
 		couponDto = new CouponDto();
 		couponDto = myDao.couponInfo(m_id);
-		mv.addObject("coupondto", couponDto);
+		session.setAttribute("coupondto", couponDto);
 		
 		//문의 건수
 		questionDto = new QuestionDto();
