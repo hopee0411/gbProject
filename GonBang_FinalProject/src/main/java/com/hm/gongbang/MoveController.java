@@ -228,12 +228,6 @@ public class MoveController {
 
 		return "w_writerManage";
 	}
-	@GetMapping("w_writerHomeFrm")
-	public String w_writerHomeFrm() {
-
-		return "w_writerHome";
-	}
-
 	/*--------------------안요한----------------------------*/
 	// 카테고리 화면(클릭 시 화면)
 	// category();

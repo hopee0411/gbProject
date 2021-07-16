@@ -28,7 +28,7 @@
 	
 	<hr><!-- 중간 선 -->
 
-	<table border="1" class="tbMenu"">
+	<table border="1" class="tbMenu">
 		<tr>
 			<th colspan="2"><span>&lt;메뉴&gt;</span></th>
 		</tr>
