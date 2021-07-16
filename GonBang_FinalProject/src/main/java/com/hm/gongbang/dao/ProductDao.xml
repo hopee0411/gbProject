@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.hm.gongbang.dao.ProductDao">
+
+<select id="productinfo" parameterType="String"
+	resultType="com.hm.gongbang.dto.ProductDto">
+	SELECT *
+	FROM PRODUCT
+	WHERE p_productnum=#{p_productnum}
+</select>
+
+<select id="opptioninfo" parameterType="String"
+	resultType="com.hm.gongbang.dto.OpptionDto">
+	SELECT *
+	FROM Opption
+	WHERE P_PRODUCTNUM=#{p_productnum}
+</select>
+
+</mapper>

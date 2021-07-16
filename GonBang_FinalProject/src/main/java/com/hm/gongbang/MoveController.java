@@ -1,17 +1,29 @@
 package com.hm.gongbang;
 
+
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.hm.gongbang.service.MemberService;
 import com.hm.gongbang.service.MyService;
 import com.hm.gongbang.service.W_DeliveryService;
 import com.hm.gongbang.service.W_InfoService;
 import com.hm.gongbang.service.W_HomeService;
+
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.hm.gongbang.dto.OpptionDto;
+import com.hm.gongbang.dto.ProductDto;
+import com.hm.gongbang.service.CateGroryService;
+
+import com.hm.gongbang.service.ProductService;
+
 
 import lombok.extern.java.Log;
 import oracle.jdbc.proxy.annotation.Post;
@@ -37,6 +49,11 @@ public class MoveController {
 	
 	@Autowired
 	private MyService myServ; // 서비스로 넘어갈 변수 지정
+
+	
+	
+	
+
 
 	// 로그인 페이지 이동 HY
 	@GetMapping("loginFrm")
@@ -228,23 +245,61 @@ public class MoveController {
 
 		return "w_writerManage";
 	}
+
+	@GetMapping("w_writerHomeFrm")
+	public String w_writerHomeFrm() {
+
+		return "w_writerHome";
+	}
+
+		
+
 	/*--------------------안요한----------------------------*/
+	
+	
+	@Autowired 
+	private CateGroryService cServ;
+	
+	@Autowired
+	private ProductService pServ;
+	
 	// 카테고리 화면(클릭 시 화면)
 	// category();
 	@GetMapping("category")
-	public String category() {
+	public ModelAndView category(String kate){
+		mv = new ModelAndView();
 		log.info("category()");
+		mv = cServ.categoryinfo(kate);
+		
+		
+		return mv;
 
-		return "category";
 	} // category ends
 
 	// 작품 상세보기 페이지
 	// productContents()
 	@GetMapping("productContents")
-	public String productContents() {
+	public ModelAndView productContents(String cate) {
 		log.info("productContents()");
+		System.out.println(cate);
+		
+		mv = pServ.productinfo(cate);
+		
+		return mv;	
 
-		return "productContents";
 	} // productContents end
 
-}// class end
+
+	// 상품 검색 버튼 클릭시 처리
+	// seachFrm()
+	@GetMapping("seachFrm")
+	public ModelAndView seachFrm() {
+		
+		
+		return mv;
+	} // seachFrm end
+	
+	
+	
+}//class end
+
