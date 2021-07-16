@@ -23,21 +23,15 @@
 	<header>
 		<jsp:include page="header.jsp" />
 	</header>
-<<<<<<< HEAD
-	<div style="width: 280px; height: 400px;">
-		<%-- <jsp:include page="queSide.jsp" /> --%>
-		<jsp:include page="w_writerHomeSide.jsp" />
-		
-=======
-	
-		<!-- 왼쪽 사이드 -->
+
+	<!-- 왼쪽 사이드 -->
 	<jsp:include page="w_writerHomeSide.jsp" />
 	<div class="w_main">
+
 		<h2>
 			<font style="vertical-align: inherit;"><font
-				style="vertical-align: inherit;">작가정보 관리</font></font>
+				style="vertical-align: inherit; margin-top: 20px;">작가 문의 관리</font></font>
 		</h2>
->>>>>>> yjBranch
 	</div>
 	<section class="se" style="padding-top: 70px;">
 		<div class="queContent">

@@ -95,7 +95,7 @@ public class MoveController {
 	public ModelAndView w_writerManageSeeFrm() {
 		mv = new ModelAndView();
 		mv.setViewName("w_writerManageSee");
-		
+
 		String id = (String) session.getAttribute("id");
 		if (id != null) {
 			mv = wInfoS.w_AtPrivateInfo();// 서비스로 넘어가기위한 작업
@@ -103,12 +103,13 @@ public class MoveController {
 		return mv;
 	}
 
-	/*
-	 * @GetMapping("w_writerManageSee") public ModelAndView w_writerManageSee() {
-	 * log.info("w_writerManageSee()"); mv = new ModelAndView(); String id =
-	 * (String) session.getAttribute("id"); if (id != null) { mv =
-	 * wInfoS.w_writerManageSee(); } else { mv.setViewName("home"); } return mv; }
-	 */
+	// 작가 배송관리 페이지 이동
+	@GetMapping("w_productDeliveryFrm")
+	public String w_productDeliveryFrm() {
+
+		return "w_productDelivery";
+	}
+
 	@GetMapping("w_writerQuestionFrm")
 	public String w_writerQuestionFrm() {
 
