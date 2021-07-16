@@ -12,7 +12,7 @@ a{
 </style>
 
 <section class="MyPM" style="width: 230px;">
-<div class="MyProfile"  style="border-style:groove;" text-a align="center" >
+<div class="MyProfile"  style="border-style:groove; text-align:center;" >
 	<img class="img-fluid1" src="resources/images/psa.jpg" 
 						alt="사진설정" width="90px;"/> <br>
 	<h5 style="margin-top: 40px;">새싹</h5>  					

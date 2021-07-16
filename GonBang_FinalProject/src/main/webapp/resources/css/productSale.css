@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.whsection {
+	margin: 65px auto 0px 0px;
+	height: 670px; 
+}
+.w_boxs {
+	width: 70%;
+	height: 100%;
+	float: left;
+}
+.w_box1{
+	height: 25%;
+}
+
+.feProduct {
+	float: left;
+	margin-left: 500px; 
+}
+
+.hi_hiuf { 
+	padding: 5px;
+	font-weight: bold;
+	position: absolute;
+	float: right;
+	right: 90px;
+	bottom: 100px;
+	color: black;
+	text-decoration: none;
+	border: 1px solid #ff7875;
+	background-color: #ffd6d5;
+}
+
+.hi_hiuf:hover {
+	color: white;
+}
+

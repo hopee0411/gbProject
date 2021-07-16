@@ -1,22 +1,13 @@
 @charset "UTF-8";
 
-.whsection {
+.wr_whsection {
 	margin: 65px auto 0px 0px;
-	height: 670px; 
+	height: 670px;  
 }
-.w_boxs {
+.wr_boxs {
 	width: 70%;
 	height: 100%;
 	float: left;
-}
-.w_boxs div{
-	height: 50%;
-}
-
-.whsection hr {
-	width: 90%;
-	margin: 0px; 
-	color: inherit;
 }
 
 .wr_box1 { 
@@ -51,9 +42,3 @@
 	float: left;
 	background-color: #fff;
 }
-
-
-
-
-
-
