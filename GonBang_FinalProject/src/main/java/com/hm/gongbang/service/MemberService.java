@@ -39,8 +39,8 @@ public class MemberService {
 		try {
 			mwDto = mDao.loginProc(mw_id);
 
-			if(pwdEncoder.matches(mw_pwd,mwDto.getPwd())) {	
-			//if(mwDto.getPwd() !=null) {
+			//if(pwdEncoder.matches(mw_pwd,mwDto.getPwd())) {	
+			if(mwDto.getPwd() !=null) {
 
 				view = "redirect:/";
 				msg = "로그인 하셨습니다.";

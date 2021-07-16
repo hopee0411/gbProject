@@ -15,7 +15,13 @@ public interface W_DeliveryDao {
 	ArrayList<ReceptDto> receptList(String w_id);
 
 	// 작가 주문 검색 옵션
-	ArrayList<ReceptDto> receptPName(@Param("w_id") String w_id, @Param("r_pname") String r_pname);
+	//ArrayList<ReceptDto> receptPName(@Param("w_id") String w_id, @Param("r_pname") String r_pname);
+	
+	ArrayList<ReceptDto> receptPName1(ReceptDto rec);
+	ArrayList<ReceptDto> receptPName2(ReceptDto rec);
+	ArrayList<ReceptDto> receptPName3(ReceptDto rec);
+
+	//ArrayList<ReceptDto> receptPName1(String w_id, String m_id);
 	
 	// 실패  ArrayList<ReceptDto> receptPName(@Param("w_id") String w_id, @Param("r_pname") String r_pname);
 	
