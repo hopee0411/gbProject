@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.webandapp.board.dao.BoardDao">
+	<!-- 반환이 List여도 한 개 원소에 해당하는 자료형을 지정 -->
+	<!-- CDATA에 대해서.
+		 대괄호 안에 들어가는 문장은 문장 그 의미대로 실행된다.
+		 '>', '<' 와 같은 xml 태그를 작성하는 기호를 비교 연산자로 
+		 사용할 경우 연산자의 의미로 사용되도록 CDATA로 작성.
+		 ><를 사용해서 태그가 종료되고 시작된다는 의미로 사용하는게 아니라 비교연산자 그대로 사용하기 위해 CDATA를 사용함.
+		 기호가 태그로 사용되지 않도록 막는것.
+	-->
+	<select id="getList" parameterType="Integer"
+		resultType="com.webandapp.board.dto.BoardDto">
+		<![CDATA[
+			SELECT * FROM BLIST_1
+			WHERE RONUM>=#{num}*10-9 
+			AND RONUM<=#{num}*10 
+		]]>
+	</select>
+	
+	<select id="getBoardCnt" resultType="Integer">
+		SELECT COUNT(*) FROM BLIST_1
+	</select>
+	
+	<insert id="boardInsert" 
+		parameterType="com.webandapp.board.dto.BoardDto"
+		useGeneratedKeys="true" keyProperty="bnum"> 
+		<selectKey keyProperty="bnum" resultType="int"
+			order="BEFORE"> 
+			SELECT BOARD_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO B
+		VALUES (${bnum}, #{btitle}, #{bcontents}, #{bid}, DEFAULT, DEFAULT)
+	</insert>
+	
+	<!-- 파일 정보 저장 -->
+	<insert id="fileInsert" parameterType="HashMap">
+		INSERT INTO BF 
+		VALUES (BF_SEQ.NEXTVAL, #{bnum}, #{oriName}, #{sysName})
+	</insert>
+	
+	<!-- 내용 가져오기 -->
+	<select id="getContents" parameterType="Integer" 
+		resultType="com.webandapp.board.dto.BoardDto">
+		SELECT * FROM BLIST_1 WHERE bnum=#{bnum}
+	</select>
+	
+	<!-- 파일목록 가져오기 -->
+	<select id="getBfList" parameterType="Integer" 
+		resultType="com.webandapp.board.dto.BfileDto">
+		SELECT * FROM BF WHERE bf_bnum=#{bnum}
+	</select>
+	
+	<!-- 댓글목록 가져오기 -->
+	<select id="getReList" parameterType="Integer" 
+		resultType="com.webandapp.board.dto.ReplyDto">
+		SELECT * FROM RLIST WHERE r_bnum=#{bnum}
+	</select>
+	
+	<insert id="replyInsert" 
+		parameterType="com.webandapp.board.dto.ReplyDto">
+		INSERT INTO R 
+		VALUES(REPLY_SEQ.NEXTVAL,#{r_bnum},#{r_contents},#{r_id},DEFAULT)
+	</insert>
+	
+</mapper>

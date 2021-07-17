@@ -39,11 +39,6 @@
 	color: inherit;
 }
 
-.wr_box1_item {
-	padding: 5px;
-	width: max-content;
-}
-
 .wr_memo {
 	padding: 10px 15px 10px 15px;
 	margin: 5px 5px 5px 30px;
@@ -53,7 +48,29 @@
 }
 
 
+.wr_boxxx {
+	width: 70%;
+	float: left;
+	padding: 5px 0;
+	border-radius: 5%;
+	background-color: #ffe4e3;
+	margin-top: 40px;
+}
 
+.wr_box1_item {
+	padding: 5px;
+	width: max-content;
+}
 
+.wr_boxxx li {
+	list-style: none;
+	float: left;
+	margin: 0 5px;
+	background-color: #fff;
+}
 
+.w_box2 hr {
+	width: 90%;
+	color: inherit;
+}
 

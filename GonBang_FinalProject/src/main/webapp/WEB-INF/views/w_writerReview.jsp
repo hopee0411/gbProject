@@ -23,6 +23,11 @@
 
 <section class="wr_whsection">
 	<div class="wr_boxs">
+		<div class="wr_box1">
+		<h2>전체 후기</h2>
+		<hr>
+	<%-- <c:forEach var="" items="${dd}"> --%>
+			<div class="wr_boxxx">
 	<h2>전체 후기</h2>
 	<hr>
 		<%-- <c:forEach var="" items="${dd}"> --%>
@@ -33,6 +38,10 @@
 					<li class="wr_box1_item">날짜</li>
 				</ul>
 				<br>
+			<div class="wr_memo">후기 내용</div>
+		</div>
+	</div>
+	<%-- </c:forEach> --%>
 				<div class="wr_memo">후기 내용</div>
 			</div>
 		<%-- </c:forEach> --%>

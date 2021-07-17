@@ -59,6 +59,9 @@
 			
 		<div class="w_box2">
 			<h2>전체 구매후기</h2>
+			<hr>
+	<%-- <c:forEach var="" items="${dd}"> --%>
+			<div class="wr_boxxx">
 			<hr><%-- 
 			<c:forEach var="" items="${dd}"> --%>
 			<div class="wr_box1">
@@ -68,6 +71,10 @@
 					<li class="wr_box1_item">날짜</li>
 				</ul>
 				<br>
+			<div class="wr_memo">후기 내용</div>
+		</div>
+	</div>
+	<%-- </c:forEach> --%>
 				<div class="wr_memo">후기 내용</div>
 			</div>
 		<%-- </c:forEach> --%>

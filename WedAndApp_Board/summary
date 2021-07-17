@@ -1,0 +1,228 @@
+Spring Legacy Progect 
+
+
+
+pom.xml, Project Facets, web.xml 설정
+
+logback(db로그용 라이브러리) 설정
+logback.xml(spring_db02에 있음)을 src/main/resources 폴더에 넣고 패키지 변경.
+
+- root-context.xml 설정
+1. dataSource bean 설정
+2. mybatis용 sqlSessionFactory bean 설정
+3. mybatis-spring : scan 설정
+
+회원 관리(HomeController)
+1. 로그인/로그아웃
+2. 회원가입
+
+게시판 관리(BoardController)
+1. 목록 보기
+`- 페이징 처리
+2. 글쓰기
+	- 파일 업로드
+3. 글내용보기
+	- 글 수정/삭제
+	- 댓글 처리
+
+
+Spring Security (웹 보안을 위한 스프링 보안 모듈 라이브러리)
+  - 비밀번호 암호화에 사용
+    비밀번호 암호화(복호화 제공 안함) 메소드 제공
+    평문 비밀번호와 암호문인 비밀번호를 비교하여 맞는지 틀린지 결과를 알려주는 메소드 제공 - 패스워드 까먹으면 못씀
+
+
+  암호화 메소드
+    BCryptPasswordEncoder의 encode() 메소드로 암호화
+    
+  암호문과 평문 비교 메소드
+  	BCryptPasswordEncoder의 matches(평문, 암호문)
+  	비교하여 같으면 true, 틀리면 false
+  	
+  암호화된 비밀번호는 단순 equals()로 비교 불가.
+  
+ 
+ 게시판 목록 보여주기
+   url : list
+   
+   jsp 페이지, 컨트롤러, 서비스, dao, dao.xml, dto
+
+  로그인 성공 -> 	DB 검색 수행	-> 게시글 목록
+
+  목록에서 추가적으로 처리해야 할 일
+    게시글 제목에 링크걸기(게시글 내용 보기 화면 이동)
+    날짜형식 지정(jstl의 fmt 활용)
+
+화면에서 controller로 전환하는 방법
+(웹 사이트의 동작 방식은 화면에서 기능과 매칭되는 url을 사용하여 컨트롤러로 전환되는게 기본 방식이다.)
+	<a> 태그의 href
+	자바스크립트의 location.href
+	<form> 태그의 action
+	
+	위 항목들에는 컨트롤러 클래스의 메소드와 연결되는 url이 작성된다.
+	ex) ./loginFrm
+	-> '.' : context path. -> Server 폴더 > server.xml
+			프로젝트가 서버에서 실행되면 server.xml 밑 부분에 
+			프로젝트가 등록되는데 등록된 프로젝트를 context라고 한다.
+			브라우저 주소창에 출력되는 'http://localhost/board'와 같다.
+			
+			-> 실제 실행 시 'http://localhost/board/loginFrm'으로 실행함.
+	
+분석 시 보는 순서.
+화면(jsp) -> controller -> service -> dao(xml)
+
+파일 업로드 - 멀티파트 처리
+Multipart
+  HTTP(웹)를 통해 파일을 서버로 전송하기 위한 content-type
+  
+  - content-type이란
+    http의 request(객체)는 요청라인(request-line), 헤더(header), 
+    공백, 바디(body)로 구성
+    헤더란 요청 메시지(객체)를 어떻게 처리해야 한다는 정보를 포함.
+    content-type은 문서의 형태(글자, 이미지, 동영상, 오디오 등)을 알리기 위해 사용.
+    텍스트 문서라면 content-type을 text/html'로 지정
+    
+멀티파트란 한 문서 안에 문자와 바이너리 데이터(이미지, 동영상, 오디오 등의 파일)이
+같이 포함되어 있는 형태.
+
+전송할 때 멀티파트로 되어있는 데이터임을 지정하여 처리.
+enctype 속성을 사용하여 멀티파트임을 서버로 전달.
+파일을 업로드 하기 위한 form에서는 enctype 속성을 사용하여야 함!
+enctype의 값은 'multipart/form-data'로 지정하고, method는 'post'로 사용
+
+업로드 파일 처리 방식
+1. DB에 파일을 같이 저장(네이버 스마트에디터 등.. 에디터 api)
+   DB에 무리를 줌.
+2. DB에 파일 정보만 입력하고 파일은 따로 저장.(이 방식으로 처리)
+
+
+멀티파트 파일 업로드용 라이브러리(maven repository에서 검색하여 pom.xml에 추가)
+commons-io, commons-fileupload
+
+MultipartResolver 객체(beans)를 servlet-context.xml에 설정
+멀티파트 리퀘스트 처리 객체. 
+설정 내용 : 문자셋(파일이름처리용), 업로드 크기, 업메모리 크기
+
+관련 DB 테이블
+1) BOARD 테이블 - 게시글의 데이터 저장
+2) BOARDFILE 테이블 - 해당 게시글의 업로드 파일 정보(파일명, 해당게시글번호)
+
+
+﻿Mybais의 출력 문법
+$ 와 #의 구분
+#{변수} : 변수가 String일 때 데이터의 앞 뒤에 ' '를 붙이고, 
+		int일 때는 붙이지 않는다.
+${변수} : 변수의 타입에 상관없이 ' '를 붙이지 않는다!
+
+$를 사용하는 경우
+1) 데이터가 숫자형일 때.
+2) 가변 쿼리문을 작성할 때, 사용할 컬럼명을 프로그램에서 입력하는 경우.
+
+ex) 
+interface에 작성한 메소드
+public getInfo(String col_name);
+
+xml에 작성한 내용
+<select id="getInfo" parapmeterType="String" resultType="String">
+	SELECT ${col_name} FROM B 
+</select>
+
+    파라미터로 컬럼의 이름을 전달. 
+    글제목를 출력할 경우 b_num을 파라미터로 전달
+    -> SELECT b_num FROM B
+    
+    글 내용을 출력할 경우 b_title을 파라미터로 전달
+    -> SELECT b_title FROM B
+
+
+1) 글제목를 출력할 경우 b_num을 파라미터로 전달
+String res = getInfo("b_title");
+
+
+
+
+selectKey : 키를 구하는 구문
+  두 테이블이 같은 값을 공유하고 있으며, 거의 동시에 데이터를 저장할 때 사용.
+  (보통 한 테이블의 기본키와 다른 테이블의 외래키 관계에서 나타남)
+  고유하는 값(키)을 먼저 생성하고 그 값을 특정 변수에 저장한 다음 사용하는 형태
+  
+  게시판 프로젝트에서는 게시글의 번호를 해당 게시글과 함께 저장하는 파일의 
+  정보 저장에도 활용하는데 쓰여짐.
+  
+  주요 속성
+  1) useGeneratedKeys="true" : selectKey를 사용한다는 것을 명시.
+  2) keyProperty="필드" : dto 필드 중 하나를 사용하여 생성값을 저장.
+  		필드는 부모 요소(insert)와 자식요소(selectKey)가 같이 공유함.
+  		selectKey 구문이 실행되면 결과가 필드에 저장됨.
+  		부모 요소에서는 필드에 저장된 값을 사용.
+  3) resultType="필드타입" : selectKey에서 생성한 값의 타입.
+  4) order="BEFORE" : 부모요소(insert) 보다 먼저 selectKey 구문을
+  		실행.("AFTER"는 부모요소 실행 후 selectKey 구문을 실행) 
+ 
+
+
+mybatis는 프로그래머가 작성한 interface를 구현한 class를 작성해주는 
+api이다. xml에 작성하는 쿼리문에 데이터를 넣고 실행하고 결과를 넘기는 class를 자동으로 생성한다. 
+
+
+월요일에 수업.
+1.글 내용 보기( + 댓글 처리 + 파일 다운로드)
+	글 수정, 글 삭제
+	
+해결 과제 : 글 작성시 포인트 증가, 조회수 증가, 글 수정, 글삭제 
+	
+	
+오늘의 프로젝트 진행(화) - 로그아웃과 관련됨
+1. 글 내용 보기( + 댓글 처리 + 파일 다운로드) 처리(boardContents.jsp)
+글 내용 보기에 포함되는 데이터
+- 게시글 내용
+- 업로드한 파일 목록
+- 댓글 목록
+댓글 처리 : ajax를 활용. 댓글 저장 후 새 댓글을 포함한 전체 댓글 목록을 
+	다시 조회하여 페이지로 전송 및 기존 댓글 목록에 덮어쓰기(기존 목록은 삭제됨)
+
+파일 다운로드 : response 객체(HttpSercletResponse)를 사용하여 페이지 변환 없이 
+	직접 사용자 컴퓨터의 브라이저로 전송
+	전송하는 데이터가 파일임을 지정하기 위해 content-type과 헤더부분을 설정
+	하드디스크에 저장된 파일을 프로그램으로 가져오기 위해 IntutStream을,
+	사용자 컴퓨터에 보내기 위해 OutputStream을 사용(byte 단위로 전송)
+	Stream 객체는 사용 후 반드시 close()를 수행(메모리 해제)
+
+
+2.세션인터셉터(필터링) - 로그아웃시 세션과 관련된거 다 지워져야함
+  비인증(로그인 없는) 접근 / 글 내용 보기(+ 댓글 처리)
+
+	로그아웃 처리
+
+	세션 인터셉터(가로채는 자)
+	사용자의 요청이 컨트롤러로 전달되기 전에 가로채서 내용을 확인하고 
+	정상적인 상태일 경우 컨트롤러로 전달, 비정상적인 상태일 때는 
+	다시 되돌리는 작업을 하는 객체. 
+	
+	작업 단계
+	1) 인터셉터 클래스 작성(HandlerInterceptorAdapter - 추상클래스)
+	2) servlet-context.xml에 관련 설정 작성
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
