@@ -177,7 +177,7 @@ public class MoveController {
 	public ModelAndView w_writerManageSeeFrm() {
 		mv = new ModelAndView();
 		mv.setViewName("w_writerManageSee");
-		
+
 		String id = (String) session.getAttribute("id");
 		if (id != null) {
 			mv = wInfoS.w_AtPrivateInfo();// 서비스로 넘어가기위한 작업
@@ -209,6 +209,8 @@ public class MoveController {
 		return mv;
 
 	}
+
+
 
 	@GetMapping("w_writerQuestionFrm")
 	public String w_writerQuestionFrm() {

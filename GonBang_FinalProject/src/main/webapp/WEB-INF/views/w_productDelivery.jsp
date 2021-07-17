@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +14,6 @@
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="resources/css/w_writerHomeSide.css" rel="stylesheet" />
 
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-
 <style type="text/css">
 a:hover {
 	color: gray;
@@ -26,6 +22,7 @@ a:hover {
 
 </head>
 <body>
+
 	<header>
 		<jsp:include page="header.jsp" />
 	</header>
@@ -60,11 +57,13 @@ a:hover {
 				<form name="search" method="get" action="wDSearchOption">
 					<div style="border: solid 1px;">
 						<fieldset style="width: 1000px; padding: 8px;">
-							<label for="">검색</label>&nbsp&nbsp&nbsp <select>
-								<option value="orderNum" name="r_num">주문번호</option>
-								<option value="orderId" name="m_id">주문자아이디</option>
-							</select> <input type="text" placeholder="입력"> <br> <label
-								for="">주문일</label>
+							<label for="">검색</label>&nbsp&nbsp&nbsp
+							<!-- <option value="orderNum" name="r_num">주문번호</option> -->
+							
+							
+							주문자아이디 <input type="text" placeholder="주문자 아이디 입력" name="m_id"> <br>
+							주문번호 <input type="text" placeholder="주문번호 입력" name="r_num"> <br>
+							<label for="">주문일</label>
 							<button type="button" id="termD" class="btnM btnWhite06"
 								onclick="dDate()">오늘</button>
 							<button type="button" id="termY" class="btnM btnWhite06"
@@ -87,15 +86,17 @@ a:hover {
 							<button class="btnM btnGray01">조회</button>
 							<br> <label for="">상품명 :</label> <input type="text"
 								placeholder="입력" name="r_pname">
+
+						</fieldset>
 					</div>
-					</fieldset>
 					<button type="submit" class="btn btn-primary btn-lg">
 						<font style="vertical-align: inherit;"><font
 							style="vertical-align: inherit;">검 색</font></font>
 					</button>
-					<button type="reset" class="btn btn-primary btn-lg">
-						<font style="vertical-align: inherit;"><font
-							style="vertical-align: inherit;">초 기 화</font></font>
+					<button type="reset" class="btn btn-primary btn-lg"
+						onclick="location.href='w_productDeliveryFrm'">
+						초 기 화 <font style="vertical-align: inherit;"><font
+							style="vertical-align: inherit;"></font></font>
 					</button>
 				</form>
 			</div>
@@ -139,10 +140,8 @@ a:hover {
 			</div>
 		</div>
 
-
 	</section>
 	<jsp:include page="footer.jsp"></jsp:include>
-
 
 </body>
 </html>

@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 public class ReceptDto {
-	private int r_num;
+	private String r_num;
 	private String r_pname;
 	private int r_count;
 	private int r_price;
