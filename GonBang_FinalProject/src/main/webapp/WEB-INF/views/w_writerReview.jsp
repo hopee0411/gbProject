@@ -28,6 +28,10 @@
 		<hr>
 	<%-- <c:forEach var="" items="${dd}"> --%>
 			<div class="wr_boxxx">
+	<h2>전체 후기</h2>
+	<hr>
+		<%-- <c:forEach var="" items="${dd}"> --%>
+			<div class="wr_box1">
 				<ul>
 					<li class="wr_box1_item">글번호</li>
 					<li class="wr_box1_item">작성자</li>
@@ -38,6 +42,9 @@
 		</div>
 	</div>
 	<%-- </c:forEach> --%>
+				<div class="wr_memo">후기 내용</div>
+			</div>
+		<%-- </c:forEach> --%>
 	</div>	
 </section>
 
