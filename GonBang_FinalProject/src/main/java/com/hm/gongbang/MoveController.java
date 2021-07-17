@@ -1,8 +1,11 @@
 package com.hm.gongbang;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.hm.gongbang.service.W_HomeService;
 
 import lombok.extern.java.Log;
 
@@ -10,9 +13,12 @@ import lombok.extern.java.Log;
 @Controller
 public class MoveController {
 
+	@Autowired
+	private W_HomeService wServ;
+	
 	private ModelAndView mv;
 
-	//·Î±×ÀÎ ÆäÀÌÁö ÀÌµ¿ HY
+	//ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ HY
 	@GetMapping("loginFrm")
 	public ModelAndView loginFrm() {
 		log.info("loginFrm()");
@@ -22,7 +28,7 @@ public class MoveController {
 		return mv;
 	}
 
-	//°³ÀÎÈ¸¿ø °¡ÀÔ ÆäÀÌÁö ÀÌµ¿ HY
+	//ï¿½ï¿½ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ HY
 	@GetMapping("m_joinMemberFrm")
 	public ModelAndView m_joinMemberFrm() {
 		log.info("m_joinMemberFrm()");
@@ -56,7 +62,8 @@ public class MoveController {
 
 		return "m_memberManager";
 	}
-
+	
+	
 	@GetMapping("w_writerQuestionFrm")
 	public String w_writerQuestionFrm() {
 		log.info("w_writerQuestionFrm()");
@@ -71,11 +78,5 @@ public class MoveController {
 
 		return "w_writerManage";
 	}
-	@GetMapping("w_writerHomeFrm")
-	public String w_writerHomeFrm() {
-		log.info("w_writerHomeFrm");
-		
-		return "w_writerHome";
-	}	
-
+ 	 
 }//class end

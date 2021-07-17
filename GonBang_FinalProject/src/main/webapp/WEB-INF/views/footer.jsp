@@ -10,7 +10,7 @@
 				<!-- Footer Location-->
 				<div class="col-lg-4 mb-5 mb-lg-0">
 					<h4 class="text-uppercase mb-4">Location</h4>
-					<p class="lead mb-0" style="font-size: 15px">
+					<p class="lead mb-0">
 						회사소개 | 이용약관 | 개인정보처리방침 | 이메일무단수집거부 <br /> 회사명:주식회사 핸드메이드<br> 대표자:정호용 <br>주소:인천일보아카데미 
 						<br> 사업자 등록번호:010-1111-2222[사업자정보확인] <br> 통신판매업신고:2021-인천일보-2021
 					</p>
@@ -38,6 +38,7 @@
 			</div>
 		</div>
 	</footer>
+	
 	<!-- Copyright Section-->
 	<div class="copyright py-4 text-center text-white">
 		<div class="container">

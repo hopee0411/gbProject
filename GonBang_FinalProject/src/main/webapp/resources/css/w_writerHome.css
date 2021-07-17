@@ -1,33 +1,84 @@
 @charset "UTF-8";
 
-section {
-	margin: 0 auto;
+.whsection {
+	margin: 65px auto 0px 0px;
+	height: 670px; 
 }
-
-
 .w_boxs {
-	border: 1px solid black;
+	width: 70%;
+	height: 100%;
+	float: left;
+}
+.w_boxs div{
+	height: 50%;
 }
 
-.w_box1 {
-	width: 335px; 
-	border: 1px solid black;
+.whsection hr {
+	width: 90%;
+	margin: 0px; 
+	color: inherit;
 }
 
-.w_box2 {
-	width: 400px; 
-	margin-left: 400px;
-	border: 1px solid black;
+.wr_box1 { 
+	width: 100%;
+	float: left;
+	padding: 5px 0;
+	border-radius: 5%;
+	background-color: #ffe4e3;
+}
+
+.wr_box1 li {
+	list-style: none;
+	float: left;
+	margin: 0 5px;
+	background-color: #fff;
+}
+
+.wr_boxs hr {
+	width: 90%;
+	color: inherit;
+}
+
+.wr_memo {
+	padding: 10px 15px 10px 15px;
+	margin: 5px 5px 5px 30px;
+	width: max-content;
+	float: left;
+	background-color: #fff;
 }
 
 
+.wr_boxxx {
+	width: 70%;
+	float: left;
+	padding: 5px 0;
+	border-radius: 5%;
+	background-color: #ffe4e3;
+	margin-top: 40px;
+}
 
+.wr_boxxx li {
+	list-style: none;
+	float: left;
+	margin: 0 5px;
+	background-color: #fff;
+}
 
+.w_box2 hr {
+	width: 90%;
+	color: inherit;
+}
 
+.wr_box1_item {
+	padding: 5px;
+	width: max-content;
+}
 
-
-
-
-
-
+.wr_memo {
+	padding: 10px 15px 10px 15px;
+	margin: 5px 5px 5px 30px;
+	width: max-content;
+	float: left;
+	background-color: #fff;
+}
 

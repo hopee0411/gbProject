@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hm.gongbang.dao.Writer_HomeDao">
+	<!-- 공방 이름 / 공방 메모 -->
+	<select id="getgbNM" parameterType="Integer"
+		resultType="com.hm.gongbang.dto.writer_homefileDto">
+		
+		SELECT * FROM writer_homefile WHERE whf_gbnum=#{whf_gbnum}	
+	</select>
+	 
+	<!-- 공방 소개 정보 출력 제목/내용 - 공방번호로 정보 찾음  -->
+	<select id="getGBI" parameterType="Integer" 
+		resultType="com.hm.gongbang.dto.GbIntroduceDto">
+		SELECT *
+		FROM gbintroduce
+		WHERE gbi_gbnum=#{whf_gbnum}
+	</select>
+	 
+	 <!-- 공방 소개 수정의 내용 출력 -->
+	 <select id="writergbi" parameterType="Integer"
+		resultType="com.hm.gongbang.dto.GbIntroduceDto">
+		SELECT * FROM gbintroduce WHERE gbi_gbnum=#{gbi_gbnum}
+	 </select>
+	 
+	 <select id="handmadeItdInUpdate"
+		parameterType="com.hm.gongbang.dto.GongBangDto">
+		UPDATE g
+		SET g_title=#{gbi_title}, g_contents=#{gbi_contents}
+		WHERE wh_gbnum=#{gbi_gbnum}
+	 </select>
+	 
+	 <select id="fileInsert"
+		parameterType="com.hm.gongbang.dto.GongBang_FileDto">
+		UPDATE gf
+		SET (gf_orgfilename=#{orgfil}, gf_savefilename=#{savefil})
+		WHERE wh_gbnum=#{gbnum}
+	 
+	 </select>
+</mapper>

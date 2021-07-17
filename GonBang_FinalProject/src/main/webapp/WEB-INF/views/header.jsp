@@ -10,7 +10,7 @@
 				class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
 				id="mainNav">
 				<div class="container">
-					<a class="navbar-brand" href="#page-top">HAND MADE</a>
+					<a class="navbar-brand" href="./">HAND MADE</a>
 
 					<button
 						class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
@@ -43,7 +43,7 @@
 								href="#contact">고객센터</a></li>
 							<li class="nav-item mx-0 mx-lg-1"><a
 								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"
-								href="./w_writerHomeFrm">작가홈</a></li>
+								href="./w_writerHomeFrm?whf_gbnum=${gbNM.whf_gbnum}">작가홈</a></li>
 						</ul>
 					</div>
 				</div>

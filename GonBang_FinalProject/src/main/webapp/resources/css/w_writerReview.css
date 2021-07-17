@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+.wr_whsection {
+	margin: 65px auto 0px 0px;
+	height: 670px;  
+}
+.wr_boxs {
+	width:  70%;
+	height: 100%;
+	float: left;
+}
+
+.wr_box1 { 
+	margin-bottom: 40px;
+}
+
+.wr_boxxx {
+	width: 70%;
+	float: left;
+	padding: 5px 0;
+	border-radius: 5%;
+	background-color: #ffe4e3;
+}
+
+.wr_boxxx li {
+	list-style: none;
+	float: left;
+	margin: 0 5px;
+	background-color: #fff;
+}
+
+.wr_boxs hr {
+	width: 90%;
+	color: inherit;
+}
+
+.wr_box1_item {
+	padding: 5px;
+	width: max-content;
+}
+
+.wr_memo {
+	padding: 10px 15px 10px 15px;
+	margin: 5px 5px 5px 30px;
+	width: max-content;
+	float: left;
+	background-color: #fff;
+}
