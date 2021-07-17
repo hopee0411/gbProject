@@ -10,13 +10,12 @@
 <link href="resources/css/styles.css" rel="stylesheet" />
 <link href="resources/css/w_writerHomeSide.css" rel="stylesheet" />
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 <script type="text/javascript">
-$(function() { $( "#Date" ).datepicker({ }); 
-});
-
+	
 </script>
 
 </head>
@@ -24,16 +23,15 @@ $(function() { $( "#Date" ).datepicker({ });
 	<header>
 		<jsp:include page="header.jsp" />
 	</header>
-	
-		<!-- 왼쪽 사이드 -->
+	<!-- 왼쪽 사이드 -->
+
 	<jsp:include page="w_writerHomeSide.jsp" />
 	<div class="w_main">
+
 		<h2>
 			<font style="vertical-align: inherit;"><font
-				style="vertical-align: inherit;">작가정보 관리</font></font>
-				<input type="text" id="Date">
+				style="vertical-align: inherit; margin-top: 20px;">작가 문의 관리</font></font>
 		</h2>
-
 	</div>
 	<section class="se" style="padding-top: 70px;">
 		<div class="queContent">

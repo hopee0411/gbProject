@@ -45,27 +45,32 @@ public class W_DeliveryService {
 
 	// 작가 배송 검색 옵션
 
-	public ModelAndView wDSearchOption(String w_id, String r_pname) {
+	public ModelAndView wDSearchOption(ReceptDto rec) {
+		rec.setW_id((String) session.getAttribute("id"));
 		mv = new ModelAndView();
 		receptDto = new ReceptDto();
+	
+		System.out.println(rec + "@@@@@@@@@@@@@@@@@@@@@@@@@");
+		if (rec.getM_id() != "") {
+			ArrayList<ReceptDto> receptList = wDDao.receptPName1(rec);
+			session.setAttribute("receptList", receptList);
 
-		ArrayList<ReceptDto> receptList = wDDao.receptPName(w_id, r_pname);
-		session.setAttribute("receptList", receptList);
+		} else if (rec.getR_pname() != "") {
+			ArrayList<ReceptDto> receptList = wDDao.receptPName2(rec);
+			session.setAttribute("receptList", receptList);
+
+		}
+
+		else {
+			ArrayList<ReceptDto> receptList = wDDao.receptPName3(rec);
+			session.setAttribute("receptList", receptList);
+
+		} // else end
 		mv.setViewName("w_productDelivery");// modelAndView에 이동할 페이지를 담는다
 
 		return mv;
-
-		/*
-		 * public ModelAndView wDSearchOption(String w_id, ReceptDto rec) { mv = new
-		 * ModelAndView(); receptDto = new ReceptDto(); String r_pname =
-		 * receptDto.getR_pname();
-		 * 
-		 * ArrayList<ReceptDto> receptList = wDDao.receptPName(w_id, r_pname);
-		 * session.setAttribute("receptList", receptList);
-		 * 
-		 * mv.setViewName("w_productDelivery");// modelAndView에 이동할 페이지를 담는다
-		 * 
-		 * return mv; }
-		 */
 	}
-}
+}// class end
+
+
+
