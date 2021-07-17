@@ -39,6 +39,15 @@ public class W_DeliveryService {
 		session.setAttribute("receptList", receptList);
 		mv.setViewName("w_productDelivery");// modelAndView에 이동할 페이지를 담는다
 		session.setAttribute("rNum", receptList.size());
+		
+		//배송 준비 건수 출력
+		int dwNum = wDDao.dwNumResult(w_id);
+		mv.addObject("dwNum", dwNum);
+		
+		//배송 완료 건수 출력
+		int deNum = wDDao.deNumResult(w_id);
+		mv.addObject("deNum", deNum);
+		
 
 		return mv;
 	}
@@ -49,19 +58,19 @@ public class W_DeliveryService {
 		rec.setW_id((String) session.getAttribute("id"));
 		mv = new ModelAndView();
 		receptDto = new ReceptDto();
-	
-		System.out.println(rec + "@@@@@@@@@@@@@@@@@@@@@@@@@");
+
+			// 주문자 아이디로 검색
 		if (rec.getM_id() != "") {
 			ArrayList<ReceptDto> receptList = wDDao.receptPName1(rec);
 			session.setAttribute("receptList", receptList);
-
+			
+			// 상품 이름으로 검색
 		} else if (rec.getR_pname() != "") {
 			ArrayList<ReceptDto> receptList = wDDao.receptPName2(rec);
 			session.setAttribute("receptList", receptList);
 
-		}
-
-		else {
+			// 주문 번호로 검색
+		} else {
 			ArrayList<ReceptDto> receptList = wDDao.receptPName3(rec);
 			session.setAttribute("receptList", receptList);
 
@@ -71,6 +80,3 @@ public class W_DeliveryService {
 		return mv;
 	}
 }// class end
-
-
-

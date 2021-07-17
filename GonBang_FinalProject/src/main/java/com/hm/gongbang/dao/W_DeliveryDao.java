@@ -16,10 +16,18 @@ public interface W_DeliveryDao {
 
 	// 작가 주문 상품명 검색
 	ArrayList<ReceptDto> receptPName(@Param("w_id") String w_id, @Param("r_pname") String r_pname);
-
 	ArrayList<ReceptDto> receptPName1(ReceptDto rec);
 	ArrayList<ReceptDto> receptPName2(ReceptDto rec);
 	ArrayList<ReceptDto> receptPName3(ReceptDto rec);
+	
+	//작가 배송 준비 건수 출력
+	int dwNumResult(String w_id);
+	
+	//작가 배송 완료 건수 출력
+	int deNumResult(String w_id);
+	
+	
+	
 
 
 }

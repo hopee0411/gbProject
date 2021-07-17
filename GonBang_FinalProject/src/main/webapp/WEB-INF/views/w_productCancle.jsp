@@ -40,8 +40,8 @@ a:hover {
 		<div class="queContent">
 			<table>
 				<tr class="dTop">
-					<td><h4 class="dTop_box">배송 준비 &nbsp&nbsp&nbsp&nbsp~건</h4></td>
-					<td><h4 class="dTop_box">배송 완료 &nbsp&nbsp&nbsp&nbsp~건</h4></td>
+					<td><h4 class="dTop_box">배송 준비 &nbsp&nbsp&nbsp ${dwNum}건</h4></td>
+					<td><h4 class="dTop_box">배송 완료 &nbsp&nbsp&nbsp ${deNum}건</h4></td>
 				</tr>
 			</table>
 			<table>

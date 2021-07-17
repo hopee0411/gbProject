@@ -40,8 +40,8 @@ a:hover {
 		<div class="queContent">
 			<table>
 				<tr class="dTop">
-					<td><h4 class="dTop_box">배송 준비 &nbsp&nbsp&nbsp&nbsp~건</h4></td>
-					<td><h4 class="dTop_box">배송 완료 &nbsp&nbsp&nbsp&nbsp~건</h4></td>
+					<td><h4 class="dTop_box">배송 준비 &nbsp&nbsp&nbsp ${dwNum}건</h4></td>
+					<td><h4 class="dTop_box">배송 완료 &nbsp&nbsp&nbsp ${deNum}건</h4></td>
 				</tr>
 			</table>
 			<table>
@@ -132,7 +132,14 @@ a:hover {
 								<td>${bitem.r_price}</td>
 								<td><input type="text" value="${bitem.r_dnum}"
 									placeholder="운송번호입력"></td>
-								<td>${bitem.r_dcondition}</td>
+								<td>
+									${bitem.r_dcondition}
+								<%-- <select>
+										<option>${bitem.r_dcondition}</option>
+										<option>배송중</option>
+										<option>배송완료</option>
+								</select> --%>
+								</td>
 							</tr>
 						</c:forEach>
 					</c:if>
