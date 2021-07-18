@@ -8,11 +8,22 @@
 		resultType="com.hm.gongbang.dto.ReceptDto">
 		SELECT * FROM R WHERE W_ID=#{w_id}
 	</select>
-	
-	<select id="receptPName" parameterType="String"
+
+	<select id="receptPName2" parameterType="com.hm.gongbang.dto.ReceptDto"
 		resultType="com.hm.gongbang.dto.ReceptDto">
 		SELECT * FROM R WHERE W_ID=#{w_id} and R_PNAME=#{r_pname}
 	</select>
+
+	<select id="receptPName1" parameterType="com.hm.gongbang.dto.ReceptDto"
+		resultType="com.hm.gongbang.dto.ReceptDto">
+		SELECT * FROM R WHERE W_ID=#{w_id} and M_id=#{m_id}
+	</select>
+	
+	<select id="receptPName3" parameterType="com.hm.gongbang.dto.ReceptDto"
+		resultType="com.hm.gongbang.dto.ReceptDto">
+		SELECT * FROM R WHERE W_ID=#{w_id} and R_NUM=#{r_num}
+	</select>
+
 
 
 </mapper>

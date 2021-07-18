@@ -39,23 +39,28 @@ public class W_DeliveryController {
 	// 작가 배송 검색 옵션
 
 	@GetMapping("wDSearchOption")
-	public ModelAndView wDSearchOption(String w_id, String r_pname) {
+	public ModelAndView wDSearchOption(ReceptDto rec) {
 		mv = new ModelAndView();
-		w_id = (String) session.getAttribute("id");
+		//w_id = (String) session.getAttribute("id");
+		System.out.println(rec + "dddddddddddddddddddd");
 		mv.setViewName("w_productDelivery");
-		mv = wDs.wDSearchOption(w_id, r_pname);
+		mv = wDs.wDSearchOption(rec);
 
-		return mv;
-	}
+		return mv; }
+	 
 
 	// 실패
+	
 	/*
-	 * GetMapping("wDSearchOption") public ModelAndView wDSearchOption(String w_id,
+	 * @GetMapping("wDSearchOption") public ModelAndView wDSearchOption(String w_id,
 	 * ReceptDto rec) { mv = new ModelAndView(); w_id = (String)
-	 * session.getAttribute("id"); mv.setViewName("w_productDelivery"); mv =
 	 * wDs.wDSearchOption(w_id, rec);
 	 * 
 	 * return mv; }
 	 */
-
 }
+
+
+
+
+

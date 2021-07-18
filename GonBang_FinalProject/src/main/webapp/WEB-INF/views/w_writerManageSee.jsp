@@ -23,7 +23,7 @@
 
 		<h2>
 			<font style="vertical-align: inherit;"><font
-				style="vertical-align: inherit;">작가정보 관리</font></font>
+				style="vertical-align: inherit;">작가 정보 관리</font></font>
 		</h2>
 	</div>
 	<section class="se" style="padding-top: 70px;">

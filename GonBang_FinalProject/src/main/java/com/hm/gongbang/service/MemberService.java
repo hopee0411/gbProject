@@ -46,7 +46,6 @@ public class MemberService {
 			//if(pwdEncoder.matches(mw_pwd,mwDto.getPwd())) {	
 			if(mwDto.getPwd() !=null) {
 
-
 				view = "redirect:/";
 				msg = "로그인 하셨습니다.";
 				session.setAttribute("id", mwDto.getId());
