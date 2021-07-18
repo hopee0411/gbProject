@@ -104,12 +104,13 @@ public class MemberService {
 		member.setM_pwd(encPwd);
 		try {
 			mDao.memberJoinProc(member);
+			mDao.firstCoupon(member.getM_id());
 			view = "redirect:loginFrm";
 			msg = "회원가입성공";
 		} catch (Exception e) {
 			//e.printStackTrace();
 			view = "redirect:m_joinMemberFrm";
-			msg = "회원가입실패";
+			//msg = "회원가입실패";
 		}
 		mv.setViewName(view);
 		rttr.addFlashAttribute("msg", msg);

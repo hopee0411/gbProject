@@ -10,15 +10,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="resources/css/join.css">
 <link href="resources/css/styles.css" rel="stylesheet" />
-<style type="text/css">
-	 
-.correct{
-    color : green;
-}
-.incorrect{
-    color : red;
-}
-</style>
 </head>
 <body>
 	<header>
@@ -27,15 +18,20 @@
 	<section>
 		<div class="content">
 			<form name="joinFrm" class="login-form" action="./memberJoinProc"
-				method="post">
+				method="post" onsubmit="return check()">
 				<h2 class="login-header">회원 가입</h2>
 				<input type="text" class="login-input" id="m_id" title="아이디"
 					name="m_id" autofocus placeholder="아이디" required> 
 				<input
 					type="button" class="idcheck-btn" value="중복확인" onclick="idcheck()"
 					required> 
-				<input type="password" class="login-input"
-					title="비밀번호" name="m_pwd" minlength="6" placeholder="비밀번호" required > 
+				<input type="password" class="login-input passCheck1"
+					title="비밀번호" name="m_pwd" minlength="6" placeholder="비밀번호" required> 
+				<input type="password" class="login-input passCheck2"
+					title="비밀번호 확인" minlength="6" placeholder="비밀번호 확인" required> 
+					<span class="pass_check_warn"></span>
+					<input
+					type="button" class="idcheck-btn passNumChk" value="비밀번호 확인"> 
 				<input
 					type="text" name="m_name" class="login-input" title="이름"
 					placeholder="이름" required> 
@@ -67,6 +63,9 @@
 	</footer>
 </body>
 <script type="text/javascript">
+	
+	
+
 	function idcheck() {
 		//입력한 id 값 읽어오기
 		var id = $("#m_id").val();
@@ -125,7 +124,8 @@
 
 		});
 	});
-
+	
+	
 	 
 	/* 인증번호 비교 */
 	$(".mailNumChk").click(function(){
@@ -135,12 +135,59 @@
 	    
 	    if(inputCode == code){                            // 일치할 경우
 	        checkResult.html("인증번호가 일치합니다.");
-	        checkResult.attr("class", "correct");        
+	        checkResult.attr("class", "correct");
 	    } else {                                            // 일치하지 않을 경우
-	        checkResult.html("인증번호를 다시 확인해주세요.");
+	        checkResult.html("인증번호가 일치하지 않습니다.");
 	        checkResult.attr("class", "incorrect");
 	    }    
 	    
 	});
+	
+	// 비밀번호 확인
+	$(".passNumChk").click(function(){
+		var passCheck1 = $(".passCheck1").val(); 
+		var passCheck2 = $(".passCheck2").val(); 
+		var passCheckResult = $(".pass_check_warn");
+		
+		if(passCheck1 != passCheck2){
+			if(passCheck2 != ""){
+				passCheckResult.html("비밀번호가 일치하지 않습니다.");
+				passCheckResult.attr("class", "incorrect");
+				alert("불일치");
+				$(".passCheck2").val("");
+				$(".passCheck2").focus();
+			}
+		}	
+		else{
+			alert("일치");
+			passCheckResult.html("비밀번호가 일치합니다.");
+			passCheckResult.attr("class", "correct");
+		}
+			
+	});
+	
+	
+	
+	/* 이메일 인증, 비밀번호 확인 실패시 처리 */
+	function check() { 
+		var checkResult = $("#mail_check_input_box_warn");  
+		var passCheckResult = $("#pass_check_warn");
+		if(passCheckResult != "비밀번호가 일치하지 않습니다."){
+			alert("비밀번호를 확인해주세요");
+			$(".passCheck2").val("");
+			$(".passCheck2").focus();
+			return false;			
+		}
+		if(checkResult.html() == "인증번호가 일치합니다."){
+			return true;
+		}
+		else{
+			alert("인증번호를 확인해주세요");
+			$(".mail_check_input").val("");
+			$(".mail_check_input").focus();
+			return false;
+		}
+	}//checck end
+	
 </script>
 </html>

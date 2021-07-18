@@ -18,7 +18,7 @@
 	<section>
 			<div class="content">
 				<form name="joinFrm" class="login-form" action="./writerJoinProc"
-					method="post">
+					method="post" onsubmit="return check()">
 					<h2 class="login-header">작가 회원 가입</h2>
 					<input type="text" class="login-input" id="w_id" title="아이디" name="w_id" autofocus placeholder="아이디" required> 
 					<input type="button" class="idcheck-btn" value="중복확인" onclick="idcheck()" required>
@@ -127,4 +127,19 @@ $(".mailNumChk").click(function(){
     }    
     
 });
+
+/* 이메일 인증 실패시 처리 */
+function check() {  
+	var checkResult = $("#mail_check_input_box_warn");  
+	
+	if(checkResult.html() == "인증번호가 일치합니다."){
+		return true;
+	}
+	else{
+		alert("인증번호를 확인해주세요");
+		$(".mail_check_input").val("");
+		$(".mail_check_input").focus();
+		return false;
+	}
+}
 </script>

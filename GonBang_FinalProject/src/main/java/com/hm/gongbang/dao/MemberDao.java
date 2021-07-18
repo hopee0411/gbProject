@@ -15,6 +15,8 @@ public interface MemberDao {
 	public void memberJoinProc(MemberDto member);
 	//장바구니
 	public ArrayList<Shopping_BasketDto> getBasket(String m_id);
+	//쿠폰ㄴ
+	public void firstCoupon(String m_id);
 
 
 }//class end

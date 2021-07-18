@@ -105,4 +105,11 @@ public class MemberController {
 		return mv;
 	}//memberJoinProc() end
 	
+	@GetMapping("w")
+	public String w(){
+		
+		String view = "w_writerHome"; 
+	return  view;
+	}
+	
 }// class end

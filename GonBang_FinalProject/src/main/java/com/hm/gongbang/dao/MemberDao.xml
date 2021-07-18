@@ -22,4 +22,9 @@
 	<select id="getBasket" parameterType="String" resultType="com.hm.gongbang.dto.Shopping_BasketDto">
 		SELECT * FROM sb WHERE m_id=#{m_id}
 	</select>
+	
+	<insert id="firstCoupon" parameterType="String">
+		INSERT INTO c VALUES <!-- 기본이되는 쿼리 --> 
+		(DEFAULT, 10, DEFAULT, #{m_id})
+	</insert>
 </mapper>
