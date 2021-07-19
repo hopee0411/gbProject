@@ -79,4 +79,24 @@ public class W_DeliveryService {
 
 		return mv;
 	}
+	
+	// 운송번호 입력
+	public ModelAndView dNumPut(ReceptDto rec) {
+		mv = new ModelAndView();
+		// receptDto = new ReceptDto();
+
+		if (rec.getR_dnum() != "") {
+			wDDao.dNumPut(rec);
+
+		}
+
+		return mv;
+	}
+
 }// class end
+
+
+
+
+
+

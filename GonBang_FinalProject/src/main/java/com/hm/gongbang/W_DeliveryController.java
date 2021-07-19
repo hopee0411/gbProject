@@ -41,16 +41,26 @@ public class W_DeliveryController {
 	@GetMapping("wDSearchOption")
 	public ModelAndView wDSearchOption(ReceptDto rec) {
 		mv = new ModelAndView();
-		//w_id = (String) session.getAttribute("id");
+		// w_id = (String) session.getAttribute("id");
 		System.out.println(rec + "dddddddddddddddddddd");
 		mv.setViewName("w_productDelivery");
 		mv = wDs.wDSearchOption(rec);
 
-		return mv; }
-	 
+		return mv;
+	}
+
+	// 배송 운송장 번호 입력
+	@GetMapping("dNumPut")
+	public ModelAndView dNumPut(ReceptDto rec) {
+		mv = new ModelAndView();
+		mv.setViewName("w_productDelivery");
+		mv = wDs.dNumPut(rec);
+
+		return mv;
+	}
 
 	// 실패
-	
+
 	/*
 	 * @GetMapping("wDSearchOption") public ModelAndView wDSearchOption(String w_id,
 	 * ReceptDto rec) { mv = new ModelAndView(); w_id = (String)
@@ -59,8 +69,3 @@ public class W_DeliveryController {
 	 * return mv; }
 	 */
 }
-
-
-
-
-

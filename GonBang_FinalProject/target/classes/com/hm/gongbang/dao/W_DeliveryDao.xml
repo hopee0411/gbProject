@@ -39,8 +39,24 @@
 		SELECT COUNT (*) FROM R WHERE W_ID=#{w_id} and R_DCONDITION='배송완료'
 	</select>
 
+	<!-- 운송장 번호 입력 -->
+	<update id="dNumPut" parameterType="com.hm.gongbang.dto.ReceptDto">
+		UPDATE RECEPTT
+		SET
+			R_DNUM = #{r_dnum},
+			R_DCONDITION = '배송중'
+		WHERE R_NUM = #{r_num}
+	</update>
+	
+
 
 </mapper>
+
+
+
+
+
+
 
 
 

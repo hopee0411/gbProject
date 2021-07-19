@@ -59,11 +59,11 @@ a:hover {
 						<fieldset style="width: 1000px; padding: 8px;">
 							<label for="">검색</label>&nbsp&nbsp&nbsp
 							<!-- <option value="orderNum" name="r_num">주문번호</option> -->
-							
-							
-							주문자아이디 <input type="text" placeholder="주문자 아이디 입력" name="m_id"> <br>
-							주문번호 <input type="text" placeholder="주문번호 입력" name="r_num"> <br>
-							<label for="">주문일</label>
+
+
+							주문자아이디 <input type="text" placeholder="주문자 아이디 입력" name="m_id">
+							<br> 주문번호 <input type="text" placeholder="주문번호 입력"
+								name="r_num"> <br> <label for="">주문일</label>
 							<button type="button" id="termD" class="btnM btnWhite06"
 								onclick="dDate()">오늘</button>
 							<button type="button" id="termY" class="btnM btnWhite06"
@@ -102,48 +102,49 @@ a:hover {
 			</div>
 			<div></div>
 			<div class="dSResult">
-				<table class="table table-hover">
-					<tr class="table-light">
-						<th>주문번호</th>
-						<td>주문일</td>
-						<td>주문자명</td>
-						<td>주소</td>
-						<td>상품명</td>
-						<td>수량</td>
-						<td>금액</td>
-						<td>운송장정보</td>
-						<td>상태</td>
-					</tr>
-					<c:if test=" ${empty receptList}">
-						<tr>
-							<td colspan="9">조회되는 내용이 없습니다.</td>
+				<form method="get" action="dNumPut">
+					<button type="submit" class="dNumCheck">확인</button>
+					<table class="table table-hover">
+						<tr class="table-light">
+							<th>주문번호</th>
+							<td>주문일</td>
+							<td>주문자명</td>
+							<td>주소</td>
+							<td>상품명</td>
+							<td>수량</td>
+							<td>금액</td>
+							<td>운송장정보</td>
+							<td>상태</td>
 						</tr>
-					</c:if>
-					<c:if test="${!empty receptList}">
-						<c:forEach var="bitem" items="${receptList}">
+						<c:if test=" ${empty receptList}">
 							<tr>
-								<td>${bitem.r_num}</td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd hh:mm"
-										value="${bitem.r_orderdate}" /></td>
-								<td>${bitem.m_id}</td>
-								<td>${bitem.r_deliver}</td>
-								<td>${bitem.r_pname}</td>
-								<td>${bitem.r_count}</td>
-								<td>${bitem.r_price}</td>
-								<td><input type="text" value="${bitem.r_dnum}"
-									placeholder="운송번호입력"></td>
-								<td>
-									${bitem.r_dcondition}
-								<%-- <select>
+								<td colspan="9">조회되는 내용이 없습니다.</td>
+							</tr>
+						</c:if>
+						<c:if test="${!empty receptList}">
+							<c:forEach var="bitem" items="${receptList}">
+								<tr>
+									<td>${bitem.r_num}</td>
+									<td><fmt:formatDate pattern="yyyy-MM-dd hh:mm"
+											value="${bitem.r_orderdate}" /></td>
+									<td>${bitem.m_id}</td>
+									<td>${bitem.r_deliver}</td>
+									<td>${bitem.r_pname}</td>
+									<td>${bitem.r_count}</td>
+									<td>${bitem.r_price}</td>
+									<td><input type="text" value="${bitem.r_dnum}"
+										placeholder="운송번호입력"></td>
+									<td>${bitem.r_dcondition}<%-- <select>
 										<option>${bitem.r_dcondition}</option>
 										<option>배송중</option>
 										<option>배송완료</option>
 								</select> --%>
-								</td>
-							</tr>
-						</c:forEach>
-					</c:if>
-				</table>
+									</td>
+								</tr>
+							</c:forEach>
+						</c:if>
+					</table>
+				</form>
 			</div>
 		</div>
 
