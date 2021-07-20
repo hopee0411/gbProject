@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hm.gongbang.dto.ReceptDto;
@@ -50,13 +51,16 @@ public class W_DeliveryController {
 	}
 
 	// 배송 운송장 번호 입력
-	@GetMapping("dNumPut")
-	public ModelAndView dNumPut(ReceptDto rec) {
-		mv = new ModelAndView();
-		mv.setViewName("w_productDelivery");
-		mv = wDs.dNumPut(rec);
-
-		return mv;
+	@GetMapping(value="dNumPut",produces = "appication/text; charset=utf-8")
+	@ResponseBody
+	public String dNumPut(ReceptDto rec) {
+		//mv = new ModelAndView();
+		//mv.setViewName("w_productDelivery");
+		System.out.println(rec.getR_num() + rec.getR_dnum());
+		System.out.println(rec + "@@@@@@@@@@@@@컨트롤러");
+		
+		String a = wDs.dNumPut(rec);;
+		return a;
 	}
 
 	// 실패

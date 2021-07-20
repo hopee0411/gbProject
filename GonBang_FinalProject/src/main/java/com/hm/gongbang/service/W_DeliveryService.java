@@ -81,16 +81,20 @@ public class W_DeliveryService {
 	}
 	
 	// 운송번호 입력
-	public ModelAndView dNumPut(ReceptDto rec) {
-		mv = new ModelAndView();
+	public String dNumPut(ReceptDto rec) {
+		//mv = new ModelAndView();
 		// receptDto = new ReceptDto();
-
+		System.out.println(rec + "@@@@@@@@@@@@@@@@@@@서비스");
+		String msg;
+		
 		if (rec.getR_dnum() != "") {
 			wDDao.dNumPut(rec);
-
+			msg ="성공";
+		} else {
+			msg ="실패";
 		}
-
-		return mv;
+		
+		return msg;
 	}
 
 }// class end

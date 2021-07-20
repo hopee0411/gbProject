@@ -26,7 +26,8 @@ public interface W_DeliveryDao {
 	//작가 배송 완료 건수 출력
 	int deNumResult(String w_id);
 	
-	String dNumPut(ReceptDto rec);
+	//작가 운송장 번호 입력
+	void dNumPut(ReceptDto rec);
 	
 	
 	

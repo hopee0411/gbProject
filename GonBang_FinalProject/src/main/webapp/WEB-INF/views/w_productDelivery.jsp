@@ -102,7 +102,7 @@ a:hover {
 			</div>
 			<div></div>
 			<div class="dSResult">
-				<form method="get" action="dNumPut">
+				<form method="get" action="dNumPut" >
 					<button type="submit" class="dNumCheck">확인</button>
 					<table class="table table-hover">
 						<tr class="table-light">
@@ -132,13 +132,17 @@ a:hover {
 									<td>${bitem.r_pname}</td>
 									<td>${bitem.r_count}</td>
 									<td>${bitem.r_price}</td>
-									<td><input type="text" value="${bitem.r_dnum}"
+									<td><input id="i_${bitem.r_num}" type="text" value="${bitem.r_dnum}" name="r_dnum"
 										placeholder="운송번호입력"></td>
-									<td>${bitem.r_dcondition}<%-- <select>
+									<td><span id="id_${bitem.r_num}">${bitem.r_dcondition}</span><%-- <select>
 										<option>${bitem.r_dcondition}</option>
 										<option>배송중</option>
 										<option>배송완료</option>
 								</select> --%>
+									</td>
+									<td><c:if test="${empty bitem.r_dnum}">
+										<button type="button" value="${bitem.r_num}">확인</button>
+										</c:if>
 									</td>
 								</tr>
 							</c:forEach>
@@ -152,6 +156,70 @@ a:hover {
 	<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
+<script type="text/javascript">
+$(function(){
+	$("button").on("click", function(){
+		var i = $(this).val();
+		console.log(i);
+		var ids = "i_" + i;		
+		var spanelm = $(this).parents("tr").children().eq(8).children("span");
+		var dnum = $(this).parents("tr").children().eq(7).children("input").val();
+		console.log(dnum);
+		console.log(spanelm);
+		spanelm.html("배송중");
+		var num = {
+				"r_num" : i,
+				"r_dnum" : dnum
+		}	
+	
+	$.ajax({
+			type : "GET",
+			url : "dNumPut",
+			data : num,
+			success : function(result) {
+				if("성공") {
+					
+				} else {
+					
+				}
+				console.log(num);
+				
+			}, error:
+			function(error){
+				
+			}
+
+		});
+		
+	})
+	
+	});
+
+	/* $.ajax({
+	 url: "replyIns",
+	 type: "post",
+	 data: replyFrm,
+	 dataType: "json",
+	 success: function(result){
+	 var rlist = "";
+	 var dlist = result.rList;
+	
+	 //목록 처리라서 반복
+	 for(var i = 0; i < dlist.length; i++){
+	 rlist += '<tr>'
+	 + '<td width="20%">' + dlist[i].r_id + '</td>'
+	 + '<td width="50%">' + dlist[i].r_contents + '</td>'
+	 + '<td width="30%">' + dlist[i].r_date + '</td>'
+	 + '</tr>';
+	 }
+	 $("#rtable").html(rlist);
+	 },
+	 error: function(error){
+	 console.log(error);
+	 alert("댓글 입력 실패");
+	 }
+	 }); */
+</script>
 </html>
 
 
