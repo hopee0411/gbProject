@@ -103,7 +103,6 @@ a:hover {
 			<div></div>
 			<div class="dSResult">
 				<form method="get" action="dNumPut" >
-					<button type="submit" class="dNumCheck">확인</button>
 					<table class="table table-hover">
 						<tr class="table-light">
 							<th>주문번호</th>
@@ -132,13 +131,26 @@ a:hover {
 									<td>${bitem.r_pname}</td>
 									<td>${bitem.r_count}</td>
 									<td>${bitem.r_price}</td>
-									<td><input id="i_${bitem.r_num}" type="text" value="${bitem.r_dnum}" name="r_dnum"
-										placeholder="운송번호입력"></td>
-									<td><span id="id_${bitem.r_num}">${bitem.r_dcondition}</span><%-- <select>
-										<option>${bitem.r_dcondition}</option>
-										<option>배송중</option>
-										<option>배송완료</option>
-								</select> --%>
+									<td>
+										  <c:choose>
+											<c:when test="${empty bitem.r_dnum}">
+												<input id="i_${bitem.r_num}" type="text"
+												value="${bitem.r_dnum}" name="r_dnum" placeholder="운송번호입력">
+											</c:when>
+											<c:when test="${!empty bitem.r_dnum}">
+												<input id="i_${bitem.r_num}" type="text"
+												value="${bitem.r_dnum}" name="r_dnum" placeholder="운송번호입력"
+												style="background-color: pink">
+											</c:when>							
+										</c:choose> 
+										 <%--  <input id="i_${bitem.r_num}" type="text"
+											value="${bitem.r_dnum}" name="r_dnum" placeholder="운송번호입력">
+											<c:if test="${!empty i_bitem.r_num}">											
+													style="background-color: pink">
+											</c:if>   --%>
+									</td>		
+									<td>
+									<span id="id_${bitem.r_num}">${bitem.r_dcondition}</span>
 									</td>
 									<td><c:if test="${empty bitem.r_dnum}">
 										<button type="button" value="${bitem.r_num}">확인</button>
@@ -159,11 +171,13 @@ a:hover {
 <script type="text/javascript">
 $(function(){
 	$("button").on("click", function(){
+		var d = $(this); //확인버튼
 		var i = $(this).val();
 		console.log(i);
 		var ids = "i_" + i;		
 		var spanelm = $(this).parents("tr").children().eq(8).children("span");
 		var dnum = $(this).parents("tr").children().eq(7).children("input").val();
+		var ddnum = $(this).parents("tr").children().eq(7).children("input");
 		console.log(dnum);
 		console.log(spanelm);
 		spanelm.html("배송중");
@@ -177,22 +191,29 @@ $(function(){
 			url : "dNumPut",
 			data : num,
 			success : function(result) {
-				if("성공") {
+				if("성공") {		
 					
-				} else {
-					
-				}
-				console.log(num);
-				
-			}, error:
-			function(error){
-				
-			}
+			ddnum.attr("readonly", true);
+			//ddnum.attr("disabled", true);
+			
+			/* $(ddnum)
+			.css("background", "pink"); */
+			
+			d.hide();
+	} else {
 
-		});
-		
-	})
-	
+							}
+							console.log(num);
+
+						},
+						error : function(error) {
+
+						}
+
+					});
+
+				})
+
 	});
 
 	/* $.ajax({
