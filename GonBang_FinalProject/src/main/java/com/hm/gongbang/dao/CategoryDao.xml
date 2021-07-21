@@ -4,11 +4,31 @@
 	
 <mapper  namespace="com.hm.gongbang.dao.CategoryDao">
 	
+	<!-- 카테고리 이동 -->
 	<select id="categoryinfo" parameterType="String"
 		resultType="com.hm.gongbang.dto.CategoryDto">
 		SELECT *
 		FROM categoryinfo
 		WHERE P_CATEGORY=#{kate}	
 	</select>
+	
+	<select id="optionage" parameterType="Integer"
+	resultType="com.hm.gongbang.dto.CategoryDto">
+	select *
+	from product
+	where P_AGE=#{age}
+	<!--  AND P_CATEGORY=#{kate} -->
+rfr
+	</select>
+	
+	<select id="optioncgender" parameterType="String"
+	resultType="com.hm.gongbang.dto.CategoryDto">
+	select *
+	from product
+	where P_GENDER=#{P_GENDER}
+	<!--  AND  P_CATEGORY=#{kate} -->
+	
+	</select>
+
 	
 </mapper>

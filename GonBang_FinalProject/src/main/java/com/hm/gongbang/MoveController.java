@@ -246,12 +246,11 @@ public class MoveController {
 		return "w_writerManage";
 	}
 
-	@GetMapping("w_writerHomeFrm")
-	public String w_writerHomeFrm() {
-
-		return "w_writerHome";
-	}
-
+	/*
+	 * @GetMapping("w_writerHomeFrm") public String w_writerHomeFrm() {
+	 * 
+	 * return "w_writerHome"; }
+	 */
 		
 
 	/*--------------------안요한----------------------------*/
@@ -288,18 +287,5 @@ public class MoveController {
 		return mv;	
 
 	} // productContents end
-
-
-	// 상품 검색 버튼 클릭시 처리
-	// seachFrm()
-	@GetMapping("seachFrm")
-	public ModelAndView seachFrm() {
-		
-		
-		return mv;
-	} // seachFrm end
-	
-	
-	
 }//class end
 

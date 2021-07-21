@@ -11,6 +11,7 @@
 <link href="resources/css/category.css" rel="stylesheet" />
 <link href="resources/css/styles.css" rel="stylesheet" />
 
+
 </head>
 <!-- 헤더 출력 -->
 <header>
@@ -19,37 +20,70 @@
 <body>
 
 	<!-- 옵션 창 출력 -->
+	<form action="./optionchoseFrm" method="get" class="optionallinfo">
+		<div class="optionall">
+			<p>
+			<h1>상세 검색</h1>
+			</p>
+			<div>	
+			<div class="optioninfo">
 
-	<div class="optionall">
-		<p>
-		<h1>상세 검색</h1>
-		</p>
-		<div class="optioninfo">
-			<!-- 연령/성별 시작 -->
-			<div class="ageall">
-				<div class="agenameinfo">
-					<label class="agename" for="age">연령</label>
-				</div>
-				<div class="ageinfo">
-					<select id="age" name="age" class="form-control">
-						<option value="1">10대</option>
-						<option value="2">20대</option>
-						<option value="3">30대</option>
-						<option value="4">40대~50대</option>
-						<option value="5">60대 이상</option>
-					</select>
-				</div>
-				<div class="coupleinfo">
-					<label class="couplename" for="couple">성별</label>
-				</div>
-				<div class="coupleinfo">
-					<select id="couple" name="couple" class="form-control">
-						<option value="1">커플</option>
-						<option value="2">여자</option>
-						<option value="3">남자</option>
-					</select>
+				<!-- 연령/성별 시작 -->
+
+				<div class="ageall">
+					<div class="agenameinfo">
+						<label class="agename" for="age">연령</label>
+					</div>
+
+					<div class="ageinfo" style="width: 200px;">
+
+						<div class="form-checking" style="float: left;">
+							<label class="toggle"> <input type="radio" name="toggle"
+								checked> <span class="label-text">전체</span>
+							</label>
+						</div>
+						<div class="form-check" style="float: left;">
+							<label class="toggle"> <input type="radio" name="toggle">
+								<span class="label-text">10대</span>
+							</label>
+						</div>
+						<div class="form-check" style="float: left;">
+							<label class="toggle"> <input type="radio" name="toggle">
+								<span class="label-text">20대</span>
+							</label>
+						</div>
+						<div class="form-check" style="float: left;">
+							<label class="toggle"> <input type="radio" name="toggle">
+								<span class="label-text">30대</span>
+							</label>
+						</div>
+					</div>
+
+					<div class="coupleinfo">
+						<label class="couplename" for="couple">성별</label>
+					</div>
+
+					<div class="coupleinfo">
+						<div class="form-checking" style="float: left;">
+							<label class="toggle"> <input type="radio" name="toggle1"
+								checked> <span class="label-text">전체</span>
+							</label>
+						</div>
+						<div class="form-checking" style="float: left;">
+							<label class="toggle"> <input type="radio" name="toggle1">
+								<span class="label-text">남자</span>
+							</label>
+						</div>
+						<div class="form-checking" style="float: left;">
+							<label class="toggle"> <input type="radio" name="toggle1">
+								<span class="label-text">여자</span>
+							</label>
+						</div>
+					</div>
+
 				</div>
 			</div>
+
 			<!-- 연령/성별 끝 -->
 
 			<!-- 가격대 시작 -->
@@ -60,20 +94,28 @@
 						class="payseach" type="search" placeholder="가격">
 				</div>
 			</div>
+
 			<!-- 가격대 끝 -->
 
 			<!--  검색/초기화 버튼 시작  -->
 			<div class="btnall">
 				<div class="btninfo">
-					<button id="seachbtn" name="seachbtn" class="btn btn-success"
-					onclick="location.href='./seachFrm'">검색</a></button>
-					<button id="removebtn" name="removebtn" class="btn btn-inverse"
-						style="background-color: pink;">초기화</button>
+					<!-- <form action="./searchFrm"> -->
+					<button id="seachbtn" name="seachbtn" class="btn btn-success">검색</button>
+					<!-- </form> -->
+
+					<a href="./category"><button id="removebtn"
+							name="removebtn" class="btn btn-inverse"
+							style="background-color: pink;" value="초기화">초기화</button></a>
+
 				</div>
 			</div>
+			</div>
+
 			<!-- 검색/초기화 버튼 끝 -->
 		</div>
-	</div>
+	</form>
+
 	<!-- 옵션 창 끝 -->
 
 	<!-- 카테고리 별 전체 제품 이미지&정보 출력 -->
@@ -91,26 +133,25 @@
 							<div class="productimginfo">
 								<img id="productimg" class="card-img-top"
 									src="resources/images/img13.jpg" alt="..." />
-								
-							
+
+
 								<!-- 하트 사진 -->
-							
+
 								<div class="heartimg">
-				
+
 									<img id="likeimg" class="images" alt="..."
 										src="resources/images/heart.png "
 										onmouseover="this.src='resources/images/pinkheart.png'"
 										onmouseout="this.src='resources/images/heart.png'"
-										style="width: 30px; height: 30px; position: block;"> 
-								
-									<img id="chicklikeimg" class="images" alt="..."
+										style="width: 30px; height: 30px; position: block;"> <img
+										id="chicklikeimg" class="images" alt="..."
 										src="resources/images/pinkheart.png "
 										onmouseout="this.src='resources/images/pinkheart.png'"
 										onmouseover="this.src='resources/images/heart.png'"
 										style="width: 30px; height: 30px; position: block;">
-									
+
 								</div>
-								
+
 								<!-- 하트 사진 끝 -->
 							</div>
 							<!-- 제품 사진 끝 -->
@@ -128,21 +169,21 @@
 							<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
 								<div class="text-center">
 									<a class="btn btn-outline-dark mt-auto"
-										href="./productContents?cate=${item.p_productnum}" style="text-align: center;"> 
-										자세히보기</a>
+										href="./productContents?cate=${item.p_productnum}"
+										style="text-align: center;"> 자세히보기</a>
 								</div>
 							</div>
 							<!-- 공방 상세보기 버튼 끝 -->
 
 						</div>
 					</div>
-					</c:forEach>
-					<!-- 한 개의 제품 이미지&정보 출력 -->
-				
+				</c:forEach>
+				<!-- 한 개의 제품 이미지&정보 출력 -->
 
 
 
-<!-- 
+
+				<!-- 
 
 				===========================수정 중 임================================
 				한 개의 제품 이미지&정보 출력
@@ -446,5 +487,11 @@
 	/*----------------- 무한 스크롤 작업 ---------------*/
 
 	/*----------------- 무한 스크롤 작업 끝---------------*/
-</script>
+
+	
+	/* 옵션 선텍시 해당 정보 출력 */
+
+	
+	
+	</script>
 </html>

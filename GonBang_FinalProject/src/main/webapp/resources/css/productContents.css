@@ -163,8 +163,10 @@ th{
 	float: left;
 }
 .form-control{
-	height:50px; 
+	height:50px;
+	width: 400px; 
 }
+
 
 /* .payimgall{
 	width: 1300px;
@@ -193,6 +195,9 @@ th{
 .bx-wrapper {
 	margin: 50px auto;
 }
+
+
+
 
 
 /* <table class="table table-hover">
