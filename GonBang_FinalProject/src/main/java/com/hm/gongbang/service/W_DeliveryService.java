@@ -51,6 +51,22 @@ public class W_DeliveryService {
 
 		return mv;
 	}
+	
+	// 작가 취소 검색 출력
+	public ModelAndView wCSearch() {
+		mv = new ModelAndView();
+		
+		String w_id = (String) session.getAttribute("id");
+		
+		//최근 주문 취소 내역
+		receptDto = new ReceptDto();
+		ArrayList<ReceptDto> receptCList = wDDao.receptCList(w_id);
+		session.setAttribute("receptCList", receptCList);
+		mv.setViewName("w_productDelivery");// modelAndView에 이동할 페이지를 담는다
+		session.setAttribute("rNum", receptCList.size());
+		
+		return mv;
+	}
 
 	// 작가 배송 검색 옵션
 
@@ -96,6 +112,7 @@ public class W_DeliveryService {
 		
 		return msg;
 	}
+
 
 }// class end
 

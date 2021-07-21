@@ -6,7 +6,13 @@
 
 	<select id="receptList" parameterType="String"
 		resultType="com.hm.gongbang.dto.ReceptDto">
-		SELECT * FROM R WHERE W_ID=#{w_id}
+		<!-- SELECT * FROM R WHERE W_ID=#{w_id} -->
+		SELECT * FROM R WHERE W_ID=#{w_id} AND NOT R_DCONDITION = '배송취소'
+	</select>
+	
+	<select id="receptCList" parameterType="String"
+		resultType="com.hm.gongbang.dto.ReceptDto">
+		SELECT * FROM R WHERE W_ID=#{w_id} AND R_DCONDITION = '배송취소'
 	</select>
 
 	<select id="receptPName2"

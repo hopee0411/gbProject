@@ -37,6 +37,15 @@ public class W_DeliveryController {
 		return mv;
 
 	}
+	// 작가 취소 검색 출력
+	@GetMapping("wCSearch")
+	public ModelAndView wCSearch() {
+		mv = new ModelAndView();
+		mv.setViewName("w_productCancle");
+		mv = wDs.wCSearch();
+
+		return mv;
+	}
 	// 작가 배송 검색 옵션
 
 	@GetMapping("wDSearchOption")

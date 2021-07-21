@@ -200,12 +200,6 @@ public class MoveController {
 		return mv;
 	}
 
-	@GetMapping("w_productCancleFrm")
-	public String w_productCancleFrm() {
-
-		return "w_productCancle";
-
-	}
 
 	@GetMapping("w_productDeliveryFrm")
 	public ModelAndView w_productDeliveryFrm() {
@@ -220,6 +214,22 @@ public class MoveController {
 
 		}
 
+		return mv;
+
+	}
+	@GetMapping("w_productCancleFrm")
+	public ModelAndView w_productCancleFrm() {
+		mv = new ModelAndView();
+		mv.setViewName("w_productCancle");
+
+		String id = (String) session.getAttribute("id");
+		if (id != null) {
+			mv = wDs.wCSearch();// 서비스로 넘어가기위한 작업 
+		} else {
+			mv.setViewName("login");
+
+		}
+		
 		return mv;
 
 	}
