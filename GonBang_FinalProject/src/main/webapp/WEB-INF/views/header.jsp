@@ -1,7 +1,7 @@
 <!-- 머릿글 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 <script type="text/javascript">
 $(function(){
 	//게시글 작성 성공(저장) 메시지 출력(alert)

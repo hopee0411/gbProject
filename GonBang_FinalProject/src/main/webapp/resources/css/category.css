@@ -10870,10 +10870,15 @@ button{
 }
 .optioninfo{
 	margin: 0 auto;
+}
+.optionallinfo{
 	width: 80%;
-	height: 100%;
+	height: 320px;
 	border: 1px solid; 
 	border-style: solid none solid none;
+	margin: auto;
+	margin-top: 50px;
+	
 }
 .ageall{
 	margin: 0 auto;

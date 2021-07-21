@@ -11,4 +11,6 @@ public interface ProductDao {
 	
 	ArrayList<OpptionDto> opptioninfo(String cate);
 
+	void pview(ProductDto pDto);
+
 }

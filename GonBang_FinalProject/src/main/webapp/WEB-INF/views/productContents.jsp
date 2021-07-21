@@ -12,7 +12,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-
 <link href="resources/css/productContents.css" rel="stylesheet" />
 <link href="resources/css/styles.css" rel="stylesheet" />
 <style type="text/css">
@@ -20,6 +19,15 @@ img {
 	border: 1px solid;
 }
 .imgsamll:hover,#likeimg:hover,#chicklikeimg:hover,#productimg:hover,.infopoto:hover{
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	transform: scale(1.2);
+}
+.button:hover{
+
+
 	-webkit-transform: scale(1.2);
 	-moz-transform: scale(1.2);
 	-ms-transform: scale(1.2);
@@ -68,10 +76,12 @@ img {
 }
 .imgbig:!hover{
 	border: none!important;
-	
-	
 }
+
 </style>
+
+
+
 
 <!-- 사진 슬라이드 작업 -->
 <script type="text/javascript">
@@ -90,10 +100,17 @@ $(function(){
 });
 
 </script>
+
+
+
 </head>
 <header>
 	<jsp:include page="header.jsp" />
 </header>
+
+
+
+
 </head>
 <body>
 	<!-- Page Content-->
@@ -150,45 +167,89 @@ $(function(){
 						<th style="border: 1px solid;"><h6>${pitme.p_point}P</h6></th>
 					</tr>
 					<tr>
-						<th style="border: 1px solid;">배송료</th>
+						<th style="border: 1px solid;">기본 배송료</th>
 						<th style="border: 1px solid;"><h6>${pitme.p_deliveryfee}원</h6></th>
 					</tr>
 				</table>
 				<!-- 적립금 정보 출력 끝 -->
 
 				<!-- 옵션 시작 -->
-				<div class="form-group">
+				 <div class="form-group">
 					<div class="col-md-4">
 						<select id="selectbasic" name="selectbasic" class="form-control">
 							<option value="0">옵션 선택</option>
-							<%-- <c:if test="${!empty optionList}"> --%>
 								<c:forEach var="opitem" items="${opList}">
-							<option>${opitem.o_optionname} 
-									${opitem.o_optionprice} 원
-									${opitem.o_optionstock} 개</option>
-									</c:forEach>
-									
-						</select>
+								
+								<!-- 스위치 문과 같음 -->
+								
+									<div sid="onclickop" name="onclickop">
+										<option value="1">
+											${opitem.o_optionname}
+											${opitem.o_optionprice} 원
+											${opitem.o_optionstock} 개
+										</option>
+								
+									</div>
+		
+						</select>	
 					</div>
-				</div>
+					
+					
+						<div class="optionall" 
+							  style="float: left;
+							  height: 100px; width: 450px; text-align: left; ">
+							<h4 style="margin-top: 10px;">
+								옵션명 : &nbsp; &nbsp; ${opitem.o_optionname} 
+								
+								 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+								  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;
+								<button type="button" onclick="fnCalCount('p',this);"
+									style="border-radius: 50%; background-color: white;
+										border: none; font-size: 30px;"  >+</button>
+									${opitem.o_optionstock}
+								<button type="button" onclick="fnCalCount('m', this);"
+									style="border-radius: 50%; background-color: white;
+										border: none; font-size: 30px;">-</button>
+							</h4>
+							<h4>
+
+							
+								옵션 가격 :	  
+								  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+								  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+								
+								   ${opitem.o_optionprice}  원
+								
+							</h4>
+						</div>
+						
+					</div> 
+					</c:forEach>
+		
+		
+				
 				<!-- 옵션 끝 -->
 
 				<!-- 총 금액 출력 시작 -->
+				<c:forEach var="opitem" items="${opList}">
 				<div class="payallinfo">
 					<div class="allpaytext">
 						<h3>총 금액:</h3>
 					</div>
 					<div class="allpay">
 						<h3>${pitme.p_price}원</h3>
+						<%-- <h3>${pitme.p_price}+${opitem.o_optionprice}원</h3> --%>
 					</div>
 				</div>
+				</c:forEach>
 				<!-- 총 금액 출력 끝 -->
 
 				<!-- 결제/장바구니 버튼 시작 -->
 				<div class="col-md-4">
+					<form  method="post"  action="./kakaopay">
 					<button id="singlebutton" name="singlebutton"
 						class="btn btn-primary"
-						style="margin-top: 25px; margin-right: 30px;">결제하기</button>
+						style="margin-top: 25px; margin-right: 30px;">결제하기</button></form>
 					<button id="singlebutton" name="singlebutton"
 						class="btn btn-primary" style="margin-top: 25px;">장바구니</button>
 				</div>
@@ -699,6 +760,19 @@ $(function(){
 		<jsp:include page="footer.jsp" />
 	</footer>
 </body>
+<script type="text/javascript">
+// 옵션 선택 시 옵션 정보 보여주기(작업 중)
+	$(document).ready(function() {
+		$(".optionall").hide();// 숨기기
+
+		$("#optionclock").click(function() {
+			$(".optionall").show();
+		
+		});
+	});
+</script>
+
+
 </html>
 
 

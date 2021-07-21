@@ -18,4 +18,10 @@
 	WHERE P_PRODUCTNUM=#{p_productnum}
 </select>
 
+<update id="pview" parameterType="com.hm.gongbang.dto.ProductDto">
+	UPDATE p
+	SET p_views=#{p_views}
+	WHERE p_productnum=#{p_productnum}
+</update>
+
 </mapper>

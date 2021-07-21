@@ -288,12 +288,12 @@ public class MoveController {
 		return "w_writerManage";
 	}
 
-	@GetMapping("w_writerHomeFrm")
-	public String w_writerHomeFrm() {
-
-		return "w_writerHome";
-	}
-
+	/*
+	 * @GetMapping("w_writerHomeFrm") public String w_writerHomeFrm() {
+	 * 
+	 * return "w_writerHome"; }
+	 */
+		
 
 
 	/*--------------------안요한----------------------------*/
@@ -325,6 +325,7 @@ public class MoveController {
 
 		mv = pServ.productinfo(cate);
 
+
 		return mv;
 
 	} // productContents end
@@ -337,4 +338,8 @@ public class MoveController {
 		return mv;
 	} // seachFrm end
 
-}// class end
+	} // class end
+
+
+
+

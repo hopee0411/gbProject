@@ -23,6 +23,10 @@ public class ProductService {
 	public ModelAndView productinfo(String cate) {	
 		mv = new ModelAndView();
 		ArrayList<ProductDto> pList = pDao.productinfo(cate);
+		int vNum = pList.get(0).getP_views() + 1;
+		pList.get(0).setP_views(vNum);
+		pDao.pview(pList.get(0));		
+		mv.setViewName("productContents");
 		mv.addObject("pList",pList);
 		System.out.println(pList.get(0));
 		
@@ -30,8 +34,6 @@ public class ProductService {
 		mv.addObject("opList", opList);
 		System.out.println(opList.get(0));
 		
-		
-		mv.setViewName("productContents");
 		return mv;
 	} // 제품 상세 끝
 
