@@ -14,46 +14,46 @@
 		</ul>
 		<a class="w_suc" href="#">내정보 관리</a>
 		<!-- 작가만 보이게 하기 -->
+		
+		<hr><!-- 중간 선 -->
 	
-
-	<hr><!-- 중간 선 -->
-
-	<!-- 관심작가 처리 안함 -->
-	<button class="likeWriter" onclick="heartclick">
-		&hearts; 관심 작가
-	</button>
-	&nbsp;&#47;&nbsp;
+		<!-- 관심작가 처리 안함 -->
+		<button class="likeWriter" onclick="heartclick">
+			&hearts; 관심 작가
+		</button>
+		&nbsp;&#47;&nbsp;
+		
+		<a class="copylink" onclick="clip(); return false;">&curren; 공유</a>
+		
+		<hr><!-- 중간 선 -->
 	
-	<a class="copylink" onclick="clip(); return false;">&curren; 공유</a>
+		<table border="1" class="tbMenu">
+			<tr>
+				<th colspan="2"><span>&lt;메뉴&gt;</span></th>
+			</tr>
+			<tr>
+				<td><a href="./w_writerHomeFrm">홈</a></td>
+				<td><a href="./handmadeItdFrm?wh_gbnum=${gbNM.whf_gbnum}">공방소개</a></td>
+			</tr>
+			<tr>
+				<td><a href="./productSaleFrm?wh_gbnum=${gbNM.whf_gbnum}">판매작품</a></td>
+				<td><a href="./w_writerReviewFrm?wh_gbnum=${gbNM.whf_gbnum}">구매후기</a></td>
+			</tr>
+		</table>
+		<a href="./w_wrtierQuestionFrm" class="w_suc">문의하기</a><br>
 	
-	<hr><!-- 중간 선 -->
-
-	<table border="1" class="tbMenu">
-		<tr>
-			<th colspan="2"><span>&lt;메뉴&gt;</span></th>
-		</tr>
-		<tr>
-			<td><a href="./w_writerHomeFrm">홈</a></td>
-			<td><a href="./handmadeItdFrm?wh_gbnum=${gbNM.whf_gbnum}">공방소개</a></td>
-		</tr>
-		<tr>
-			<td><a href="./productSaleFrm?wh_gbnum=${gbNM.whf_gbnum}">판매작품</a></td>
-			<td><a href="./w_writerReviewFrm?wh_gbnum=${gbNM.whf_gbnum}">구매후기</a></td>
-		</tr>
-	</table>
-	<a href="./w_wrtierQuestionFrm" class="w_suc">문의하기</a><br>
-
-
-	<div class="orderManagement" class="w_suc">
-	<hr><!-- 중간 선 -->
-		<ul>
-
-			<span>&lt;주문 관리&gt;</span>
-			<li><a href="./w_productDeliveryFrm">배송 관리</a></li>
-			<li><a href="./w_productCancleFrm">취소/교환/반품/환불</a></li>
-
-			<li><a href="#">상품 등록/수정</a></li>
-		</ul>
+	
+		<div class="orderManagement" class="w_suc">
+		<hr><!-- 중간 선 -->
+			<ul>
+	
+				<span>&lt;주문 관리&gt;</span>
+				<li><a href="./w_productDeliveryFrm">배송 관리</a></li>
+				<li><a href="./w_productCancleFrm">취소/교환/반품/환불</a></li>
+	
+				<li><a href="#">상품 등록/수정</a></li>
+			</ul>
+		</div>
 	</div>
 </div>
 

@@ -1,3 +1,116 @@
+.all {
+	height: 800px;
+}
+
+table {
+	margin-top: 50px;
+	width: 70%;
+	border: 0;
+}
+
+th, td {
+	padding: 5px;
+	height: 20px;
+	text-align: center;
+}
+
+th {
+	height: 100px;
+	background-color: #ffe7e6;
+}
+
+td {
+	border-bottom: 2px dashed black;
+	padding: 15px 0;
+}
+
+/* 전체선택 */
+.allSelect-text {
+	 font-size: 12px;
+}
+
+.allSelect-checkbox {
+	bottom: 0;
+	width: 14px;
+	height: 14px;
+}
+
+.imgs {
+	width: 70px;
+	height: 70px;
+}
+
+.checkB {
+	width: 18px;
+	height: 18px;
+}
+
+.optionName {
+	padding-left:10px;
+	text-align: left;
+}
+
+.p_nums {
+	text-align: center;
+	width: 40px;
+}
+
+.deleteBtn {
+	color: black;
+	border: 1px solid #ff7875;
+	background-color: #ffe7e6;
+}
+
+.deleteBtn:hover {
+	color: #fff;
+}
+/* 선택상품삭제, 장바구니 비우기 */
+.dddd {
+	margin-top: 20px;
+	text-align: right;
+	margin-right: 18rem;
+}
+
+.ddd {
+	margin-right: 10px;
+}
+
+/* 상품수, 합계금액 */
+.tf {
+	margin-top:50px;
+	width:35%;
+	border: none;
+	text-align: center;
+}
+
+.sumCount{
+	width:25rem;
+	margin-bottom: 10px;
+	font-size: 1.25em;
+	font-weight: bold;
+	background-color: white;
+	border: 1px solid #00c2c8;
+	border-radius: 20px;
+	
+}
+
+.sumPrice {
+	width:resize;
+	margin-bottom: 10px;
+	font-size: 1.25em;
+	border: 1px solid #00c2c8;
+	border-radius: 20px;
+}
+/* 상품 주문 */
+.order {
+	padding: 12px 30px;
+	box-sizing: border-box;
+	margin-top: 10px;
+	font-size: 1.2em;
+}
+
+
+/* -------------------------------------------- */
 .basketdiv {
 	width: 100%;
 	border-top: 1px solid #e0e0e0;

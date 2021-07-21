@@ -16,12 +16,6 @@ $(function(){
 	}
 });
 </script>
-<style type="text/css">
-.pageMa {
-	text-decoration: none;
-	color: black;
-}
-</style>
 <title>로그인 페이지</title>
 </head>
 <body>
@@ -30,15 +24,14 @@ $(function(){
 	</header>	
 	<center>
 		<div class="login-all">
-			<div class="person-all">
-				<form action="./loginProc" method="post">
-					<h2>
-						<span>개인회원 로그인</span>
-					</h2>
-					<div>
+			<div class="boxStyle person"><!-- person-all -->
+				<form action="./loginProc" method="post" >
+						<span class="mainText"><h2>&lt; 개인회원 로그인 &gt;</h2></span>
+					<div class="box-log-pwd">
 						<div id="person-id-pwd">
 							<input class="idinput a" type="text" name="id"
-								placeholder=" 아이디" required> <br> <input class="a" type="password"
+								placeholder=" 아이디" required> <br> 
+							<input class="a" type="password"
 								name="pwd" placeholder=" 비밀번호" maxlength="12" minlength="6" required>
 						</div>
 						<div class="loginbtn">
@@ -48,22 +41,25 @@ $(function(){
 				</form>
 				<div id="per-sub-id-pwd">
 					<div class="btnPdd">
-						<button class="btnStyle" type="button" ><a class="pageMa" href="./m_joinMemberFrm">개인 회원가입</a></button>
+						<input type="button" class="btnStyle" href="./m_joinMemberFrm" value="개인 회원가입">					
+					<!-- <button class="btnStyle" type="button" ><a class="pageMa" href="./m_joinMemberFrm">개인 회원가입</a></button> -->
 					</div>
 					<div class="btnPdd">
-						<button class="btnStyle" type="button">아이디/비밀번호 찾기</button>
+						<input class="btnStyle" type="button" value="아이디/비밀번호 찾기">
+						<!-- <button class="btnStyle" type="button">아이디/비밀번호 찾기</button> -->
 					</div>
 				</div>
 			</div>
-			<div class="company-all">
+			<div class="boxStyle company"><!-- company-all -->
 				<form action="./loginProc" method="post">
 					<h2>
-						<span>작가 로그인</span>
+						<span class="mainText">&lt; 작가 로그인 &gt;</span>
 					</h2>
 					<div>
-						<div id="company-id-pwd">
+						<div id="company-id-pwd" class="box-log-pwd">
 							<input type="text" name="id" placeholder=" 아이디"
-								class="idinput a"> <br> <input type="password"
+								class="idinput a"> <br> 
+							<input type="password"
 								name="pwd" placeholder=" 비밀번호" maxlength="12" minlength="6"
 								class="a">
 						</div>
@@ -74,10 +70,10 @@ $(function(){
 				</form>
 				<div id="per-sub-id-pwd">
 						<div class="btnPdd">
-							<button class="btnStyle" type="button"><a class="pageMa" href="w_joinWriterFrm">작가 회원가입</a></button>
+							<input class="btnStyle pageMa" type="button" value="작가 회원가입" href="w_joinWriterFrm">
 						</div>
 						<div class="btnPdd">
-							<button class="btnStyle" type="button">아이디/비밀번호 찾기</button>
+							<input class="btnStyle" type="button" value="아이디/비밀번호 찾기">
 						</div>
 					</div>
 			</div>
@@ -86,5 +82,3 @@ $(function(){
 	<footer>
 		<jsp:include page="footer.jsp" />
 	</footer>
-</body>
-</html>
