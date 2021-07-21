@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hm.gongbang.dto.ReceptDto;
@@ -41,16 +42,29 @@ public class W_DeliveryController {
 	@GetMapping("wDSearchOption")
 	public ModelAndView wDSearchOption(ReceptDto rec) {
 		mv = new ModelAndView();
-		//w_id = (String) session.getAttribute("id");
+		// w_id = (String) session.getAttribute("id");
 		System.out.println(rec + "dddddddddddddddddddd");
 		mv.setViewName("w_productDelivery");
 		mv = wDs.wDSearchOption(rec);
 
-		return mv; }
-	 
+		return mv;
+	}
+
+	// 배송 운송장 번호 입력
+	@GetMapping(value="dNumPut",produces = "appication/text; charset=utf-8")
+	@ResponseBody
+	public String dNumPut(ReceptDto rec) {
+		//mv = new ModelAndView();
+		//mv.setViewName("w_productDelivery");
+		System.out.println(rec.getR_num() + rec.getR_dnum());
+		System.out.println(rec + "@@@@@@@@@@@@@컨트롤러");
+		
+		String a = wDs.dNumPut(rec);;
+		return a;
+	}
 
 	// 실패
-	
+
 	/*
 	 * @GetMapping("wDSearchOption") public ModelAndView wDSearchOption(String w_id,
 	 * ReceptDto rec) { mv = new ModelAndView(); w_id = (String)
@@ -59,8 +73,3 @@ public class W_DeliveryController {
 	 * return mv; }
 	 */
 }
-
-
-
-
-

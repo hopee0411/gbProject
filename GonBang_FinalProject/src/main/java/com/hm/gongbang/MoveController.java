@@ -293,8 +293,6 @@ public class MoveController {
 	 * 
 	 * return "w_writerHome"; }
 	 */
-		
-
 
 	/*--------------------안요한----------------------------*/
 

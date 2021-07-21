@@ -35,7 +35,9 @@ public class W_InfoController {
 	private W_InfoService wInfoS;
 
 	private ModelAndView mv;
-private W_HomeService wServ;
+	
+	@Autowired
+	private W_HomeService wServ;
 	
 	
 	@Autowired
@@ -44,8 +46,10 @@ private W_HomeService wServ;
 	//홈 -> 공방 홈 / 공방 번호 받음 사이드 정보 출력
 	@GetMapping("w_writerHomeFrm") 
 	public ModelAndView w_WriterHomeSide(Integer whf_gbnum) { 
-		log.info("홈 -> 공방 홈 - 공방번호 : " + whf_gbnum);
+		mv = new ModelAndView();
+		
 		whf_gbnum = 3;
+		log.info("홈 -> 공방 홈 - 공방번호 : " + whf_gbnum);
 		
 		//사이드 데이터 담고 이동할 페이지 
 		mv = wServ.getWHSideInfo(whf_gbnum);

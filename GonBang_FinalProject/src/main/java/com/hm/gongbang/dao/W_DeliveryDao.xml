@@ -9,21 +9,54 @@
 		SELECT * FROM R WHERE W_ID=#{w_id}
 	</select>
 
-	<select id="receptPName2" parameterType="com.hm.gongbang.dto.ReceptDto"
+	<select id="receptPName2"
+		parameterType="com.hm.gongbang.dto.ReceptDto"
 		resultType="com.hm.gongbang.dto.ReceptDto">
 		SELECT * FROM R WHERE W_ID=#{w_id} and R_PNAME=#{r_pname}
 	</select>
 
-	<select id="receptPName1" parameterType="com.hm.gongbang.dto.ReceptDto"
+	<select id="receptPName1"
+		parameterType="com.hm.gongbang.dto.ReceptDto"
 		resultType="com.hm.gongbang.dto.ReceptDto">
 		SELECT * FROM R WHERE W_ID=#{w_id} and M_id=#{m_id}
 	</select>
-	
-	<select id="receptPName3" parameterType="com.hm.gongbang.dto.ReceptDto"
+
+	<select id="receptPName3"
+		parameterType="com.hm.gongbang.dto.ReceptDto"
 		resultType="com.hm.gongbang.dto.ReceptDto">
 		SELECT * FROM R WHERE W_ID=#{w_id} and R_NUM=#{r_num}
 	</select>
 
+	<!-- 배송 준비 건수 -->
+	<select id="dwNumResult" parameterType="String"
+		resultType="Integer">
+		SELECT COUNT (*) FROM R WHERE W_ID=#{w_id} and R_DCONDITION='배송중'
+	</select>
+	
+	<!-- 배송 완료 건수 -->
+	<select id="deNumResult" parameterType="String"
+		resultType="Integer">
+		SELECT COUNT (*) FROM R WHERE W_ID=#{w_id} and R_DCONDITION='배송완료'
+	</select>
+
+	<!-- 운송장 번호 입력 -->
+	<update id="dNumPut" parameterType="com.hm.gongbang.dto.ReceptDto">
+		UPDATE RECEPTT
+		SET
+			R_DNUM = #{r_dnum},
+			R_DCONDITION = '배송중'
+		WHERE R_NUM = #{r_num}
+	</update>
+	
 
 
 </mapper>
+
+
+
+
+
+
+
+
+
