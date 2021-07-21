@@ -2,28 +2,52 @@
 
 .login-all {
 	width: 1200px;
-	height: 300px;
+	height: 420px;
 	margin-top: 50px;
-	padding: 10px;
 }
 
 #login-person {
 	text-align: center;
 }
 
-.person-all {
+.boxStyle {
 	width: 500px;
 	height: 300px;
 	float: left;
-	border: 1px solid white;
 	border-radius: 10px;
-	background-color: lightyellow;
-	padding-top: 50px;
-	color: white;
+	background-color: rgb(255, 235, 234);
+	padding-top: 25px;
+	margin-left: 50px;
+	margin-right: 50px;
 }
 .a {
+	border-radius: 5px;
+	height: 30px;
+	width: 50%;
 	border: none;
 }
+.person {
+	border: 1px solid #ec4aa7;
+}
+.company {
+	border: 1px solid #00c2c8;
+}
+
+.box-log-pwd {
+	margin-top: 20px;
+}
+
+.mainText {
+	top: 20px;
+	font-style: bold;
+	background: none;
+	color: black;
+	width: 300px;
+	text-align: center;
+	border: none;
+	padding-bottom: 20px;
+}
+
 span {
 	width: none;
 	background-color: #f495cc;
@@ -50,12 +74,19 @@ center {
 
 .loginbtn {	
 	margin: 5px;
-	margin-top: 10px;
+	margin-top: 15px;
 }
 
 .btnStyle {
+	border-radius: 5px;
 	width: 50%;
-	border: none;
+	border: 1px solid #ff7875;
+	text-decoration: none;
+	background-color: #ffe4e3;
+}
+
+.btnStyle:hover {
+	color: white;
 }
 
 .btnPdd {

@@ -1,12 +1,19 @@
 package com.hm.gongbang;
 
+
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hm.gongbang.service.MemberService;
@@ -19,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.hm.gongbang.dto.OpptionDto;
 import com.hm.gongbang.dto.ProductDto;
+import com.hm.gongbang.dto.Shopping_BasketDto;
 import com.hm.gongbang.service.CateGroryService;
 
 import com.hm.gongbang.service.ProductService;
@@ -86,6 +94,49 @@ public class MoveController {
 		mv = mServ.getBasket();
 		return mv;
 	}
+	
+	//행 한줄 삭제
+	/*
+	@RequestMapping("basketRowDelete")
+	public String deleteRow(@RequestParam int sb_basketnum) {
+		log.info("deleteRow()");
+		
+		mServ.deleteRow(sb_basketnum);
+		String view = "m_sBasket";
+		return view;
+	}
+	*/
+	@PostMapping(value="basketRowDelete", produces="application/text; charset=utf-8")
+	@ResponseBody
+	public int dataRest(int sb_basketnum) throws Exception {
+		log.info("dataRest : " + sb_basketnum);
+		int delNum = 0;
+
+		delNum = mServ.deleteRow(sb_basketnum);
+		return delNum;
+	}
+	//선택한거 삭제
+	@RequestMapping("delSelect")
+    @ResponseBody
+    public int deleteReport(Map<String,Object> commandMap) throws Exception{
+        int result=1;
+        try {
+            int cnt = Integer.parseInt((String) commandMap.get("CNT"));
+            String rprtOdr = (String)commandMap.get("RPRT_ODR");
+            String [] strArray = rprtOdr.split(",");
+            for(int i=0; i<cnt; i++) {
+                int temp = Integer.parseInt((String)strArray[i]);
+                commandMap.put("RPRT_ODR", temp);
+                mServ.delete("ReportDAO.deleteReport", commandMap);
+            }
+        } catch (Exception e) {
+            log.info(e.getMessage());
+            result=0;
+        }
+        return result;
+       }
+
+	
 
 	// 마이페이지 메인
 	@GetMapping("myPageFrm")
@@ -242,6 +293,8 @@ public class MoveController {
 
 		return "w_writerHome";
 	}
+
+
 
 	/*--------------------안요한----------------------------*/
 

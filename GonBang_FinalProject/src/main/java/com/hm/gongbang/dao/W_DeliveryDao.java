@@ -20,6 +20,4 @@ public interface W_DeliveryDao {
 	ArrayList<ReceptDto> receptPName1(ReceptDto rec);
 	ArrayList<ReceptDto> receptPName2(ReceptDto rec);
 	ArrayList<ReceptDto> receptPName3(ReceptDto rec);
-
-
 }

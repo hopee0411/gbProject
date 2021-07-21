@@ -10,201 +10,223 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>장바구니</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="resource/js/jquery.serializeObject.js"></script>
+
 <link href="resources/css/styles.css" rel="stylesheet" />
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-	integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-	crossorigin="anonymous">
 <link rel="stylesheet" href="resources/css/m_sBasket.css" />
-<script type="text/javascript" src="./10-11.js"></script>
-<style type="text/css">
-header {
-	margin-bottom: 50px;
-}
 
-.basketdiv {
-	height: auto;
-	
-}
-
-.row {
-	height: 93px;
-}
-</style>
 </head>
 <body>
 	<header>
 		<jsp:include page="header.jsp" />
 	</header>
-
-	<form name="orderform" id="orderform" method="post" class="orderform"
-		action="/Page" onsubmit="return false;">
-
-		<input type="hidden" name="cmd" value="order">
-		<div class="basketdiv" id="basket">
-			<div class="row head">
-				<div class="subdiv">
-					<div class="check">선택</div>
-					<div class="img">이미지</div>
-					<div class="pname">상품명</div>
-				</div>
-				<div class="subdiv">
-					<div class="basketprice">가격</div>
-					<div class="num">수량</div>
-					<div class="sum">합계</div>
-				</div>
-				<div class="subdiv">
-
-					<div class="basketcmd">삭제</div>
-				</div>
-				<div class="split"></div>
-			</div>
-			<c:if test="${empty basketlist}">
-				<h3>장바구니에 담긴 상품이 없습니다.</h3>
-			</c:if>
-			<c:if test="${!empty basketlist}">
+	<div class="all">
+	<center>
+	
+	<table id="mytable">
+		<thead>
+			<tr>
+				<th style="width: 100px;"><h4>선택</h4><input allSelect-checkbox type="checkbox"  id="chk_list" name="chk_list" value="전체선택"><span class="allSelect-text">전체선택</span></th>
+				<th style="width: 150px;"><h4>이미지</h4></th>
+				<th style="width: 500px;"><h4>상품명</h4></th>
+				<th><h4>가격</h4></th>
+				<th><h4>수량</h4></th>
+				<th><h4>합계</h4></th>
+				<th><h4>삭제</h4></th>
+			</tr>
+		</thead>
+		<tbody>
 			<c:forEach var="bitem" items="${basketlist}">
-				<div class="row data">
-					<div class="subdiv">
-						<div class="check">
-							<input type="checkbox" name="buy" value="260" checked=""
-								onclick="javascript:basket.checkItem();">&nbsp;
-						</div>
-						<div class="img">
-							<img src="resources/images/flowers.png" width="60" height="60">
-						</div>
-						<div class="pname">
-							<span>${bitem.sb_optionname}</span>
-						</div>
-					</div>
-					<div class="subdiv">
-						<div class="basketprice">
-							<input type="hidden" name="p_price" id="p_price1" class="p_price"
-								value="${bitem.sb_optionprice}">${bitem.sb_optionprice}원
-						</div>
-						<div class="num">
-							<div class="updown">
-								<input type="text" name="p_num1" id="p_num1" size="2"
-									maxlength="4" class="p_num" value="${bitem.sb_count}"
-									onkeyup="javascript:basket.changePNum(1);"> 
-							</div>
-						</div>
-						<div class="sum">${bitem.sb_totalprice}원</div>
-					</div>
-					<div class="subdiv">
-						<div class="basketcmd">
-							<a href="javascript:void(0)" class="abutton"
-								onclick="javascript:basket.delItem();">삭제</a>
-						</div>
-					</div>
-				</div>
-				</c:forEach>
-			</c:if>
-
-			<div class="row data">
-				<div class="subdiv">
-					<div class="check">
-						<input type="checkbox" name="buy" value="261" checked=""
-							onclick="javascript:basket.checkItem();">&nbsp;
-					</div>
-					<div class="img">
-						<img src="resources/images/img13.jpg" width="60" height="60">
-					</div>
-					<div class="pname">
-						<span>노바 요거팜(JP-268T)</span>
-					</div>
-				</div>
-				<div class="subdiv">
-					<div class="basketprice">
-						<input type="hidden" name="p_price" id="p_price2" class="p_price"
-							value="19000">19,000원
-					</div>
-					<div class="num">
-						<div class="updown">
-							<input type="text" name="p_num2" id="p_num2" size="2"
-								maxlength="4" class="p_num" value="1"
-								onkeyup="javascript:basket.changePNum(2);"> <span
-								onclick="javascript:basket.changePNum(2);"><i
-								class="fas fa-arrow-alt-circle-up up"></i></span> <span
-								onclick="javascript:basket.changePNum(2);"><i
-								class="fas fa-arrow-alt-circle-down down"></i></span>
-						</div>
-					</div>
-					<div class="sum">19,000원</div>
-				</div>
-				<div class="subdiv">
-					<div class="basketcmd">
-						<a href="javascript:void(0)" class="abutton"
-							onclick="javascript:basket.delItem();">삭제</a>
-					</div>
-				</div>
-			</div>
-
-
-			<div class="row data">
-				<div class="subdiv">
-					<div class="check">
-						<input type="checkbox" name="buy" value="262" checked=""
-							onclick="javascript:basket.checkItem();">&nbsp;
-					</div>
-					<div class="img">
-						<img src="resources/images/img36.PNG" width="60" height="60">
-					</div>
-					<div class="pname">
-						<span>아날도 바시니 보스톤 가방 20인치 (ab-380)</span>
-					</div>
-				</div>
-				<div class="subdiv">
-					<div class="basketprice">
-						<input type="hidden" name="p_price" id="p_price3" class="p_price"
-							value="15200">15,200원
-					</div>
-					<div class="num">
-						<div class="updown">
-							<input type="text" name="p_num3" id="p_num3" size="2"
-								maxlength="4" class="p_num" value="1"
-								onkeyup="javascript:basket.changePNum(3);"> <span
-								onclick="javascript:basket.changePNum(3);"><i
-								class="fas fa-arrow-alt-circle-up up"></i></span> <span
-								onclick="javascript:basket.changePNum(3);"><i
-								class="fas fa-arrow-alt-circle-down down"></i></span>
-						</div>
-					</div>
-					<div class="sum">15,200원</div>
-				</div>
-				<div class="subdiv">
-					<div class="basketcmd">
-						<a href="javascript:void(0)" class="abutton"
-							onclick="javascript:basket.delItem();">삭제</a>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-		<div class="right-align basketrowcmd">
-			<a href="javascript:void(0)" class="abutton"
-				onclick="javascript:basket.delCheckedItem();">선택상품삭제</a> <a
-				href="javascript:void(0)" class="abutton"
-				onclick="javascript:basket.delAllItem();">장바구니비우기</a>
-		</div>
-
-		<div class="bigtext right-align sumcount" id="sum_p_num">상품갯수:
-			4개</div>
-		<div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액:
-			74,200원</div>
-
-		<div id="goorder" class="">
-			<div class="clear"></div>
-			<div class="buttongroup center-align cmd">
-				<a href="javascript:void(0);">선택한 상품 주문</a>
-			</div>
-		</div>
-	</form>
+				<c:if test="${empty basketlist}">
+					<h3>장바구니에 담긴 상품이 없습니다.</h3>
+				</c:if>
+				<c:if test="${!empty basketlist}">
+				
+				<tr>
+					<input type="hidden" id="basketnum" value="${bitem.sb_basketnum}">
+					<td><input type="checkbox" class="checkB" id="chk" name="chk"></td>
+					<td><img src="resources/images/flowers.png" class="imgs"></td>
+					<td class="optionName">${bitem.sb_optionname}</td>
+					<td >
+						<%-- <input type="hidden" name="p_price" id="p_price1" class="p_price"
+							value="${bitem.sb_optionprice}"> --%>${bitem.sb_optionprice} 원
+					</td>
+					<td id="totalNum">
+						<%-- <input type="text" name="p_num1" id="p_num1" size="2"
+							maxlength="4" class="p_nums" value="${bitem.sb_count}"
+							onkeyup="javascript:basket.changePNum(1);"> --%>${bitem.sb_count} 개
+					</td>
+					<td class="totalP" id="totalP">${bitem.sb_totalprice} 원</td>
+					<td>
+						<%-- <a class="deleteBtn" href="./basketRowDelete/deleteNum?sb_basketnum="${bitem.sb_basketnum}" onclick="deleteL(this)">삭제</a> --%>
+						<button class="deleteBtn" id="btn_delete" onclick="deleteL(this)">삭제</button>
+					</td>
+				</tr>
+				</c:if>
+			</c:forEach>
+		</tbody>
+	</table>
+	
+	<div class="dddd">
+		<button class="deleteBtn" onclick="reeeeee()">선택상품 삭제</button> 
+		<button class="deleteBtn" id="delAllItem" > <!-- onclick="javascript:basket.delAllItem();" -->장바구니 비우기</button> 
+	</div>
+	
+	<div class="tf">
+		<button class="sumCount" id="sum_p_num" onclick="pSum()">상품수 보기</button>
+		<button class="sumCount" id="sum_p_price" onclick="calSum()">합계 보기</button>
+	</div>
+	
+	<button class="deleteBtn order">선택한 상품 주문</button>
+	
+</center></div><br><br><br><br>
 	<footer>
 		<jsp:include page="footer.jsp" />
 	</footer>
 </body>
+<script type="text/javascript">
+function calSum() {
+	  //합계구하기
+	  var sum = 0;
+	  
+	  $('#mytable #totalP').each(function() {
+		 sum += parseInt(this.innerText); 
+	  });
+	  //input일 경우 innerHTML대신 value로 넣기
+	  document.getElementById('sum_p_price').innerHTML = ("합계 : " + sum);
+	  
+}
+</script>
+<script type="text/javascript">
+function pSum() {
+	  //상품 수
+	  var sum = 0;
+	  
+	  //수량
+	  var numP = $("#totalNum").val();
+	  
+	  $('#mytable #chk').each(function() {
+		 sum += 1; 
+	  });
+	  
+	  //input일 경우 innerHTML대신 value로 넣기
+	  document.getElementById('sum_p_num').innerHTML = ("상품수 : " + sum + "전체 수량 : " + num);
+}
+</script>
+
+
+<script type="text/javascript">
+//삭제 버튼
+function deleteL(obj){
+	var tr = $(obj).parent().parent();
+	tr.remove();
+}
+	
+/* 
+$(document).on('click', '#btn_delete', function() {
+	const basketnum = $("#basketnum").val();
+	
+	if(confirm("정말 삭제하시겠습니까 ?")) {
+		var tr = $(obj).parent().parent();
+		tr.remove();
+		
+		$.ajax({
+			url : "basketRowDelete",
+			type : "POST",
+			cache: false,
+			data : {
+				basketnum : $()
+			},
+			success : function(res){
+				alert('삭제 완료');
+				location.href='./m_sBasketFrm';
+			}
+		})
+	}
+});
+*/
+
+/* $(document).on("click", ".btn_delete", function() {
+	console.log("delete : ");
+	
+	var $ele = $(this).parent().parent();
+	var deleNum =$(#basketnum).val();
+	
+	if(confirm("정말 삭제하시겠습니까 ?")) {
+		console.log("1");
+		$.ajax({
+			url:"basketRowDelete",
+			type: "POST",
+			cache: false, 
+			data: deleNum,
+			success: function(result) {
+				var tr = $(obj).parent().parent();
+				tr.remove();
+				
+				console.log("success : " + tr);
+				
+				$("#mytable").html(result);
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	}
+}); */
+
+
+/* function deleteL(obj) {
+	console.log("delete : " + obj);
+	
+	if(confirm("정말 삭제하시겠습니까 ?")) {
+		console.log("1");
+		$.ajax({
+			url:"basketRowDelete",
+			type: "POST",
+			/* cache: false, */
+			/*data: obj,
+			success: function(result) {
+				var tr = $(obj).parent().parent();
+				tr.remove();
+				
+				console.log("success : " + tr);
+				
+				$("#mytable").html(result);
+			},
+			error: function(error){
+				console.log(error);
+			}
+		});
+	}
+}  */
+
+</script>
+
+
+<script type="text/javascript">
+function reeeeee(){
+	//선택행 삭제	
+ 	/*var $obj = $("input[type=checkbox][name='chk']");
+	var checkCount = $obj.size();
+	console.log(obj);
+	console.log(checkCount); 
+	
+	for (var i=0; i<obj(); i++){
+		if($obj.eq(i).is(":checked")){
+			$obj.eq(i).parent().parent().remove();
+		}
+	}
+	 
+	document.querySelectorAll("input[name='chk']:checked").function (item) {
+
+        item.parentElement.parentElement.parentElement.remove();
+
+    };  */
+}
+
+</script>
+
 <script type="text/javascript">
 	let basket = {
 		totalCount : 0,

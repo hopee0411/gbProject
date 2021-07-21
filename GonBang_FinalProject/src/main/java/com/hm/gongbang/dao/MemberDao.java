@@ -1,6 +1,7 @@
 package com.hm.gongbang.dao;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import com.hm.gongbang.dto.MemberDto;
 import com.hm.gongbang.dto.Mw_viewDto;
@@ -15,6 +16,10 @@ public interface MemberDao {
 	public void memberJoinProc(MemberDto member);
 	//장바구니
 	public ArrayList<Shopping_BasketDto> getBasket(String m_id);
+	//장바구니 행 삭제
+	public void deleteRow(int sb_basketnum);
+	
+	public int deleteRows(Map<String, Object> commandMap);
 
 
 }//class end

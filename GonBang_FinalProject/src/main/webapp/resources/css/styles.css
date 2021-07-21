@@ -7028,6 +7028,10 @@ textarea.form-control-lg {
   margin-bottom: 3rem !important;
 }
 
+.mb-s {
+  margin-bottom: 0.5rem !important;
+}
+
 .mb-auto {
   margin-bottom: auto !important;
 }
@@ -11079,12 +11083,14 @@ html {
 }
 
 .footer {
-	margin-top: 100px;
-	padding-top: 12px;
-	padding-bottom: 5rem;
+	margin-top: 180px;
+	padding-top: 10px;
+	padding-bottom: 0.5rem;
 	background-color: #ffa8a5;
 	color: #fff;
-	height: 150px;
+ 	position: sticky;
+ 	bottom: 0;
+	width: 100%;
 }
 
 .copyright {
@@ -11098,17 +11104,8 @@ html {
     margin-left: auto;
     max-width: 1210px;	
     margin-top: 0;
-    margin-bottom: 10px;
 }
-/* .tf_menu {
-	color: black;
-} */
 
-
-
-/* .header_footer>.tf_menu>ul {
-	padding: 10px;	
-} */
 
 .header {
 	background-color: #ffa8a5 !important;
@@ -11157,7 +11154,7 @@ html {
 }
 
 .container {
-	margin-bottom: 2px;
+	margin-bottom: 0.5rem;
 }
 
 .suc {

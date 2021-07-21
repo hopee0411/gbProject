@@ -2,6 +2,7 @@ package com.hm.gongbang.service;
 
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -127,6 +128,18 @@ public class MemberService {
 		mv.setViewName("m_sBasket");
 		return mv;
 	}//getBasket() end
+
+	//장바구니 행 삭제
+	public int deleteRow(int sb_basketnum) {
+		mDao.deleteRow(sb_basketnum);
+		int delNum = 0;
+		return delNum;
+	}
+
+	public int delete(String string, Map<String, Object> commandMap) {
+		int del = mDao.deleteRows(commandMap);
+		return del;
+	}
 
 
 }//class end

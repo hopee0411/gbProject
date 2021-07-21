@@ -22,4 +22,12 @@
 	<select id="getBasket" parameterType="String" resultType="com.hm.gongbang.dto.Shopping_BasketDto">
 		SELECT * FROM sb WHERE m_id=#{m_id}
 	</select>
+	
+	<delete id="deleteRow">
+		DELETE * FROM sb WHERE sb_basketnum=#{sb_basketnum}
+	</delete>
+
+	<delete id="deleteRows">
+		DELETE * FROM sb WHERE sb_basketnum=#{sb_basketnum}
+	</delete>
 </mapper>
