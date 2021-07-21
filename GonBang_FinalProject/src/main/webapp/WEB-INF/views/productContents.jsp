@@ -11,6 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script src="resources/js/jq.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <link href="resources/css/productContents.css" rel="stylesheet" />
 <link href="resources/css/styles.css" rel="stylesheet" />
@@ -174,11 +175,12 @@ $(function(){
 				<!-- 적립금 정보 출력 끝 -->
 
 				<!-- 옵션 시작 -->
+				<c:forEach var="opitem" items="${opList}">
 				 <div class="form-group">
 					<div class="col-md-4">
 						<select id="selectbasic" name="selectbasic" class="form-control">
 							<option value="0">옵션 선택</option>
-								<c:forEach var="opitem" items="${opList}">
+								
 								
 								<!-- 스위치 문과 같음 -->
 								
@@ -246,10 +248,12 @@ $(function(){
 
 				<!-- 결제/장바구니 버튼 시작 -->
 				<div class="col-md-4">
-					<form  method="post"  action="./kakaopay">
-					<button id="singlebutton" name="singlebutton"
+					<form  method="post"  action="./kakaopay1">
+					<button id="apibtn1" name="apibtn1"
 						class="btn btn-primary"
 						style="margin-top: 25px; margin-right: 30px;">결제하기</button></form>
+						<div id="apibtn">kakaopay</div>
+						
 					<button id="singlebutton" name="singlebutton"
 						class="btn btn-primary" style="margin-top: 25px;">장바구니</button>
 				</div>
@@ -760,7 +764,7 @@ $(function(){
 		<jsp:include page="footer.jsp" />
 	</footer>
 </body>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 // 옵션 선택 시 옵션 정보 보여주기(작업 중)
 	$(document).ready(function() {
 		$(".optionall").hide();// 숨기기
@@ -770,7 +774,7 @@ $(function(){
 		
 		});
 	});
-</script>
+</script> -->
 
 
 </html>

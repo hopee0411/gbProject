@@ -59,8 +59,10 @@ $(function(){
 								href="./w_writerHomeFrm">작가홈</a></li>
 							<li class="nav-item mx-0 mx-lg-1"><a
 								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"
-
 								href="./w_writerHomeFrm?whf_gbnum=${gbNM.whf_gbnum}">작가홈</a></li>
+							<li class="nav-item mx-0 mx-lg-1"><a
+								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"	
+								a href="./testFrm"><h5>카카오페이실험</h5></a>
 
 								
 

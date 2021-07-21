@@ -328,6 +328,13 @@ public class MoveController {
 
 	} // productContents end
 
+	@GetMapping("testFrm")
+	public ModelAndView testFrm() {
+		mv = new ModelAndView();
+		
+		mv.setViewName("jq/test");
+		return mv;
+	}
 	// 상품 검색 버튼 클릭시 처리
 	// seachFrm()
 	@GetMapping("seachFrm")
