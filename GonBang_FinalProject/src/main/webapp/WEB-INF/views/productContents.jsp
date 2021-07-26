@@ -212,6 +212,7 @@ $(function(){
 								<button type="button" onclick="fnCalCount('m', this);"
 									style="border-radius: 50%; background-color: white;
 										border: none; font-size: 30px;">-</button>
+								
 							</h4>
 							<h4>
 
@@ -248,14 +249,20 @@ $(function(){
 
 				<!-- 결제/장바구니 버튼 시작 -->
 				<div class="col-md-4">
-					<form  method="post"  action="./kakaopay1">
-					<button id="apibtn1" name="apibtn1"
-						class="btn btn-primary"
-						style="margin-top: 25px; margin-right: 30px;">결제하기</button></form>
-						<div id="apibtn">kakaopay</div>
-						
-					<button id="singlebutton" name="singlebutton"
-						class="btn btn-primary" style="margin-top: 25px;">장바구니</button>
+
+						<div id="apibtn">
+							<img alt="..." src="resources/images/kakaopay1.png"
+								style="border: none; margin-right: 25px; margin-top: 20px; width: 150px;"
+								id="singlebutton" name="singlebutton" type="button">
+						</div>
+						<!-- <button id="singlebutton" name="singlebutton"
+						class="btn btn-primary" style="margin-top: 25px; margin-right: 25px;
+							background-color: yellow; color: black;"></button> -->
+						<img id="basket" alt="..." src="resources/images/shoppingbasket.jpg"
+							type="button" style="width: 100px; height: 100px; border: none;
+								margin-top: 10px; margin-left: 100px;">
+					<!-- <button id="singlebutton" name="singlebutton"
+						class="btn btn-primary" style="margin-top: 25px;">장바구니</button> -->
 				</div>
 				<!-- 결제/장바구니 버튼 끝 -->
 
@@ -310,6 +317,10 @@ $(function(){
 				<div class="riewbtn">
 					<button type="button" class="btn btn-success">등록</button>
 				</div>
+				
+				<table>
+					<tfoot><tr>등록 번호</tr></tfoot>	
+				</table>
 
 			</div>
 
@@ -764,7 +775,7 @@ $(function(){
 		<jsp:include page="footer.jsp" />
 	</footer>
 </body>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 // 옵션 선택 시 옵션 정보 보여주기(작업 중)
 	$(document).ready(function() {
 		$(".optionall").hide();// 숨기기
@@ -774,7 +785,7 @@ $(function(){
 		
 		});
 	});
-</script> -->
+</script>
 
 
 </html>
