@@ -11182,3 +11182,40 @@ html {
 	margin: 10px;
 	width: 200px;
 }
+
+/* ------------------------------------------------- */
+
+.dropdown-centent:hover   {
+	display: none;
+}
+
+.dropdown-centent {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 500px;
+	display: none;
+}
+
+.dropdown-centent li {
+	background: yellow;
+}
+
+.dropdown-centent li a:hover {
+	background: gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
