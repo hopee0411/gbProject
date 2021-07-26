@@ -48,17 +48,17 @@
 		</div>
 		<div class="carousel-inner" style="margin-top: 50px;">
 			<div class="carousel-item active" data-bs-interval="10000">
-				<img src="resources/images/Lighthouse.jpg" class="d-block w-100"
+				<img src="resources/images/101.png" class="d-block w-100"
 					alt="...">
 				<div class="carousel-caption d-none d-md-block"></div>
 			</div>
 			<div class="carousel-item" data-bs-interval="2000">
-				<img src="resources/images/Tulips.jpg" class="d-block w-100"
+				<img src="resources/images/100.png" class="d-block w-100"
 					alt="...">
 				<div class="carousel-caption d-none d-md-block"></div>
 			</div>
 			<div class="carousel-item">
-				<img src="resources/images/Desert.jpg" class="d-block w-100"
+				<img src="resources/images/102.png" class="d-block w-100"
 					alt="...">
 				<div class="carousel-caption d-none d-md-block"></div>
 			</div>

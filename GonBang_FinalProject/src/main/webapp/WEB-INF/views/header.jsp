@@ -36,9 +36,9 @@ $(function(){
 						Menu <i class="fas fa-bars"></i>
 					</button>
 					<div class="collapse navbar-collapse" id="navbarResponsive">
-						<ul class="navbar-nav ms-auto">
+						<ul class="navbar-nav ms-auto" id="header_ul">
 							<li><input type="text" placeholder="검색">
-								<img alt="검색버튼" src="resources/images/Desert.jpg"
+								<img alt="검색버튼" src="resources/images/serch.png"
 								class="py-3 selectImg" onclick="#"></li>
 							<!-- href="#portfolio"로 하면 페이지 내에서 이동함(카테고리로 이동함) -->
 							<li class="nav-item mx-0 mx-lg-1 suc"><a
@@ -49,8 +49,27 @@ $(function(){
 								class="nav-link py-3 px-0 px-lg-3 rounded" href="./myPageFrm">내정보</a></li>
 							<li class="nav-item mx-0 mx-lg-1 suc"><a
 								class="nav-link py-3 px-0 px-lg-3 rounded" href="./m_sBasketFrm">장바구니</a></li>
-							<li class="nav-item mx-0 mx-lg-1"><a
-								class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">고객센터</a></li>
+								
+							<li class="nav-item mx-0 mx-lg-1 dropdownTop">
+								<a class="nav-link py-3 px-0 px-lg-3 rounded" id="s_cneter">고객센터</a>
+								<ul  class="dropdown-centent" id="s_cneter_ul">
+									<li>
+										<a href="./noticeHomeFrm">
+											"공지사항"
+										</a>
+									</li>
+									<li>
+										<a href="./faqHomeFrm">
+											"FAQ"
+										</a>
+									</li>
+									<li>
+										<a href="">
+											"자유게시판"
+										</a>
+									</li>
+								</ul>
+							</li>
 							<li class="nav-item mx-0 mx-lg-1"><a
 								class="nav-link py-3 px-0 px-lg-3 rounded"
 								href="./w_writerHomeFrm">작가홈</a></li>
@@ -58,9 +77,6 @@ $(function(){
 								class="nav-link py-3 px-0 px-lg-3 rounded" class="bef"
 
 								href="./w_writerHomeFrm?whf_gbnum=${gbNM.whf_gbnum}">작가홈</a></li>
-
-								
-
 						</ul>
 					</div>
 				</div>
@@ -76,3 +92,20 @@ $(function(){
 			</ul>
 		</div>
 	</div>
+	
+	<script type="text/javascript">
+		function myFunction() {
+			if( $("#s_cneter_ul").css("display") == "none") { //안보이는 상태면
+				$("#s_cneter_ul").css("display", "block"); //보이게 함
+				console.log("myFunction - block"); //콘솔 출력
+				
+				$(document).ready(function(){
+					  $('#dropdown a#s_cneter').click(function(){
+					    $(this).find('ul').toggle();
+					  });
+					});
+			}
+			else if ($("#s_cneter_ul").css("display") == "block") { //보이는 상태면
+				$("#s_cneter_ul").css("display", "none"); //안보이게 함 
+		}
+	</script>
